@@ -24,7 +24,7 @@ NorthStar addresses these challenges through an integrated intelligence platform
 
 ## Platform Architecture
 
-![![NorthStar Architecture](https://github.com/GeoTheLeo/northstar-platform/raw/main/docs/screenshots/northstar_ai_platform_architecture.png)](/GeoTheLeo/northstar-platform/blob/main/docs/screenshots/northstar_ai_platform_architecture.png)
+![NorthStar Architecture](docs/screenshots/northstar_ai_platform_architecture.png)
 
 ---
 
