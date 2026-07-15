@@ -1,53 +1,58 @@
 """
 NorthStar Analytics View
-
-Responsible for rendering executive analytics.
-
-Presentation logic only.
 """
 
-import pandas as pd
 import plotly.express as px
 import streamlit as st
 
+from platform.config import (
+    SMALL_CHART_HEIGHT,
+    LARGE_CHART_HEIGHT,
+)
 
-def render_analytics(dashboard: dict) -> None:
-    """
-    Render the analytics dashboard.
-    """
+from platform.models.dashboard_data import (
+    DashboardData,
+)
 
-    st.subheader("Analytics Command Center")
 
-    learner_df = dashboard["learner_df"]
+def render_analytics(
+    dashboard: DashboardData,
+) -> None:
 
-    segments_df = pd.read_csv(
-        "src/segmentation/data/segment_assignments.csv"
+    st.subheader(
+        "Analytics Command Center"
     )
 
     attendance_chart = px.histogram(
-        learner_df,
+        dashboard.learner_df,
         x="attendance",
         title="Attendance Distribution",
     )
 
-    attendance_chart.update_layout(height=450)
+    attendance_chart.update_layout(
+        height=SMALL_CHART_HEIGHT
+    )
 
     engagement_chart = px.scatter(
-        learner_df,
+        dashboard.learner_df,
         x="engagement_score",
         y="assessment_score",
         title="Engagement vs Assessment",
     )
 
-    engagement_chart.update_layout(height=500)
+    engagement_chart.update_layout(
+        height=LARGE_CHART_HEIGHT
+    )
 
     segment_chart = px.histogram(
-        segments_df,
+        dashboard.segments_df,
         x="cluster",
         title="Learner Segment Distribution",
     )
 
-    segment_chart.update_layout(height=500)
+    segment_chart.update_layout(
+        height=LARGE_CHART_HEIGHT
+    )
 
     st.plotly_chart(
         attendance_chart,
