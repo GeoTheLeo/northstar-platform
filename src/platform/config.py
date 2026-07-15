@@ -1,24 +1,21 @@
 """
 NorthStar Platform Configuration
 
-Centralizes application-wide configuration values used by the
-Streamlit interface. Keeping these values in one location avoids
-hard-coded strings throughout the presentation layer and makes
-future deployment configuration significantly easier.
+Central configuration for the NorthStar executive application.
 """
 
 APP_NAME = "NorthStar Executive Platform"
 
 PAGE_TITLE = APP_NAME
 
+PAGE_ICON = "🎓"
+
 LAYOUT = "wide"
+
+INITIAL_SIDEBAR_STATE = "expanded"
 
 CAPTION = "NorthStar AI Learning Intelligence Platform"
 
-PAGE_ICON = "🎓"
+SMALL_CHART_HEIGHT = 450
 
-SIDEBAR_STATE = "expanded"
-
-CHART_HEIGHT_SMALL = 450
-
-CHART_HEIGHT_LARGE = 500
+LARGE_CHART_HEIGHT = 500
