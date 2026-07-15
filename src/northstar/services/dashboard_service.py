@@ -1,48 +1,24 @@
 """
 Dashboard Service
 
-Provides aggregated data required by the
-NorthStar Executive Platform.
+Coordinates dashboard data retrieval.
 """
 
-from pathlib import Path
-
-import pandas as pd
-
-from bi.data.sample_data import load_dashboard_data
-from bi.metrics.kpi_calculator import calculate_kpis
-from bi.metrics.risk_metrics import calculate_risk_metrics
-from bi.metrics.segmentation_metrics import (
-    calculate_segmentation_metrics,
-)
-
 from northstar.models.dashboard_data import DashboardData
-
-
-BASE_DIR = Path(__file__).resolve().parents[3]
+from northstar.repositories.csv.dashboard_repository import (
+    CsvDashboardRepository,
+)
 
 
 class DashboardService:
     """
-    Service responsible for preparing dashboard data.
+    Application service for dashboard data.
     """
+
+    def __init__(self):
+
+        self.repository = CsvDashboardRepository()
 
     def load_dashboard(self) -> DashboardData:
 
-        learner_df = load_dashboard_data()
-
-        segments_df = pd.read_csv(
-            BASE_DIR
-            / "src"
-            / "segmentation"
-            / "data"
-            / "segment_assignments.csv"
-        )
-
-        return DashboardData(
-            learner_df=learner_df,
-            segments_df=segments_df,
-            kpis=calculate_kpis(learner_df),
-            risk_metrics=calculate_risk_metrics(),
-            segment_metrics=calculate_segmentation_metrics(),
-        )
+        return self.repository.load_dashboard()
