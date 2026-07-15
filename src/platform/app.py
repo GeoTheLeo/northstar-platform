@@ -13,18 +13,6 @@ Responsibilities
 Business logic intentionally lives outside this module.
 """
 
-from pathlib import Path
-import sys
-
-# ---------------------------------------------------------------------
-# Configure project imports
-# ---------------------------------------------------------------------
-
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-
-if str(PROJECT_ROOT / "src") not in sys.path:
-    sys.path.append(str(PROJECT_ROOT / "src"))
-
 # ---------------------------------------------------------------------
 # Third-party imports
 # ---------------------------------------------------------------------
