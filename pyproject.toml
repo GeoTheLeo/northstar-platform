@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "northstar-platform"
+version = "0.1.0"
+description = "Applied AI platform for learner intelligence, analytics, RAG, and MLOps."
+readme = "README.md"
+requires-python = ">=3.11"
+
+authors = [
+    { name = "George Smith" }
+]
+
+dependencies = [
+    "pandas",
+    "plotly",
+    "streamlit",
+    "numpy",
+    "scikit-learn",
+]
+
+[tool.setuptools]
+
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+
+where = ["src"]
