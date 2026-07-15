@@ -16,7 +16,7 @@ from bi.metrics.segmentation_metrics import (
     calculate_segmentation_metrics,
 )
 
-from platform.models.dashboard_data import DashboardData
+from northstar.models.dashboard_data import DashboardData
 
 
 BASE_DIR = Path(__file__).resolve().parents[3]

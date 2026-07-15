@@ -1,6 +1,6 @@
 bi
 early_warning
 mlops
-platform
+northstar
 rag_assistant
 segmentation

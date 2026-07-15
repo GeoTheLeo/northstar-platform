@@ -5,7 +5,7 @@ Coordinates platform services and exposes
 application-ready data to the UI layer.
 """
 
-from platform.services.dashboard_service import DashboardService
+from northstar.services.dashboard_service import DashboardService
 
 
 class NorthStarController:
