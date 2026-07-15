@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Generated artifacts
+artifacts/
+outputs/
+
+# OS
+.DS_Store
+Thumbs.db
