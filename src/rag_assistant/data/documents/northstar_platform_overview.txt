@@ -1,0 +1,13 @@
+NorthStar is an AI Learning Intelligence Platform.
+
+The platform includes:
+
+- Early Warning System
+- Learner Segmentation Engine
+- BI Decision Command Center
+- AI Knowledge Assistant
+- MLOps Foundation
+
+The goal is to improve learner success through
+predictive analytics, clustering, decision support,
+and intelligent knowledge retrieval.

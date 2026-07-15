@@ -1,0 +1,42 @@
+# Python
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+
+.venv/
+venv/
+
+# Jupyter
+
+.ipynb_checkpoints/
+
+# Models
+
+*.pkl
+
+# MLflow
+
+*.db
+
+# Environment
+
+.env
+
+# VS Code
+
+.vscode/
+
+# OS
+
+.DS_Store
+Thumbs.db
+
+__pycache__/
+*.pyc
+.venv/
+*.pkl
+*.db    
