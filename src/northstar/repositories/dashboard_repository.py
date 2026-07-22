@@ -1,14 +1,25 @@
-from abc import ABC, abstractmethod
+"""
+Repository interface.
+"""
 
-from northstar.models.dashboard_data import DashboardData
+from abc import ABC
+from abc import abstractmethod
+
+import pandas as pd
 
 
-class DashboardRepository(ABC):
+class DashboardRepository(
+    ABC
+):
     """
-    Abstract interface for dashboard data repositories.
+    Dashboard repository abstraction.
     """
 
     @abstractmethod
-    def load_dashboard(self) -> DashboardData:
-        """Load dashboard data."""
+    def load_dashboard_data(
+        self,
+    ) -> pd.DataFrame:
+        """
+        Load learner data.
+        """
         raise NotImplementedError

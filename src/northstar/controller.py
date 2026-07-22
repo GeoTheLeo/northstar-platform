@@ -1,22 +1,20 @@
 """
-NorthStar Platform Controller
-
-Coordinates platform services and exposes
-application-ready data to the UI layer.
+NorthStar Controller
 """
 
-from northstar.services.dashboard_service import DashboardService
+from northstar.container import ApplicationContainer
 
 
 class NorthStarController:
     """
-    Application orchestration layer.
+    Coordinates UI requests.
     """
 
     def __init__(self):
-
-        self.dashboard_service = DashboardService()
+        self.container = ApplicationContainer()
 
     def dashboard(self):
-
-        return self.dashboard_service.load_dashboard()
+        """
+        Return the dashboard model for the UI.
+        """
+        return self.container.dashboard_service.load_dashboard()

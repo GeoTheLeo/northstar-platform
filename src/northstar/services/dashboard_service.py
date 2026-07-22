@@ -1,39 +1,75 @@
 """
 Dashboard Service
 
-Coordinates dashboard data retrieval and business intelligence generation.
+Coordinates dashboard data retrieval and executive intelligence.
 """
 
 from northstar.models.dashboard_data import DashboardData
-from northstar.repositories.csv.dashboard_repository import (
-    CsvDashboardRepository,
+from northstar.repositories.csv.dashboard_repository import CsvDashboardRepository
+from northstar.services.business_intelligence_service import (
+    BusinessIntelligenceService,
 )
+from northstar.services.early_warning_service import EarlyWarningService
+from northstar.services.segmentation_service import SegmentationService
 
 
 class DashboardService:
     """
-    Application service responsible for preparing executive dashboard data.
-
-    Responsibilities
-    ----------------
-    - Retrieve dashboard data from the repository
-    - Calculate business metrics
-    - Generate executive insights
+    Coordinates the dashboard workflow.
     """
 
-    def __init__(self):
+    def __init__(
+        self,
+        repository=None,
+        early_warning=None,
+        segmentation=None,
+        business_intelligence=None,
+    ):
+        self.repository = repository or CsvDashboardRepository()
 
-        self.repository = CsvDashboardRepository()
+        self.early_warning = (
+            early_warning or EarlyWarningService()
+        )
+
+        self.segmentation = (
+            segmentation or SegmentationService()
+        )
+
+        self.business_intelligence = (
+            business_intelligence
+            or BusinessIntelligenceService()
+        )
 
     def load_dashboard(self) -> DashboardData:
-        """
-        Load dashboard data and enrich it with executive intelligence.
-        """
 
-        dashboard = self.repository.load_dashboard()
+        learner_df = self.repository.load_dashboard_data()
 
-        dashboard.executive_summary = self._build_executive_summary(
-            dashboard
+        predictions_df = self.early_warning.predict(
+            learner_df
+        )
+
+        segments_df = self.segmentation.segment(
+            learner_df
+        )
+
+        metrics = self.business_intelligence.build_metrics(
+            learner_df,
+            predictions_df,
+            segments_df,
+        )
+
+        dashboard = DashboardData(
+            learner_df=learner_df,
+            segments_df=segments_df,
+            kpis=metrics["kpis"],
+            risk_metrics=metrics["risk_metrics"],
+            segment_metrics=metrics["segment_metrics"],
+        )
+
+        dashboard.executive_summary = (
+            self._build_executive_summary(
+                dashboard
+            )
         )
 
         return dashboard
@@ -42,28 +78,17 @@ class DashboardService:
         self,
         dashboard: DashboardData,
     ) -> str:
-        """
-        Generate a concise executive summary.
-
-        This intentionally remains lightweight for now.
-        Future sprints will replace these rules with
-        AI-assisted insight generation.
-        """
 
         if dashboard.retention_rate >= 90:
             return (
-                "Retention is strong. Current customer behaviour "
-                "indicates a healthy level of engagement."
+                "Retention is strong. Current learner behaviour indicates healthy engagement."
             )
 
         if dashboard.retention_rate >= 80:
             return (
-                "Retention remains stable but deserves monitoring "
-                "for early warning signals."
+                "Retention remains stable but should be monitored for early warning signals."
             )
 
         return (
-            "Retention has fallen below the desired threshold. "
-            "Recommend investigating customer engagement and "
-            "identifying at-risk segments."
+            "Retention is below our target. Prioritize intervention for at-risk learners."
         )
