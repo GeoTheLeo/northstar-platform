@@ -20,10 +20,10 @@ Business logic intentionally lives outside this module.
 import streamlit as st
 
 # ---------------------------------------------------------------------
-# Platform imports
+# NorthStar imports
 # ---------------------------------------------------------------------
 
-from platform.config import (
+from northstar.config import (
     PAGE_TITLE,
     PAGE_ICON,
     LAYOUT,
@@ -32,13 +32,13 @@ from platform.config import (
     CAPTION,
 )
 
-from platform.controller import NorthStarController
+from northstar.controller import NorthStarController
 
-from platform.ui.theme import load_theme
-from platform.ui.metrics import render_metrics
-from platform.ui.analytics import render_analytics
-from platform.ui.copilot import render_copilot
-from platform.ui.assistant import render_assistant
+from northstar.ui.theme import load_theme
+from northstar.ui.metrics import render_metrics
+from northstar.ui.analytics import render_analytics
+from northstar.ui.copilot import render_copilot
+from northstar.ui.assistant import render_assistant
 
 
 def main() -> None:

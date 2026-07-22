@@ -1,11 +1,18 @@
+"""
+Risk Metrics
+
+Calculates learner risk statistics.
+"""
+
 import pandas as pd
 
 
-def calculate_risk_metrics():
-
-    predictions = pd.read_csv(
-        "src/early_warning/data/predictions.csv"
-    )
+def calculate_risk_metrics(
+    predictions: pd.DataFrame,
+) -> dict:
+    """
+    Calculate dashboard risk metrics.
+    """
 
     total_students = len(predictions)
 
@@ -14,7 +21,9 @@ def calculate_risk_metrics():
     ).sum()
 
     risk_percentage = round(
-        (at_risk_students / total_students) * 100,
+        at_risk_students
+        / total_students
+        * 100,
         1,
     )
 

@@ -1,12 +1,8 @@
 """
 CSV Dashboard Repository
-
-Loads dashboard data from local CSV files.
 """
 
-from pathlib import Path
-
-import pandas as pd
+from pandas import DataFrame
 
 from bi.data.sample_data import load_dashboard_data
 from bi.metrics.kpi_calculator import calculate_kpis
@@ -15,34 +11,62 @@ from bi.metrics.segmentation_metrics import (
     calculate_segmentation_metrics,
 )
 
+from segmentation.clustering.train_cluster_model import (
+    train_segmentation_model,
+)
+
 from northstar.models.dashboard_data import DashboardData
-from northstar.repositories.dashboard_repository import DashboardRepository
+from northstar.repositories.dashboard_repository import (
+    DashboardRepository,
+)
+from northstar.services.early_warning_service import (
+    EarlyWarningService,
+)
 
 
-BASE_DIR = Path(__file__).resolve().parents[4]
-
-
-class CsvDashboardRepository(DashboardRepository):
+class CsvDashboardRepository(
+    DashboardRepository
+):
     """
-    CSV-backed repository implementation.
+    CSV-backed dashboard repository.
     """
 
-    def load_dashboard(self) -> DashboardData:
+    def __init__(self):
 
-        learner_df = load_dashboard_data()
+        self.early_warning = (
+            EarlyWarningService()
+        )
 
-        segments_df = pd.read_csv(
-            BASE_DIR
-            / "src"
-            / "segmentation"
-            / "data"
-            / "segment_assignments.csv"
+    def load_dashboard(
+        self,
+    ) -> DashboardData:
+
+        learner_df: DataFrame = (
+            load_dashboard_data()
+        )
+
+        predictions_df = (
+            self.early_warning.predict(
+                learner_df
+            )
+        )
+
+        _, segments_df = (
+            train_segmentation_model(
+                learner_df.copy()
+            )
         )
 
         return DashboardData(
             learner_df=learner_df,
             segments_df=segments_df,
-            kpis=calculate_kpis(learner_df),
-            risk_metrics=calculate_risk_metrics(),
-            segment_metrics=calculate_segmentation_metrics(),
+            kpis=calculate_kpis(
+                learner_df
+            ),
+            risk_metrics=calculate_risk_metrics(
+                predictions_df
+            ),
+            segment_metrics=calculate_segmentation_metrics(
+                segments_df
+            ),
         )

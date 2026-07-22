@@ -4,25 +4,26 @@ NorthStar Metrics View
 
 import streamlit as st
 
-from platform.models.dashboard_data import DashboardData
+from northstar.models.dashboard_data import DashboardData
 
 
-def _metric_card(title: str, value) -> None:
+def _metric_card(
+    title: str,
+    value,
+) -> None:
+    """
+    Render a single executive KPI card.
+    """
+
+    html = (
+        f'<div class="metric-card">'
+        f'<div class="metric-title">{title}</div>'
+        f'<div class="metric-value">{value}</div>'
+        f'</div>'
+    )
 
     st.markdown(
-        f"""
-        <div class="metric-card">
-
-            <div class="metric-title">
-                {title}
-            </div>
-
-            <div class="metric-value">
-                {value}
-            </div>
-
-        </div>
-        """,
+        html,
         unsafe_allow_html=True,
     )
 
@@ -30,41 +31,34 @@ def _metric_card(title: str, value) -> None:
 def render_metrics(
     dashboard: DashboardData,
 ) -> None:
+    """
+    Render the Executive KPI overview.
+    """
 
-    st.subheader(
-        "Executive Overview"
-    )
+    st.subheader("Executive Overview")
 
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
-
         _metric_card(
-            "Students",
-            dashboard.kpis["total_students"],
+            "Learners",
+            dashboard.total_learners,
         )
 
     with col2:
-
         _metric_card(
             "At-Risk Learners",
-            dashboard.risk_metrics[
-                "at_risk_students"
-            ],
+            dashboard.at_risk_learners,
         )
 
     with col3:
-
         _metric_card(
-            "Active Segments",
-            dashboard.segment_metrics[
-                "total_segments"
-            ],
+            "Retention",
+            f"{dashboard.retention_rate:.1f}%",
         )
 
     with col4:
-
         _metric_card(
-            "Risk Percentage",
-            f'{dashboard.risk_metrics["risk_percentage"]}%',
+            "Churn",
+            f"{dashboard.churn_rate:.1f}%",
         )

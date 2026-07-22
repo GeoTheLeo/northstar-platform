@@ -5,12 +5,12 @@ NorthStar Analytics View
 import plotly.express as px
 import streamlit as st
 
-from platform.config import (
-    SMALL_CHART_HEIGHT,
+from northstar.config import (
     LARGE_CHART_HEIGHT,
+    SMALL_CHART_HEIGHT,
 )
 
-from platform.models.dashboard_data import (
+from northstar.models.dashboard_data import (
     DashboardData,
 )
 
@@ -18,10 +18,66 @@ from platform.models.dashboard_data import (
 def render_analytics(
     dashboard: DashboardData,
 ) -> None:
+    """
+    Render the Executive Analytics workspace.
+    """
 
-    st.subheader(
-        "Analytics Command Center"
-    )
+    st.subheader("📊 Analytics Command Center")
+
+    # --------------------------------------------------
+    # Executive Intelligence
+    # --------------------------------------------------
+
+    st.markdown("### Executive Intelligence")
+
+    st.info(dashboard.executive_summary)
+
+    observations = []
+
+    if dashboard.retention_rate >= 90:
+        observations.append(
+            "✅ Retention is currently exceeding target."
+        )
+    else:
+        observations.append(
+            "⚠ Retention has fallen below the desired target."
+        )
+
+    if dashboard.at_risk_learners > 0:
+        observations.append(
+            f"⚠ {dashboard.at_risk_learners:,} learners are currently identified as at risk."
+        )
+
+    if dashboard.intervention_rate > 0:
+        observations.append(
+            f"📈 Intervention rate: {dashboard.intervention_rate:.1f}%"
+        )
+
+    st.markdown("#### Key Business Observations")
+
+    for observation in observations:
+        st.write(observation)
+
+    st.markdown("#### Recommended Next Action")
+
+    if dashboard.retention_rate >= 90:
+        st.success(
+            "Maintain current learner engagement strategies while monitoring early warning indicators."
+        )
+    elif dashboard.retention_rate >= 80:
+        st.warning(
+            "Increase proactive coaching for medium-risk learner segments."
+        )
+    else:
+        st.error(
+            "Prioritize immediate intervention for high-risk learners and review engagement strategy."
+        )
+
+    st.divider()
+
+    # --------------------------------------------------
+    # Visual Analytics
+    # --------------------------------------------------
 
     attendance_chart = px.histogram(
         dashboard.learner_df,
