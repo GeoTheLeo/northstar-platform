@@ -2,15 +2,12 @@
 Repository interface.
 """
 
-from abc import ABC
-from abc import abstractmethod
+from abc import ABC, abstractmethod
 
 import pandas as pd
 
 
-class DashboardRepository(
-    ABC
-):
+class DashboardRepository(ABC):
     """
     Dashboard repository abstraction.
     """

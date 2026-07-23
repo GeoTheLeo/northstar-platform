@@ -8,17 +8,37 @@ from northstar.repositories.duckdb.database import (
 
 
 class QueryService:
+    """
+    Execute warehouse queries.
+    """
 
     def __init__(self):
 
         self.connection = connect()
 
-    def executive_dashboard(self):
+    def execute(
+        self,
+        sql: str,
+    ):
+        """
+        Execute arbitrary SQL.
+        """
 
-        return self.connection.execute(
-            """
-            SELECT *
+        return self.connection.execute(sql)
 
-            FROM northstar.executive_dashboard
-            """
-        ).fetchdf()
+    def fetch_dataframe(
+        self,
+        sql: str,
+    ):
+        """
+        Execute SQL and return a DataFrame.
+        """
+
+        return (
+            self.connection
+            .execute(sql)
+            .fetchdf()
+        )
+
+    def close(self):
+        self.connection.close()

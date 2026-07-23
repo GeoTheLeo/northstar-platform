@@ -4,13 +4,18 @@ NorthStar Application Container
 Creates and wires application services.
 """
 
-from northstar.repositories.csv.dashboard_repository import (
-    CsvDashboardRepository,
+from northstar.repositories.duckdb.bootstrap import (
+    bootstrap,
+)
+from northstar.repositories.repository_factory import (
+    RepositoryFactory,
 )
 from northstar.services.business_intelligence_service import (
     BusinessIntelligenceService,
 )
-from northstar.services.dashboard_service import DashboardService
+from northstar.services.dashboard_service import (
+    DashboardService,
+)
 from northstar.services.early_warning_service import (
     EarlyWarningService,
 )
@@ -26,7 +31,10 @@ class ApplicationContainer:
 
     def __init__(self):
 
-        repository = CsvDashboardRepository()
+        
+        repository = (
+            RepositoryFactory.create_dashboard_repository()
+        )
 
         early_warning = EarlyWarningService()
 

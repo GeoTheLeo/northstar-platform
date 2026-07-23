@@ -1,21 +1,47 @@
 """
-NorthStar Platform Configuration
-
-Central configuration for the NorthStar executive application.
+NorthStar Configuration
 """
 
-APP_NAME = "NorthStar Executive Platform"
+from dataclasses import dataclass
 
-PAGE_TITLE = APP_NAME
+# ---------------------------------------------------------------------
+# Streamlit UI Configuration
+# ---------------------------------------------------------------------
 
-PAGE_ICON = "🎓"
+PAGE_TITLE = "NorthStar Executive Platform"
+
+PAGE_ICON = "⭐"
 
 LAYOUT = "wide"
 
 INITIAL_SIDEBAR_STATE = "expanded"
 
-CAPTION = "NorthStar AI Learning Intelligence Platform"
+APP_NAME = "NorthStar Executive Platform"
 
-SMALL_CHART_HEIGHT = 450
+CAPTION = (
+    "NorthStar Applied AI Platform • "
+    "Architecture • Analytics • MLOps • RAG"
+)
+
+# ---------------------------------------------------------------------
+# Chart Configuration
+# ---------------------------------------------------------------------
+
+SMALL_CHART_HEIGHT = 350
 
 LARGE_CHART_HEIGHT = 500
+
+# ---------------------------------------------------------------------
+# Application Settings
+# ---------------------------------------------------------------------
+
+@dataclass(frozen=True)
+class Settings:
+    """
+    Application configuration.
+    """
+
+    dashboard_repository: str = "csv"
+
+
+settings = Settings()

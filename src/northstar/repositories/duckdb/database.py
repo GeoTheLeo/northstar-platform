@@ -19,8 +19,16 @@ DATABASE_PATH = (
 )
 
 
-def connect():
+def connect() -> duckdb.DuckDBPyConnection:
+    """
+    Return a DuckDB connection.
+    """
+
+    DATABASE_PATH.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
 
     return duckdb.connect(
-        DATABASE_PATH
+        str(DATABASE_PATH)
     )
