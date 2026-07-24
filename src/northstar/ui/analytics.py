@@ -30,7 +30,18 @@ def render_analytics(
 
     st.markdown("### Executive Intelligence")
 
-    st.info(dashboard.executive_summary)
+    summary = dashboard.executive_summary
+
+    if summary.severity == "success":
+        st.success(summary.headline)
+
+    elif summary.severity == "warning":
+        st.warning(summary.headline)
+
+    else:
+        st.error(summary.headline)
+
+    st.write(summary.recommendation)
 
     observations = []
 

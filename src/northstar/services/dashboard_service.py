@@ -4,7 +4,9 @@ Dashboard Service
 Coordinates dashboard data retrieval and executive intelligence.
 """
 
+from northstar.logging import logger
 from northstar.models.dashboard_data import DashboardData
+from northstar.models.executive_summary import ExecutiveSummary
 from northstar.repositories.csv.dashboard_repository import CsvDashboardRepository
 from northstar.services.business_intelligence_service import (
     BusinessIntelligenceService,
@@ -41,6 +43,13 @@ class DashboardService:
         )
 
     def load_dashboard(self) -> DashboardData:
+        """
+        Load, enrich, and assemble the dashboard model.
+        """
+
+        logger.info(
+            "Dashboard generation started."
+        )
 
         learner_df = self.repository.load_dashboard_data()
 
@@ -61,9 +70,9 @@ class DashboardService:
         dashboard = DashboardData(
             learner_df=learner_df,
             segments_df=segments_df,
-            kpis=metrics["kpis"],
-            risk_metrics=metrics["risk_metrics"],
-            segment_metrics=metrics["segment_metrics"],
+            kpis=metrics.kpis,
+            risk_metrics=metrics.risk_metrics,
+            segment_metrics=metrics.segment_metrics,
         )
 
         dashboard.executive_summary = (
@@ -72,23 +81,39 @@ class DashboardService:
             )
         )
 
+        logger.info(
+            "Dashboard successfully generated."
+        )
+
         return dashboard
 
     def _build_executive_summary(
         self,
         dashboard: DashboardData,
-    ) -> str:
+    ) -> ExecutiveSummary:
 
         if dashboard.retention_rate >= 90:
-            return (
-                "Retention is strong. Current learner behaviour indicates healthy engagement."
+            return ExecutiveSummary(
+                headline="Retention is strong.",
+                recommendation=(
+                    "Maintain current learner engagement strategies."
+                ),
+                severity="success",
             )
 
         if dashboard.retention_rate >= 80:
-            return (
-                "Retention remains stable but should be monitored for early warning signals."
+            return ExecutiveSummary(
+                headline="Retention is stable.",
+                recommendation=(
+                    "Increase proactive coaching for medium-risk learners."
+                ),
+                severity="warning",
             )
 
-        return (
-            "Retention is below our target. Prioritize intervention for at-risk learners."
+        return ExecutiveSummary(
+            headline="Retention is below target.",
+            recommendation=(
+                "Prioritize immediate intervention for at-risk learners."
+            ),
+            severity="error",
         )

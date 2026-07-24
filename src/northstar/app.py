@@ -6,7 +6,7 @@ Application entry point for the NorthStar Applied AI Platform.
 Responsibilities
 ----------------
 - Configure the Streamlit application
-- Initialize the platform controller
+- Initialize platform services
 - Load shared UI theme
 - Delegate rendering to UI components
 
@@ -34,6 +34,8 @@ from northstar.config import (
 
 from northstar.controller import NorthStarController
 
+from northstar.logging import logger
+
 from northstar.ui.theme import load_theme
 from northstar.ui.metrics import render_metrics
 from northstar.ui.analytics import render_analytics
@@ -45,6 +47,8 @@ def main() -> None:
     """
     Launch the NorthStar Executive Platform.
     """
+
+    logger.info("NorthStar application started.")
 
     st.set_page_config(
         page_title=PAGE_TITLE,

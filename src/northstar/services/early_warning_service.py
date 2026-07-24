@@ -14,6 +14,8 @@ import pandas as pd
 from early_warning.features.feature_engineering import create_features
 from early_warning.models.train_model import train_model
 
+from northstar.logging import logger
+
 
 class EarlyWarningService:
     """
@@ -41,19 +43,43 @@ class EarlyWarningService:
         Predict learner risk.
         """
 
-        model = self._load_or_train_model(
-            learner_df
+        logger.info(
+            "Predicting learner risk for %d learners.",
+            len(learner_df),
         )
 
-        engineered = create_features(
-            learner_df.copy()
-        )
+        try:
 
-        engineered["risk_prediction"] = model.predict(
-            engineered[self.FEATURE_COLUMNS]
-        )
+            model = self._load_or_train_model(
+                learner_df
+            )
 
-        return engineered
+            engineered = create_features(
+                learner_df.copy()
+            )
+
+            engineered["risk_prediction"] = model.predict(
+                engineered[self.FEATURE_COLUMNS]
+            )
+
+            at_risk = int(
+                engineered["risk_prediction"].sum()
+            )
+
+            logger.info(
+                "Risk prediction complete. %d learners identified as at risk.",
+                at_risk,
+            )
+
+            return engineered
+
+        except Exception:
+
+            logger.exception(
+                "Early warning prediction failed."
+            )
+
+            raise
 
     def _load_or_train_model(
         self,
@@ -64,12 +90,25 @@ class EarlyWarningService:
         """
 
         if self.MODEL_PATH.exists():
+
+            logger.info(
+                "Loading trained early warning model."
+            )
+
             return joblib.load(
                 self.MODEL_PATH
             )
 
+        logger.warning(
+            "No trained model found. Training a new model."
+        )
+
         model = train_model(
             learner_df.copy()
+        )
+
+        logger.info(
+            "Early warning model training complete."
         )
 
         return model
