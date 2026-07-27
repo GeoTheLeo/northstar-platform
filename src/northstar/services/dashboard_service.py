@@ -6,12 +6,14 @@ Coordinates dashboard data retrieval and executive intelligence.
 
 from northstar.logging import logger
 from northstar.models.dashboard_data import DashboardData
-from northstar.models.executive_summary import ExecutiveSummary
 from northstar.repositories.csv.dashboard_repository import CsvDashboardRepository
 from northstar.services.business_intelligence_service import (
     BusinessIntelligenceService,
 )
 from northstar.services.early_warning_service import EarlyWarningService
+from northstar.services.executive_summary_service import (
+    ExecutiveSummaryService,
+)
 from northstar.services.segmentation_service import SegmentationService
 
 
@@ -26,6 +28,7 @@ class DashboardService:
         early_warning=None,
         segmentation=None,
         business_intelligence=None,
+        executive_summary=None,
     ):
         self.repository = repository or CsvDashboardRepository()
 
@@ -40,6 +43,11 @@ class DashboardService:
         self.business_intelligence = (
             business_intelligence
             or BusinessIntelligenceService()
+        )
+
+        self.executive_summary = (
+            executive_summary
+            or ExecutiveSummaryService()
         )
 
     def load_dashboard(self) -> DashboardData:
@@ -76,8 +84,8 @@ class DashboardService:
         )
 
         dashboard.executive_summary = (
-            self._build_executive_summary(
-                dashboard
+            self.executive_summary.build(
+                dashboard.retention_rate
             )
         )
 
@@ -86,34 +94,3 @@ class DashboardService:
         )
 
         return dashboard
-
-    def _build_executive_summary(
-        self,
-        dashboard: DashboardData,
-    ) -> ExecutiveSummary:
-
-        if dashboard.retention_rate >= 90:
-            return ExecutiveSummary(
-                headline="Retention is strong.",
-                recommendation=(
-                    "Maintain current learner engagement strategies."
-                ),
-                severity="success",
-            )
-
-        if dashboard.retention_rate >= 80:
-            return ExecutiveSummary(
-                headline="Retention is stable.",
-                recommendation=(
-                    "Increase proactive coaching for medium-risk learners."
-                ),
-                severity="warning",
-            )
-
-        return ExecutiveSummary(
-            headline="Retention is below target.",
-            recommendation=(
-                "Prioritize immediate intervention for at-risk learners."
-            ),
-            severity="error",
-        )
