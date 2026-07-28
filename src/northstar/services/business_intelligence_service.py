@@ -5,7 +5,6 @@ NorthStar Business Intelligence Service
 from bi.metrics.kpi_calculator import calculate_kpis
 from bi.metrics.risk_metrics import calculate_risk_metrics
 from bi.metrics.segmentation_metrics import calculate_segmentation_metrics
-
 from northstar.logging import logger
 from northstar.models.dashboard_metrics import DashboardMetrics
 

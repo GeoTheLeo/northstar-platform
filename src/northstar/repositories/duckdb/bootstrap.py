@@ -5,7 +5,6 @@ Initializes and populates the NorthStar analytical warehouse.
 """
 
 from bi.data.sample_data import load_dashboard_data
-
 from northstar.repositories.duckdb.database import (
     connect,
 )

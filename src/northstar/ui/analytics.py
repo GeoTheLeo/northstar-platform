@@ -9,7 +9,6 @@ from northstar.config import (
     LARGE_CHART_HEIGHT,
     SMALL_CHART_HEIGHT,
 )
-
 from northstar.models.dashboard_data import (
     DashboardData,
 )
@@ -56,7 +55,8 @@ def render_analytics(
 
     if dashboard.at_risk_learners > 0:
         observations.append(
-            f"⚠ {dashboard.at_risk_learners:,} learners are currently identified as at risk."
+            f"⚠ {dashboard.at_risk_learners:,} learners "
+            "are currently identified as at risk."
         )
 
     if dashboard.intervention_rate > 0:
@@ -73,7 +73,9 @@ def render_analytics(
 
     if dashboard.retention_rate >= 90:
         st.success(
-            "Maintain current learner engagement strategies while monitoring early warning indicators."
+            "Maintain current learner engagement "
+            "strategies while monitoring early "
+            "warning indicators."
         )
     elif dashboard.retention_rate >= 80:
         st.warning(
@@ -81,7 +83,9 @@ def render_analytics(
         )
     else:
         st.error(
-            "Prioritize immediate intervention for high-risk learners and review engagement strategy."
+            "Prioritize immediate intervention "
+            "for high-risk learners and review "
+            "engagement strategy."
         )
 
     st.divider()

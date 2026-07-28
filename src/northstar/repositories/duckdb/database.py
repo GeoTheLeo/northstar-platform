@@ -8,7 +8,6 @@ from pathlib import Path
 
 import duckdb
 
-
 BASE_DIR = Path(__file__).resolve().parents[4]
 
 DATABASE_PATH = (

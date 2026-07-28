@@ -6,11 +6,10 @@ Provides runtime learner segmentation.
 
 import pandas as pd
 
+from northstar.logging import logger
 from segmentation.clustering.train_cluster_model import (
     train_segmentation_model,
 )
-
-from northstar.logging import logger
 
 
 class SegmentationService:

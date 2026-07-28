@@ -4,9 +4,6 @@ NorthStar Application Container
 Creates and wires application services.
 """
 
-from northstar.repositories.duckdb.bootstrap import (
-    bootstrap,
-)
 from northstar.repositories.repository_factory import (
     RepositoryFactory,
 )

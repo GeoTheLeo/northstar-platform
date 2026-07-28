@@ -7,7 +7,6 @@ Responsible only for loading dashboard source data.
 from pandas import DataFrame
 
 from bi.data.sample_data import load_dashboard_data
-
 from northstar.logging import logger
 from northstar.repositories.dashboard_repository import (
     DashboardRepository,

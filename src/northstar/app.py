@@ -22,25 +22,21 @@ import streamlit as st
 # ---------------------------------------------------------------------
 # NorthStar imports
 # ---------------------------------------------------------------------
-
 from northstar.config import (
-    PAGE_TITLE,
-    PAGE_ICON,
-    LAYOUT,
-    INITIAL_SIDEBAR_STATE,
     APP_NAME,
     CAPTION,
+    INITIAL_SIDEBAR_STATE,
+    LAYOUT,
+    PAGE_ICON,
+    PAGE_TITLE,
 )
-
 from northstar.controller import NorthStarController
-
 from northstar.logging import logger
-
-from northstar.ui.theme import load_theme
-from northstar.ui.metrics import render_metrics
 from northstar.ui.analytics import render_analytics
-from northstar.ui.copilot import render_copilot
 from northstar.ui.assistant import render_assistant
+from northstar.ui.copilot import render_copilot
+from northstar.ui.metrics import render_metrics
+from northstar.ui.theme import load_theme
 
 
 def main() -> None:

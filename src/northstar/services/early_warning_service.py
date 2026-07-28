@@ -13,7 +13,6 @@ import pandas as pd
 
 from early_warning.features.feature_engineering import create_features
 from early_warning.models.train_model import train_model
-
 from northstar.logging import logger
 
 

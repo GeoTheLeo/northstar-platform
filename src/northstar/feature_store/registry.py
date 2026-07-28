@@ -5,7 +5,6 @@ Feature Registry
 from northstar.feature_store.feature_store import (
     FeatureStore,
 )
-
 from northstar.feature_store.features import (
     build_engagement_features,
 )
