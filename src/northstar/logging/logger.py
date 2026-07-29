@@ -12,11 +12,7 @@ LOG_FILE = LOG_DIR / "northstar.log"
 
 logging.basicConfig(
     level=logging.INFO,
-    format=(
-        "%(asctime)s | "
-        "%(levelname)-8s | "
-        "%(message)s"
-    ),
+    format=("%(asctime)s | " "%(levelname)-8s | " "%(message)s"),
     handlers=[
         logging.FileHandler(LOG_FILE),
         logging.StreamHandler(),

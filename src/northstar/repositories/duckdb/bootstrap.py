@@ -17,11 +17,9 @@ def bootstrap() -> None:
 
     connection = connect()
 
-    connection.execute(
-        """
+    connection.execute("""
         CREATE SCHEMA IF NOT EXISTS analytics;
-        """
-    )
+        """)
 
     learner_df = load_dashboard_data()
 
@@ -30,19 +28,15 @@ def bootstrap() -> None:
         learner_df,
     )
 
-    connection.execute(
-        """
+    connection.execute("""
         CREATE OR REPLACE TABLE
             analytics.learners
         AS
         SELECT *
         FROM learner_df;
-        """
-    )
+        """)
 
-    connection.unregister(
-        "learner_df"
-    )
+    connection.unregister("learner_df")
 
     connection.close()
 

@@ -17,13 +17,7 @@ def load_theme() -> None:
     Load the shared application stylesheet.
     """
 
-    css = (
-        BASE_DIR
-        / "assets"
-        / "styles.css"
-    ).read_text(
-        encoding="utf-8"
-    )
+    css = (BASE_DIR / "assets" / "styles.css").read_text(encoding="utf-8")
 
     st.markdown(
         f"<style>{css}</style>",

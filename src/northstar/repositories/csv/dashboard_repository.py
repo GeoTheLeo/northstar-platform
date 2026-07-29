@@ -4,6 +4,8 @@ CSV Dashboard Repository
 Responsible only for loading dashboard source data.
 """
 
+from typing import cast
+
 from pandas import DataFrame
 
 from bi.data.sample_data import load_dashboard_data
@@ -13,9 +15,7 @@ from northstar.repositories.dashboard_repository import (
 )
 
 
-class CsvDashboardRepository(
-    DashboardRepository
-):
+class CsvDashboardRepository(DashboardRepository):
     """
     CSV-backed repository.
     """
@@ -27,13 +27,13 @@ class CsvDashboardRepository(
         Load learner data.
         """
 
-        logger.info(
-            "Using CSV repository."
-        )
+        logger.info("Using CSV repository.")
 
         try:
-
-            learner_df = load_dashboard_data()
+            learner_df = cast(
+                DataFrame,
+                load_dashboard_data(),
+            )
 
             logger.info(
                 "Loaded %d learner records.",
@@ -43,9 +43,7 @@ class CsvDashboardRepository(
             return learner_df
 
         except Exception:
-
             logger.exception(
-                "Failed to load learner dataset."
+                "We didn't load learner dataset."
             )
-
             raise

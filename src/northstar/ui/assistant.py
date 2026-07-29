@@ -17,26 +17,18 @@ def render_assistant() -> None:
     Render the conversational assistant.
     """
 
-    st.subheader(
-        "NorthStar Knowledge Assistant"
-    )
+    st.subheader("NorthStar Knowledge Assistant")
 
     if "messages" not in st.session_state:
         st.session_state.messages = []
 
     for message in st.session_state.messages:
 
-        with st.chat_message(
-            message["role"]
-        ):
+        with st.chat_message(message["role"]):
 
-            st.markdown(
-                message["content"]
-            )
+            st.markdown(message["content"])
 
-    question = st.chat_input(
-        "Ask NorthStar..."
-    )
+    question = st.chat_input("Ask NorthStar...")
 
     if not question:
         return
@@ -52,17 +44,11 @@ def render_assistant() -> None:
 
         st.markdown(question)
 
-    response = ask_assistant(
-        question
-    )
+    response = ask_assistant(question)
 
-    with st.chat_message(
-        "assistant"
-    ):
+    with st.chat_message("assistant"):
 
-        st.markdown(
-            response
-        )
+        st.markdown(response)
 
     st.session_state.messages.append(
         {

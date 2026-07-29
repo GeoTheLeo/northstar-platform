@@ -19,18 +19,8 @@ class FeatureStore:
 
     def load_students(self) -> pd.DataFrame:
 
-        return pd.read_csv(
-            BASE_DIR
-            / "data"
-            / "raw"
-            / "student_data.csv"
-        )
+        return pd.read_csv(BASE_DIR / "data" / "raw" / "student_data.csv")
 
     def load_segmentation(self) -> pd.DataFrame:
 
-        return pd.read_csv(
-            BASE_DIR
-            / "data"
-            / "raw"
-            / "learner_segmentation_data.csv"
-        )
+        return pd.read_csv(BASE_DIR / "data" / "raw" / "learner_segmentation_data.csv")

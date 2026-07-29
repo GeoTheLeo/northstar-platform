@@ -10,11 +10,15 @@ from northstar.repositories.csv.dashboard_repository import CsvDashboardReposito
 from northstar.services.business_intelligence_service import (
     BusinessIntelligenceService,
 )
-from northstar.services.early_warning_service import EarlyWarningService
+from northstar.services.early_warning_service import (
+    EarlyWarningService,
+)
 from northstar.services.executive_summary_service import (
     ExecutiveSummaryService,
 )
-from northstar.services.segmentation_service import SegmentationService
+from northstar.services.segmentation_service import (
+    SegmentationService,
+)
 
 
 class DashboardService:
@@ -24,30 +28,40 @@ class DashboardService:
 
     def __init__(
         self,
-        repository=None,
-        early_warning=None,
-        segmentation=None,
-        business_intelligence=None,
-        executive_summary=None,
-    ):
-        self.repository = repository or CsvDashboardRepository()
+        repository: CsvDashboardRepository | None = None,
+        early_warning: EarlyWarningService | None = None,
+        segmentation: SegmentationService | None = None,
+        business_intelligence: BusinessIntelligenceService | None = None,
+        executive_summary: ExecutiveSummaryService | None = None,
+    ) -> None:
+        self.repository = (
+            repository
+            if repository is not None
+            else CsvDashboardRepository()
+        )
 
         self.early_warning = (
-            early_warning or EarlyWarningService()
+            early_warning
+            if early_warning is not None
+            else EarlyWarningService()
         )
 
         self.segmentation = (
-            segmentation or SegmentationService()
+            segmentation
+            if segmentation is not None
+            else SegmentationService()
         )
 
         self.business_intelligence = (
             business_intelligence
-            or BusinessIntelligenceService()
+            if business_intelligence is not None
+            else BusinessIntelligenceService()
         )
 
         self.executive_summary = (
             executive_summary
-            or ExecutiveSummaryService()
+            if executive_summary is not None
+            else ExecutiveSummaryService()
         )
 
     def load_dashboard(self) -> DashboardData:
@@ -55,9 +69,7 @@ class DashboardService:
         Load, enrich, and assemble the dashboard model.
         """
 
-        logger.info(
-            "Dashboard generation started."
-        )
+        logger.info("Dashboard generation started.")
 
         learner_df = self.repository.load_dashboard_data()
 
@@ -75,18 +87,44 @@ class DashboardService:
             segments_df,
         )
 
+        total_learners = int(
+            metrics.kpis.get(
+                "total_students",
+                len(learner_df),
+            )
+        )
+
+        at_risk_learners = int(
+            metrics.risk_metrics.get(
+                "at_risk_students",
+                0,
+            )
+        )
+
+        retention_rate = (
+            0.0
+            if total_learners == 0
+            else round(
+                (total_learners - at_risk_learners)
+                / total_learners
+                * 100,
+                1,
+            )
+        )
+
+        executive_summary = (
+            self.executive_summary.build(
+                retention_rate
+            )
+        )
+
         dashboard = DashboardData(
             learner_df=learner_df,
             segments_df=segments_df,
             kpis=metrics.kpis,
             risk_metrics=metrics.risk_metrics,
             segment_metrics=metrics.segment_metrics,
-        )
-
-        dashboard.executive_summary = (
-            self.executive_summary.build(
-                dashboard.retention_rate
-            )
+            executive_summary=executive_summary,
         )
 
         logger.info(

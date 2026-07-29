@@ -16,17 +16,11 @@ def render_copilot() -> None:
     Render the executive copilot.
     """
 
-    st.subheader(
-        "NorthStar Executive Copilot"
-    )
+    st.subheader("NorthStar Executive Copilot")
 
-    if st.button(
-        "Generate Executive Briefing"
-    ):
+    if st.button("Generate Executive Briefing"):
 
-        briefing = (
-            generate_executive_brief()
-        )
+        briefing = generate_executive_brief()
 
         st.text_area(
             "Executive Briefing",

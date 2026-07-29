@@ -11,13 +11,10 @@ def build_engagement_features(
 
     engineered = df.copy()
 
-    engineered["attendance_ratio"] = (
-        engineered["attendance"] / 100
-    )
+    engineered["attendance_ratio"] = engineered["attendance"] / 100
 
     engineered["engagement_gap"] = (
-        engineered["engagement_score"]
-        - engineered["assessment_score"]
+        engineered["engagement_score"] - engineered["assessment_score"]
     )
 
     engineered["performance_index"] = (

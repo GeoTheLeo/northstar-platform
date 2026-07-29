@@ -13,5 +13,9 @@ class RepositoryFactory:
     """
 
     @staticmethod
-    def create_dashboard_repository():
+    def create_dashboard_repository() -> CsvDashboardRepository:
+        """
+        Create the dashboard repository implementation.
+        """
+
         return CsvDashboardRepository()

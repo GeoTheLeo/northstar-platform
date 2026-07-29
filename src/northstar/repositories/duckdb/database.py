@@ -10,12 +10,7 @@ import duckdb
 
 BASE_DIR = Path(__file__).resolve().parents[4]
 
-DATABASE_PATH = (
-    BASE_DIR
-    / "data"
-    / "warehouse"
-    / "northstar.duckdb"
-)
+DATABASE_PATH = BASE_DIR / "data" / "warehouse" / "northstar.duckdb"
 
 
 def connect() -> duckdb.DuckDBPyConnection:
@@ -28,6 +23,4 @@ def connect() -> duckdb.DuckDBPyConnection:
         exist_ok=True,
     )
 
-    return duckdb.connect(
-        str(DATABASE_PATH)
-    )
+    return duckdb.connect(str(DATABASE_PATH))

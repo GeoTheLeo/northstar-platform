@@ -45,13 +45,9 @@ def render_analytics(
     observations = []
 
     if dashboard.retention_rate >= 90:
-        observations.append(
-            "✅ Retention is currently exceeding target."
-        )
+        observations.append("✅ Retention is currently exceeding target.")
     else:
-        observations.append(
-            "⚠ Retention has fallen below the desired target."
-        )
+        observations.append("⚠ Retention has fallen below the desired target.")
 
     if dashboard.at_risk_learners > 0:
         observations.append(
@@ -60,9 +56,7 @@ def render_analytics(
         )
 
     if dashboard.intervention_rate > 0:
-        observations.append(
-            f"📈 Intervention rate: {dashboard.intervention_rate:.1f}%"
-        )
+        observations.append(f"📈 Intervention rate: {dashboard.intervention_rate:.1f}%")
 
     st.markdown("#### Key Business Observations")
 
@@ -78,9 +72,7 @@ def render_analytics(
             "warning indicators."
         )
     elif dashboard.retention_rate >= 80:
-        st.warning(
-            "Increase proactive coaching for medium-risk learner segments."
-        )
+        st.warning("Increase proactive coaching for medium-risk learner segments.")
     else:
         st.error(
             "Prioritize immediate intervention "
@@ -100,9 +92,7 @@ def render_analytics(
         title="Attendance Distribution",
     )
 
-    attendance_chart.update_layout(
-        height=SMALL_CHART_HEIGHT
-    )
+    attendance_chart.update_layout(height=SMALL_CHART_HEIGHT)
 
     engagement_chart = px.scatter(
         dashboard.learner_df,
@@ -111,9 +101,7 @@ def render_analytics(
         title="Engagement vs Assessment",
     )
 
-    engagement_chart.update_layout(
-        height=LARGE_CHART_HEIGHT
-    )
+    engagement_chart.update_layout(height=LARGE_CHART_HEIGHT)
 
     segment_chart = px.histogram(
         dashboard.segments_df,
@@ -121,9 +109,7 @@ def render_analytics(
         title="Learner Segment Distribution",
     )
 
-    segment_chart.update_layout(
-        height=LARGE_CHART_HEIGHT
-    )
+    segment_chart.update_layout(height=LARGE_CHART_HEIGHT)
 
     st.plotly_chart(
         attendance_chart,

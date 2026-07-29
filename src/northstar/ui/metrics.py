@@ -2,6 +2,8 @@
 NorthStar Metrics View
 """
 
+from typing import Any
+
 import streamlit as st
 
 from northstar.models.dashboard_data import DashboardData
@@ -9,7 +11,7 @@ from northstar.models.dashboard_data import DashboardData
 
 def _metric_card(
     title: str,
-    value,
+    value: Any,
 ) -> None:
     """
     Render a single executive KPI card.
@@ -19,7 +21,7 @@ def _metric_card(
         f'<div class="metric-card">'
         f'<div class="metric-title">{title}</div>'
         f'<div class="metric-value">{value}</div>'
-        f'</div>'
+        f"</div>"
     )
 
     st.markdown(

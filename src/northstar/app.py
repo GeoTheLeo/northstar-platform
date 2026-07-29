@@ -14,6 +14,12 @@ Business logic intentionally lives outside this module.
 """
 
 # ---------------------------------------------------------------------
+# Standard library imports
+# ---------------------------------------------------------------------
+
+from typing import Literal, cast
+
+# ---------------------------------------------------------------------
 # Third-party imports
 # ---------------------------------------------------------------------
 
@@ -22,6 +28,7 @@ import streamlit as st
 # ---------------------------------------------------------------------
 # NorthStar imports
 # ---------------------------------------------------------------------
+
 from northstar.config import (
     APP_NAME,
     CAPTION,
@@ -49,8 +56,11 @@ def main() -> None:
     st.set_page_config(
         page_title=PAGE_TITLE,
         page_icon=PAGE_ICON,
-        layout=LAYOUT,
-        initial_sidebar_state=INITIAL_SIDEBAR_STATE,
+        layout=cast(Literal["centered", "wide"], LAYOUT),
+        initial_sidebar_state=cast(
+            Literal["auto", "expanded", "collapsed"],
+            INITIAL_SIDEBAR_STATE,
+        ),
     )
 
     load_theme()

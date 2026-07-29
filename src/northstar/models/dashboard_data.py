@@ -9,6 +9,8 @@ from dataclasses import dataclass
 
 import pandas as pd
 
+from northstar.models.executive_summary import ExecutiveSummary
+
 
 @dataclass(slots=True)
 class DashboardData:
@@ -26,7 +28,7 @@ class DashboardData:
     risk_metrics: dict
     segment_metrics: dict
 
-    executive_summary: str = ""
+    executive_summary: ExecutiveSummary
 
     @property
     def total_learners(self) -> int:
@@ -61,15 +63,10 @@ class DashboardData:
         if self.total_learners == 0:
             return 0.0
 
-        retained = (
-            self.total_learners
-            - self.at_risk_learners
-        )
+        retained = self.total_learners - self.at_risk_learners
 
         return round(
-            retained
-            / self.total_learners
-            * 100,
+            retained / self.total_learners * 100,
             1,
         )
 
@@ -83,9 +80,7 @@ class DashboardData:
             return 0.0
 
         return round(
-            self.at_risk_learners
-            / self.total_learners
-            * 100,
+            self.at_risk_learners / self.total_learners * 100,
             1,
         )
 

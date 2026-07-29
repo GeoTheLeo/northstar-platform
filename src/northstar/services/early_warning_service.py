@@ -7,6 +7,7 @@ If no trained model exists, the service trains one automatically.
 """
 
 from pathlib import Path
+from typing import Any
 
 import joblib
 import pandas as pd
@@ -48,7 +49,6 @@ class EarlyWarningService:
         )
 
         try:
-
             model = self._load_or_train_model(
                 learner_df
             )
@@ -73,23 +73,20 @@ class EarlyWarningService:
             return engineered
 
         except Exception:
-
             logger.exception(
                 "Early warning prediction failed."
             )
-
             raise
 
     def _load_or_train_model(
         self,
         learner_df: pd.DataFrame,
-    ):
+    ) -> Any:
         """
         Load an existing model or train one if it does not exist.
         """
 
         if self.MODEL_PATH.exists():
-
             logger.info(
                 "Loading trained early warning model."
             )

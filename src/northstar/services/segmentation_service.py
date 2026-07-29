@@ -4,6 +4,8 @@ NorthStar Segmentation Service
 Provides runtime learner segmentation.
 """
 
+from typing import cast
+
 import pandas as pd
 
 from northstar.logging import logger
@@ -31,13 +33,16 @@ class SegmentationService:
         )
 
         try:
-
             _, segmented_df = train_segmentation_model(
                 learner_df.copy()
             )
 
-            if "cluster" in segmented_df.columns:
+            segmented_df = cast(
+                pd.DataFrame,
+                segmented_df,
+            )
 
+            if "cluster" in segmented_df.columns:
                 cluster_counts = (
                     segmented_df["cluster"]
                     .value_counts()
@@ -62,9 +67,7 @@ class SegmentationService:
             return segmented_df
 
         except Exception:
-
             logger.exception(
                 "Learner segmentation failed."
             )
-
             raise

@@ -2,6 +2,8 @@
 NorthStar Business Intelligence Service
 """
 
+import pandas as pd
+
 from bi.metrics.kpi_calculator import calculate_kpis
 from bi.metrics.risk_metrics import calculate_risk_metrics
 from bi.metrics.segmentation_metrics import calculate_segmentation_metrics
@@ -16,23 +18,18 @@ class BusinessIntelligenceService:
 
     def build_metrics(
         self,
-        learner_df,
-        predictions_df,
-        segments_df,
+        learner_df: pd.DataFrame,
+        predictions_df: pd.DataFrame,
+        segments_df: pd.DataFrame,
     ) -> DashboardMetrics:
         """
         Build the executive dashboard metrics.
         """
 
-        logger.info(
-            "Calculating executive business metrics."
-        )
+        logger.info("Calculating executive business metrics.")
 
         try:
-
-            kpis = calculate_kpis(
-                learner_df
-            )
+            kpis = calculate_kpis(learner_df)
 
             risk_metrics = calculate_risk_metrics(
                 predictions_df
@@ -70,9 +67,7 @@ class BusinessIntelligenceService:
             )
 
         except Exception:
-
             logger.exception(
-                "Business intelligence metric generation failed."
+                "Business intelligence metric generation has failed."
             )
-
             raise

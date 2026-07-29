@@ -18,10 +18,7 @@ INITIAL_SIDEBAR_STATE = "expanded"
 
 APP_NAME = "NorthStar Executive Platform"
 
-CAPTION = (
-    "NorthStar Applied AI Platform • "
-    "Architecture • Analytics • MLOps • RAG"
-)
+CAPTION = "NorthStar Applied AI Platform • " "Architecture • Analytics • MLOps • RAG"
 
 # ---------------------------------------------------------------------
 # Chart Configuration
@@ -34,6 +31,7 @@ LARGE_CHART_HEIGHT = 500
 # ---------------------------------------------------------------------
 # Application Settings
 # ---------------------------------------------------------------------
+
 
 @dataclass(frozen=True)
 class Settings:

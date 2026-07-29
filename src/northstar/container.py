@@ -26,20 +26,14 @@ class ApplicationContainer:
     Simple dependency container.
     """
 
-    def __init__(self):
-
-        
-        repository = (
-            RepositoryFactory.create_dashboard_repository()
-        )
+    def __init__(self) -> None:
+        repository = RepositoryFactory.create_dashboard_repository()
 
         early_warning = EarlyWarningService()
 
         segmentation = SegmentationService()
 
-        business_intelligence = (
-            BusinessIntelligenceService()
-        )
+        business_intelligence = BusinessIntelligenceService()
 
         self.dashboard_service = DashboardService(
             repository=repository,

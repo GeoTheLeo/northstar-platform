@@ -18,9 +18,7 @@ class ExecutiveSummaryService:
         if retention_rate >= 90:
             return ExecutiveSummary(
                 headline="Retention is strong.",
-                recommendation=(
-                    "Maintain current learner engagement strategies."
-                ),
+                recommendation=("Maintain current learner engagement strategies."),
                 severity="success",
             )
 
@@ -35,8 +33,6 @@ class ExecutiveSummaryService:
 
         return ExecutiveSummary(
             headline="Retention is below target.",
-            recommendation=(
-                "Prioritize immediate intervention for at-risk learners."
-            ),
+            recommendation=("Prioritize immediate intervention for at-risk learners."),
             severity="error",
         )
