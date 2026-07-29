@@ -13,13 +13,11 @@ def create_features(df: pd.DataFrame) -> pd.DataFrame:
     )
 
     engineered["engagement_ratio"] = (
-        engineered["engagement_score"]
-        / engineered["engagement_score"].max()
+        engineered["engagement_score"] / engineered["engagement_score"].max()
     )
 
     engineered["assessment_ratio"] = (
-        engineered["assessment_score"]
-        / engineered["assessment_score"].max()
+        engineered["assessment_score"] / engineered["assessment_score"].max()
     )
 
     return engineered

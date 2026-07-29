@@ -5,9 +5,7 @@ from early_warning.features.feature_engineering import (
     create_features,
 )
 
-MODEL_PATH = (
-    "src/early_warning/models/early_warning_model.pkl"
-)
+MODEL_PATH = "src/early_warning/models/early_warning_model.pkl"
 
 
 def predict(student_record: dict):

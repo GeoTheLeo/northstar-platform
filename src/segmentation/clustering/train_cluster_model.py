@@ -1,6 +1,5 @@
 import joblib
 import pandas as pd
-
 from sklearn.cluster import KMeans
 
 from segmentation.features.feature_engineering import (

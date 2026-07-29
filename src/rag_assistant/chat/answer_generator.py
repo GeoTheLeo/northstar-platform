@@ -5,9 +5,7 @@ def generate_answer(
 
     if not results:
 
-        return (
-            "No relevant knowledge found."
-        )
+        return "No relevant knowledge found."
 
     sources = set()
 
@@ -15,28 +13,15 @@ def generate_answer(
 
     for result in results:
 
-        clean_text = (
-            result["content"]
-            .replace("\n", " ")
-            .replace("  ", " ")
-        )
+        clean_text = result["content"].replace("\n", " ").replace("  ", " ")
 
-        supporting_points.append(
-            clean_text
-        )
+        supporting_points.append(clean_text)
 
-        sources.add(
-            result["document"]
-        )
+        sources.add(result["document"])
 
-    answer = "\n\n".join(
-        supporting_points
-    )
+    answer = "\n\n".join(supporting_points)
 
-    source_text = "\n".join(
-        f"- {source}"
-        for source in sources
-    )
+    source_text = "\n".join(f"- {source}" for source in sources)
 
     return (
         f"\nNorthStar Response\n"

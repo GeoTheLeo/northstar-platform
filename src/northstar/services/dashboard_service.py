@@ -35,21 +35,15 @@ class DashboardService:
         executive_summary: ExecutiveSummaryService | None = None,
     ) -> None:
         self.repository = (
-            repository
-            if repository is not None
-            else CsvDashboardRepository()
+            repository if repository is not None else CsvDashboardRepository()
         )
 
         self.early_warning = (
-            early_warning
-            if early_warning is not None
-            else EarlyWarningService()
+            early_warning if early_warning is not None else EarlyWarningService()
         )
 
         self.segmentation = (
-            segmentation
-            if segmentation is not None
-            else SegmentationService()
+            segmentation if segmentation is not None else SegmentationService()
         )
 
         self.business_intelligence = (
@@ -73,13 +67,9 @@ class DashboardService:
 
         learner_df = self.repository.load_dashboard_data()
 
-        predictions_df = self.early_warning.predict(
-            learner_df
-        )
+        predictions_df = self.early_warning.predict(learner_df)
 
-        segments_df = self.segmentation.segment(
-            learner_df
-        )
+        segments_df = self.segmentation.segment(learner_df)
 
         metrics = self.business_intelligence.build_metrics(
             learner_df,
@@ -105,18 +95,12 @@ class DashboardService:
             0.0
             if total_learners == 0
             else round(
-                (total_learners - at_risk_learners)
-                / total_learners
-                * 100,
+                (total_learners - at_risk_learners) / total_learners * 100,
                 1,
             )
         )
 
-        executive_summary = (
-            self.executive_summary.build(
-                retention_rate
-            )
-        )
+        executive_summary = self.executive_summary.build(retention_rate)
 
         dashboard = DashboardData(
             learner_df=learner_df,
@@ -127,8 +111,6 @@ class DashboardService:
             executive_summary=executive_summary,
         )
 
-        logger.info(
-            "Dashboard successfully generated."
-        )
+        logger.info("Dashboard successfully generated.")
 
         return dashboard

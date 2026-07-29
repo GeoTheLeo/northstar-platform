@@ -1,10 +1,8 @@
-import pandas as pd
 
-from bi.metrics.risk_metrics import (
+from northstar.bi.metrics.risk_metrics import (
     calculate_risk_metrics,
 )
-
-from bi.metrics.segmentation_metrics import (
+from northstar.bi.metrics.segmentation_metrics import (
     calculate_segmentation_metrics,
 )
 
@@ -13,9 +11,7 @@ def get_platform_context():
 
     risk = calculate_risk_metrics()
 
-    segments = (
-        calculate_segmentation_metrics()
-    )
+    segments = calculate_segmentation_metrics()
 
     return f"""
 NorthStar Live Platform Metrics

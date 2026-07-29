@@ -1,30 +1,22 @@
-import sys
-from pathlib import Path
+"""
+NorthStar AI Knowledge Assistant Entry Point.
+"""
 
-project_root = Path(__file__).resolve().parents[2]
+from rag_assistant.chat.assistant import ask_assistant
 
-sys.path.append(
-    str(project_root / "src")
-)
 
-from rag_assistant.chat.assistant import (
-    ask_assistant,
-)
+def main() -> None:
+    """Launch the NorthStar AI Knowledge Assistant."""
 
-print(
-    "\nNorthStar AI Knowledge Assistant\n"
-)
+    print("\nNorthStar AI Knowledge Assistant\n")
 
-question = input(
-    "Ask a question: "
-)
+    question = input("Ask a question: ")
 
-response = ask_assistant(
-    question
-)
+    response = ask_assistant(question)
 
-print(
-    "\nRetrieved Knowledge:\n"
-)
+    print("\nRetrieved Knowledge:\n")
+    print(response)
 
-print(response)
+
+if __name__ == "__main__":
+    main()

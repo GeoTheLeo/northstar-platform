@@ -22,13 +22,11 @@ from typing import Literal, cast
 # ---------------------------------------------------------------------
 # Third-party imports
 # ---------------------------------------------------------------------
-
 import streamlit as st
 
 # ---------------------------------------------------------------------
 # NorthStar imports
 # ---------------------------------------------------------------------
-
 from northstar.config import (
     APP_NAME,
     CAPTION,
@@ -67,8 +65,7 @@ def main() -> None:
 
     st.title(APP_NAME)
 
-    st.markdown(
-        """
+    st.markdown("""
         Unified Applied AI Platform integrating:
 
         - Early Warning System
@@ -77,8 +74,7 @@ def main() -> None:
         - Retrieval-Augmented Generation (RAG)
         - Executive Copilot
         - MLOps Foundation
-        """
-    )
+        """)
 
     controller = NorthStarController()
 

@@ -49,21 +49,15 @@ class EarlyWarningService:
         )
 
         try:
-            model = self._load_or_train_model(
-                learner_df
-            )
+            model = self._load_or_train_model(learner_df)
 
-            engineered = create_features(
-                learner_df.copy()
-            )
+            engineered = create_features(learner_df.copy())
 
             engineered["risk_prediction"] = model.predict(
                 engineered[self.FEATURE_COLUMNS]
             )
 
-            at_risk = int(
-                engineered["risk_prediction"].sum()
-            )
+            at_risk = int(engineered["risk_prediction"].sum())
 
             logger.info(
                 "Risk prediction complete. %d learners identified as at risk.",
@@ -73,9 +67,7 @@ class EarlyWarningService:
             return engineered
 
         except Exception:
-            logger.exception(
-                "Early warning prediction failed."
-            )
+            logger.exception("Early warning prediction failed.")
             raise
 
     def _load_or_train_model(
@@ -87,24 +79,14 @@ class EarlyWarningService:
         """
 
         if self.MODEL_PATH.exists():
-            logger.info(
-                "Loading trained early warning model."
-            )
+            logger.info("Loading trained early warning model.")
 
-            return joblib.load(
-                self.MODEL_PATH
-            )
+            return joblib.load(self.MODEL_PATH)
 
-        logger.warning(
-            "No trained model found. Training a new model."
-        )
+        logger.warning("No trained model found. Training a new model.")
 
-        model = train_model(
-            learner_df.copy()
-        )
+        model = train_model(learner_df.copy())
 
-        logger.info(
-            "Early warning model training complete."
-        )
+        logger.info("Early warning model training complete.")
 
         return model

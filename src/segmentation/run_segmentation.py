@@ -1,11 +1,6 @@
-import sys
-from pathlib import Path
-
-project_root = Path(__file__).resolve().parents[2]
-
-sys.path.append(
-    str(project_root / "src")
-)
+"""
+NorthStar Learner Segmentation Engine Entry Point.
+"""
 
 import pandas as pd
 
@@ -13,27 +8,27 @@ from segmentation.clustering.train_cluster_model import (
     train_segmentation_model,
 )
 
-print(
-    "\nNorthStar Learner Segmentation Engine\n"
-)
 
-df = pd.read_csv(
-    "data/raw/learner_segmentation_data.csv"
-)
+def main() -> None:
+    """Run the learner segmentation pipeline."""
 
-model, segmented_data = (
-    train_segmentation_model(df)
-)
+    print("\nNorthStar Learner Segmentation Engine\n")
 
-print(
-    "\nSegmentation completed successfully!\n"
-)
+    df = pd.read_csv("data/raw/learner_segmentation_data.csv")
 
-print(
-    segmented_data[
-        [
-            "student_id",
-            "cluster",
-        ]
-    ].head()
-)
+    _, segmented_data = train_segmentation_model(df)
+
+    print("\nSegmentation completed successfully!\n")
+
+    print(
+        segmented_data[
+            [
+                "student_id",
+                "cluster",
+            ]
+        ].head()
+    )
+
+
+if __name__ == "__main__":
+    main()

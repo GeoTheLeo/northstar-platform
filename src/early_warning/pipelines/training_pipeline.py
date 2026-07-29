@@ -7,9 +7,7 @@ from early_warning.models.train_model import (
 
 def run_pipeline():
 
-    df = pd.read_csv(
-        "data/raw/student_data.csv"
-    )
+    df = pd.read_csv("data/raw/student_data.csv")
 
     model = train_model(df)
 

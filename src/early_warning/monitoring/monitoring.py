@@ -1,6 +1,5 @@
 import logging
 
-
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s %(message)s",
@@ -9,6 +8,4 @@ logging.basicConfig(
 
 def log_prediction(prediction):
 
-    logging.info(
-        f"Prediction generated: {prediction}"
-    )
+    logging.info(f"Prediction generated: {prediction}")

@@ -16,14 +16,10 @@ def calculate_risk_metrics(
 
     total_students = len(predictions)
 
-    at_risk_students = (
-        predictions["risk_prediction"] == 1
-    ).sum()
+    at_risk_students = (predictions["risk_prediction"] == 1).sum()
 
     risk_percentage = round(
-        at_risk_students
-        / total_students
-        * 100,
+        at_risk_students / total_students * 100,
         1,
     )
 

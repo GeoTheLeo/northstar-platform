@@ -5,9 +5,7 @@ from rag_assistant.data.platform_context import (
 
 def generate_executive_brief():
 
-    metrics = (
-        get_platform_context()
-    )
+    metrics = get_platform_context()
 
     return f"""
 NorthStar Executive Briefing

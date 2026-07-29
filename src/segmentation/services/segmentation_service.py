@@ -5,9 +5,7 @@ from segmentation.features.feature_engineering import (
     create_features,
 )
 
-MODEL_PATH = (
-    "src/segmentation/clustering/segmentation_model.pkl"
-)
+MODEL_PATH = "src/segmentation/clustering/segmentation_model.pkl"
 
 
 def assign_cluster(
@@ -30,6 +28,4 @@ def assign_cluster(
 
     cluster = model.predict(X)
 
-    return {
-        "cluster": int(cluster[0])
-    }
+    return {"cluster": int(cluster[0])}

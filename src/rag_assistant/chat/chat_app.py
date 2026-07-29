@@ -1,89 +1,66 @@
-import sys
-from pathlib import Path
-
-project_root = (
-    Path(__file__).resolve().parents[3]
-)
-
-sys.path.append(
-    str(project_root / "src")
-)
+"""
+NorthStar AI Knowledge Assistant Web Application.
+"""
 
 import streamlit as st
 
-from rag_assistant.chat.assistant import (
-    ask_assistant,
-)
+from rag_assistant.chat.assistant import ask_assistant
 
-st.set_page_config(
-    page_title="NorthStar AI Assistant",
-    layout="wide",
-)
 
-st.title(
-    "NorthStar AI Knowledge Assistant"
-)
+def main() -> None:
+    """Launch the NorthStar AI Knowledge Assistant."""
 
-st.markdown(
-    """
-    Ask questions about:
+    st.set_page_config(
+        page_title="NorthStar AI Assistant",
+        layout="wide",
+    )
 
-    - Early Warning System
-    - Learner Segmentation
-    - BI Metrics
-    - Student Success Strategies
-    - NorthStar Platform
-    """
-)
+    st.title("NorthStar AI Knowledge Assistant")
 
-if "messages" not in st.session_state:
+    st.markdown(
+        """
+        Ask questions about:
 
-    st.session_state.messages = []
+        - Early Warning System
+        - Learner Segmentation
+        - BI Metrics
+        - Student Success Strategies
+        - NorthStar Platform
+        """
+    )
 
-for message in (
-    st.session_state.messages
-):
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
 
-    with st.chat_message(
-        message["role"]
-    ):
+    for message in st.session_state.messages:
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
 
-        st.markdown(
-            message["content"]
+    question = st.chat_input("Ask NorthStar...")
+
+    if question:
+        st.session_state.messages.append(
+            {
+                "role": "user",
+                "content": question,
+            }
         )
 
-question = st.chat_input(
-    "Ask NorthStar..."
-)
+        with st.chat_message("user"):
+            st.markdown(question)
 
-if question:
+        response = ask_assistant(question)
 
-    st.session_state.messages.append(
-        {
-            "role": "user",
-            "content": question,
-        }
-    )
+        with st.chat_message("assistant"):
+            st.markdown(response)
 
-    with st.chat_message(
-        "user"
-    ):
+        st.session_state.messages.append(
+            {
+                "role": "assistant",
+                "content": response,
+            }
+        )
 
-        st.markdown(question)
 
-    response = ask_assistant(
-        question
-    )
-
-    with st.chat_message(
-        "assistant"
-    ):
-
-        st.markdown(response)
-
-    st.session_state.messages.append(
-        {
-            "role": "assistant",
-            "content": response,
-        }
-    )
+if __name__ == "__main__":
+    main()
