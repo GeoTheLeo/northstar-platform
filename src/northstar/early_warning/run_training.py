@@ -2,7 +2,7 @@
 NorthStar Early Warning System Training Entry Point.
 """
 
-from early_warning.pipelines.training_pipeline import run_pipeline
+from northstar.early_warning.pipelines.training_pipeline import run_pipeline
 
 
 def main() -> None:

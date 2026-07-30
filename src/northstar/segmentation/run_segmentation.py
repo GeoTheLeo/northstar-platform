@@ -4,7 +4,7 @@ NorthStar Learner Segmentation Engine Entry Point.
 
 import pandas as pd
 
-from segmentation.clustering.train_cluster_model import (
+from northstar.segmentation.clustering.train_cluster_model import (
     train_segmentation_model,
 )
 

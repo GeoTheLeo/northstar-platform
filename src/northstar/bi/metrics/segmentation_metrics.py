@@ -1,23 +1,35 @@
 """
-Segmentation Metrics
+Segmentation Metrics.
 
-Calculates learner segmentation statistics from an in-memory DataFrame.
+Calculates learner segmentation statistics.
 """
+
+from typing import TypedDict
 
 import pandas as pd
 
 
+class SegmentationMetrics(TypedDict):
+    """
+    Summary metrics describing learner segmentation.
+    """
+
+    total_segments: int
+    largest_segment: int
+    largest_segment_size: int
+
+
 def calculate_segmentation_metrics(
     segments: pd.DataFrame,
-) -> dict:
+) -> SegmentationMetrics:
     """
     Calculate summary statistics for learner segmentation.
     """
 
     cluster_counts = segments["cluster"].value_counts()
 
-    return {
-        "total_segments": segments["cluster"].nunique(),
-        "largest_segment": cluster_counts.idxmax(),
-        "largest_segment_size": cluster_counts.max(),
-    }
+    return SegmentationMetrics(
+        total_segments=int(segments["cluster"].nunique()),
+        largest_segment=int(cluster_counts.idxmax()),
+        largest_segment_size=int(cluster_counts.max()),
+    )

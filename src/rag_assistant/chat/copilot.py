@@ -1,9 +1,19 @@
+"""
+NorthStar Executive Copilot.
+
+Generates executive-level platform briefings.
+"""
+
 from rag_assistant.data.platform_context import (
     get_platform_context,
 )
 
 
-def generate_executive_brief():
+def generate_executive_brief() -> str:
+    """
+    Generate an executive summary of the current
+    NorthStar platform.
+    """
 
     metrics = get_platform_context()
 

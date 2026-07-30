@@ -1,5 +1,5 @@
 """
-Dashboard Domain Model
+Dashboard Domain Model.
 
 Defines the application data returned by the
 DashboardService and consumed by the UI layer.
@@ -9,6 +9,9 @@ from dataclasses import dataclass
 
 import pandas as pd
 
+from northstar.bi.metrics.kpi_calculator import KPIResults
+from northstar.bi.metrics.risk_metrics import RiskMetrics
+from northstar.bi.metrics.segmentation_metrics import SegmentationMetrics
 from northstar.models.executive_summary import ExecutiveSummary
 
 
@@ -24,9 +27,9 @@ class DashboardData:
     learner_df: pd.DataFrame
     segments_df: pd.DataFrame
 
-    kpis: dict
-    risk_metrics: dict
-    segment_metrics: dict
+    kpis: KPIResults
+    risk_metrics: RiskMetrics
+    segment_metrics: SegmentationMetrics
 
     executive_summary: ExecutiveSummary
 
@@ -35,6 +38,7 @@ class DashboardData:
         """
         Total learners represented in the dashboard.
         """
+
         return int(
             self.kpis.get(
                 "total_students",
@@ -47,6 +51,7 @@ class DashboardData:
         """
         Learners currently predicted to be at risk.
         """
+
         return int(
             self.risk_metrics.get(
                 "at_risk_students",

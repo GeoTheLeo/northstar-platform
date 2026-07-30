@@ -7,13 +7,13 @@ If no trained model exists, the service trains one automatically.
 """
 
 from pathlib import Path
-from typing import Any
+from typing import Any, ClassVar
 
 import joblib
 import pandas as pd
 
-from early_warning.features.feature_engineering import create_features
-from early_warning.models.train_model import train_model
+from northstar.early_warning.features.feature_engineering import create_features
+from northstar.early_warning.models.train_model import train_model
 from northstar.logging import logger
 
 
@@ -29,7 +29,7 @@ class EarlyWarningService:
         / "early_warning_model.pkl"
     )
 
-    FEATURE_COLUMNS = [
+    FEATURE_COLUMNS: ClassVar[list[str]] = [
         "attendance_ratio",
         "engagement_ratio",
         "assessment_ratio",

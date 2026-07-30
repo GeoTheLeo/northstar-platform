@@ -1,14 +1,27 @@
+"""
+Early Warning Model Training.
+"""
+
+from pathlib import Path
+
 import joblib
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 
-from early_warning.features.feature_engineering import (
+from northstar.early_warning.features.feature_engineering import (
     create_features,
 )
 
+MODEL_PATH = Path(__file__).parent / "early_warning_model.pkl"
 
-def train_model(df: pd.DataFrame):
+
+def train_model(
+    df: pd.DataFrame,
+) -> RandomForestClassifier:
+    """
+    Train and persist the Early Warning model.
+    """
 
     df = create_features(df)
 
@@ -22,7 +35,7 @@ def train_model(df: pd.DataFrame):
 
     y = df["at_risk"]
 
-    X_train, X_test, y_train, y_test = train_test_split(
+    X_train, _X_test, y_train, _y_test = train_test_split(
         X,
         y,
         test_size=0.2,
@@ -36,9 +49,14 @@ def train_model(df: pd.DataFrame):
 
     model.fit(X_train, y_train)
 
+    MODEL_PATH.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
     joblib.dump(
         model,
-        "src/early_warning/models/early_warning_model.pkl",
+        MODEL_PATH,
     )
 
     return model

@@ -2,8 +2,8 @@
 NorthStar Sample Data Loader.
 """
 
-from pandas import DataFrame
 import pandas as pd
+from pandas import DataFrame
 
 
 def load_dashboard_data() -> DataFrame:
