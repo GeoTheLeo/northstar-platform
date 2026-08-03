@@ -5,13 +5,12 @@ NorthStar Analytics View
 import plotly.express as px
 import streamlit as st
 
+from northstar.advisor import ExecutiveAdvisor
 from northstar.config import (
     LARGE_CHART_HEIGHT,
     SMALL_CHART_HEIGHT,
 )
-from northstar.models.dashboard_data import (
-    DashboardData,
-)
+from northstar.models.dashboard_data import DashboardData
 
 
 def render_analytics(
@@ -21,13 +20,13 @@ def render_analytics(
     Render the Executive Analytics workspace.
     """
 
+    advisor = ExecutiveAdvisor()
+
+    recommendations = advisor.advise(
+        dashboard,
+    )
+
     st.subheader("📊 Analytics Command Center")
-
-    # --------------------------------------------------
-    # Executive Intelligence
-    # --------------------------------------------------
-
-    st.markdown("### Executive Intelligence")
 
     summary = dashboard.executive_summary
 
@@ -42,49 +41,67 @@ def render_analytics(
 
     st.write(summary.recommendation)
 
-    observations = []
+    observations: list[str] = []
 
     if dashboard.retention_rate >= 90:
-        observations.append("✅ Retention is currently exceeding target.")
+        observations.append(
+            "✅ Retention is currently exceeding target."
+        )
     else:
-        observations.append("⚠ Retention has fallen below the desired target.")
+        observations.append(
+            "⚠ Retention has fallen below the desired target."
+        )
 
     if dashboard.at_risk_learners > 0:
         observations.append(
-            f"⚠ {dashboard.at_risk_learners:,} learners "
-            "are currently identified as at risk."
+            f"⚠ {dashboard.at_risk_learners:,} learners are currently identified as at risk."
         )
 
     if dashboard.intervention_rate > 0:
-        observations.append(f"📈 Intervention rate: {dashboard.intervention_rate:.1f}%")
+        observations.append(
+            f"📈 Intervention rate: {dashboard.intervention_rate:.1f}%"
+        )
 
-    st.markdown("#### Key Business Observations")
+    st.markdown("### Key Business Observations")
 
     for observation in observations:
         st.write(observation)
 
-    st.markdown("#### Recommended Next Action")
-
-    if dashboard.retention_rate >= 90:
-        st.success(
-            "Maintain current learner engagement "
-            "strategies while monitoring early "
-            "warning indicators."
-        )
-    elif dashboard.retention_rate >= 80:
-        st.warning("Increase proactive coaching for medium-risk learner segments.")
-    else:
-        st.error(
-            "Prioritize immediate intervention "
-            "for high-risk learners and review "
-            "engagement strategy."
-        )
-
     st.divider()
 
     # --------------------------------------------------
-    # Visual Analytics
+    # Executive AI Advisor
     # --------------------------------------------------
+
+    st.subheader("🧠 Executive AI Advisor")
+
+    for recommendation in recommendations:
+
+        if recommendation.priority == "High":
+
+            st.error(
+                f"**{recommendation.title}**\n\n"
+                f"{recommendation.explanation}\n\n"
+                f"**Recommended Action:** {recommendation.action}"
+            )
+
+        elif recommendation.priority == "Medium":
+
+            st.warning(
+                f"**{recommendation.title}**\n\n"
+                f"{recommendation.explanation}\n\n"
+                f"**Recommended Action:** {recommendation.action}"
+            )
+
+        else:
+
+            st.success(
+                f"**{recommendation.title}**\n\n"
+                f"{recommendation.explanation}\n\n"
+                f"**Recommended Action:** {recommendation.action}"
+            )
+
+    st.divider()
 
     attendance_chart = px.histogram(
         dashboard.learner_df,
@@ -92,7 +109,9 @@ def render_analytics(
         title="Attendance Distribution",
     )
 
-    attendance_chart.update_layout(height=SMALL_CHART_HEIGHT)
+    attendance_chart.update_layout(
+        height=SMALL_CHART_HEIGHT,
+    )
 
     engagement_chart = px.scatter(
         dashboard.learner_df,
@@ -101,7 +120,9 @@ def render_analytics(
         title="Engagement vs Assessment",
     )
 
-    engagement_chart.update_layout(height=LARGE_CHART_HEIGHT)
+    engagement_chart.update_layout(
+        height=LARGE_CHART_HEIGHT,
+    )
 
     segment_chart = px.histogram(
         dashboard.segments_df,
@@ -109,7 +130,9 @@ def render_analytics(
         title="Learner Segment Distribution",
     )
 
-    segment_chart.update_layout(height=LARGE_CHART_HEIGHT)
+    segment_chart.update_layout(
+        height=LARGE_CHART_HEIGHT,
+    )
 
     st.plotly_chart(
         attendance_chart,

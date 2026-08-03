@@ -2,18 +2,15 @@
 Early Warning Model Training.
 """
 
-from pathlib import Path
-
 import joblib
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 
+from northstar.core.paths import EARLY_WARNING_MODEL_PATH
 from northstar.early_warning.features.feature_engineering import (
     create_features,
 )
-
-MODEL_PATH = Path(__file__).parent / "early_warning_model.pkl"
 
 
 def train_model(
@@ -47,16 +44,19 @@ def train_model(
         random_state=42,
     )
 
-    model.fit(X_train, y_train)
+    model.fit(
+        X_train,
+        y_train,
+    )
 
-    MODEL_PATH.parent.mkdir(
+    EARLY_WARNING_MODEL_PATH.parent.mkdir(
         parents=True,
         exist_ok=True,
     )
 
     joblib.dump(
         model,
-        MODEL_PATH,
+        EARLY_WARNING_MODEL_PATH,
     )
 
     return model

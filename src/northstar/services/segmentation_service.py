@@ -14,7 +14,7 @@ from northstar.segmentation.clustering.train_cluster_model import (
 
 class SegmentationService:
     """
-    Runtime learner segmentation.
+    Runtime learner segmentation service.
     """
 
     def segment(
@@ -36,6 +36,7 @@ class SegmentationService:
             )
 
             if "cluster" in segmented_df.columns:
+
                 cluster_counts = (
                     segmented_df["cluster"]
                     .value_counts()
@@ -54,13 +55,13 @@ class SegmentationService:
                 )
 
             logger.info(
-                "Learner segmentation complete."
+                "Learner segmentation complete.",
             )
 
             return segmented_df
 
         except Exception:
             logger.exception(
-                "Learner segmentation failed."
+                "Learner segmentation failed.",
             )
             raise

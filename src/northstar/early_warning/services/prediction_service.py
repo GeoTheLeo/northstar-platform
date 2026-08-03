@@ -2,35 +2,33 @@
 Early Warning prediction service.
 """
 
-from pathlib import Path
-from typing import Any
-
 import joblib
 import pandas as pd
 
+from northstar.core.paths import EARLY_WARNING_MODEL_PATH
 from northstar.early_warning.features.feature_engineering import (
     create_features,
 )
 
-MODEL_PATH = (
-    Path(__file__).resolve().parent.parent
-    / "models"
-    / "early_warning_model.pkl"
-)
 
-
-def predict(student_record: dict[str, Any]) -> dict[str, float | int]:
+def predict(
+    student_record: dict[str, float],
+) -> dict[str, float | int]:
     """
-    Generate an Early Warning prediction for a single learner.
+    Predict whether a learner is at risk.
     """
 
-    model = joblib.load(MODEL_PATH)
+    model = joblib.load(
+        EARLY_WARNING_MODEL_PATH,
+    )
 
-    df = pd.DataFrame([student_record])
+    df = pd.DataFrame(
+        [student_record],
+    )
 
-    df = create_features(df)
+    engineered = create_features(df)
 
-    X = df[
+    features = engineered[
         [
             "attendance_ratio",
             "engagement_ratio",
@@ -38,11 +36,15 @@ def predict(student_record: dict[str, Any]) -> dict[str, float | int]:
         ]
     ]
 
-    prediction = model.predict(X)
+    prediction = model.predict(
+        features,
+    )
 
-    probability = model.predict_proba(X)
+    probability = model.predict_proba(
+        features,
+    )
 
     return {
         "prediction": int(prediction[0]),
-        "confidence": float(probability[0].max()),
+        "confidence": float(max(probability[0])),
     }
