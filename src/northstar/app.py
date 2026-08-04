@@ -2,31 +2,12 @@
 NorthStar Executive Platform
 
 Application entry point for the NorthStar Applied AI Platform.
-
-Responsibilities
-----------------
-- Configure the Streamlit application
-- Initialize platform services
-- Load shared UI theme
-- Delegate rendering to UI components
-
-Business logic intentionally lives outside this module.
 """
-
-# ---------------------------------------------------------------------
-# Standard library imports
-# ---------------------------------------------------------------------
 
 from typing import Literal, cast
 
-# ---------------------------------------------------------------------
-# Third-party imports
-# ---------------------------------------------------------------------
 import streamlit as st
 
-# ---------------------------------------------------------------------
-# NorthStar imports
-# ---------------------------------------------------------------------
 from northstar.config import (
     APP_NAME,
     CAPTION,
@@ -41,6 +22,7 @@ from northstar.ui.analytics import render_analytics
 from northstar.ui.assistant import render_assistant
 from northstar.ui.copilot import render_copilot
 from northstar.ui.metrics import render_metrics
+from northstar.ui.model_registry import render_model_registry
 from northstar.ui.theme import load_theme
 
 
@@ -65,16 +47,18 @@ def main() -> None:
 
     st.title(APP_NAME)
 
-    st.markdown("""
-        Unified Applied AI Platform integrating:
+    st.markdown(
+        """
+Unified Applied AI Platform integrating:
 
-        - Early Warning System
-        - Learner Segmentation
-        - Executive Business Intelligence
-        - Retrieval-Augmented Generation (RAG)
-        - Executive Copilot
-        - MLOps Foundation
-        """)
+- Early Warning System
+- Learner Segmentation
+- Executive Business Intelligence
+- Retrieval-Augmented Generation (RAG)
+- Executive Copilot
+- MLOps Foundation
+"""
+    )
 
     controller = NorthStarController()
 
@@ -93,6 +77,10 @@ def main() -> None:
     st.divider()
 
     render_assistant()
+
+    st.divider()
+
+    render_model_registry()
 
     st.caption(CAPTION)
 
