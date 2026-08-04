@@ -4,6 +4,9 @@ NorthStar model registry.
 
 from pathlib import Path
 
+from northstar.mlops.loader import (
+    ModelLoader,
+)
 from northstar.mlops.model_metadata import (
     ModelMetadata,
 )
@@ -41,4 +44,8 @@ registry.register(
             / "segmentation_model.pkl"
         ),
     )
+)
+
+loader = ModelLoader(
+    registry,
 )
