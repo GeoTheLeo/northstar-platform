@@ -1,5 +1,5 @@
 """
-Executive Recommendation domain model.
+Recommendation domain model.
 """
 
 from dataclasses import dataclass
@@ -8,8 +8,7 @@ from dataclasses import dataclass
 @dataclass(slots=True, frozen=True)
 class Recommendation:
     """
-    Represents a recommendation produced by the
-    Executive AI Advisor.
+    Represents an executive recommendation.
     """
 
     priority: str
@@ -19,3 +18,9 @@ class Recommendation:
     explanation: str
 
     action: str
+
+    confidence: float
+
+    business_impact: str
+
+    expected_time: str

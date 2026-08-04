@@ -15,8 +15,7 @@ from northstar.models.dashboard_data import (
 
 class ExecutiveAdvisor:
     """
-    Produces executive recommendations from
-    dashboard intelligence.
+    Produces executive recommendations.
     """
 
     def advise(
@@ -24,7 +23,7 @@ class ExecutiveAdvisor:
         dashboard: DashboardData,
     ) -> list[Recommendation]:
         """
-        Produce executive recommendations.
+        Generate recommendations.
         """
 
         return generate_recommendations(

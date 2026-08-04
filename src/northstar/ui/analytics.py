@@ -1,16 +1,23 @@
 """
-NorthStar Analytics View
+NorthStar Analytics View.
+
+Executive analytics workspace for the
+NorthStar AI Learning Intelligence Platform.
 """
 
 import plotly.express as px
 import streamlit as st
 
-from northstar.advisor import ExecutiveAdvisor
 from northstar.config import (
     LARGE_CHART_HEIGHT,
     SMALL_CHART_HEIGHT,
 )
-from northstar.models.dashboard_data import DashboardData
+from northstar.models.dashboard_data import (
+    DashboardData,
+)
+from northstar.services.advisor_service import (
+    AdvisorService,
+)
 
 
 def render_analytics(
@@ -20,88 +27,142 @@ def render_analytics(
     Render the Executive Analytics workspace.
     """
 
-    advisor = ExecutiveAdvisor()
+    advisor = AdvisorService()
 
     recommendations = advisor.advise(
         dashboard,
     )
 
-    st.subheader("📊 Analytics Command Center")
+    st.subheader("📊 Executive Analytics Command Center")
 
     summary = dashboard.executive_summary
 
     if summary.severity == "success":
+
         st.success(summary.headline)
 
     elif summary.severity == "warning":
+
         st.warning(summary.headline)
 
     else:
+
         st.error(summary.headline)
 
     st.write(summary.recommendation)
 
+    st.divider()
+
+    st.markdown("## Executive Performance Snapshot")
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+
+        st.metric(
+            "Retention",
+            f"{dashboard.retention_rate:.1f}%",
+        )
+
+    with col2:
+
+        st.metric(
+            "Churn",
+            f"{dashboard.churn_rate:.1f}%",
+        )
+
+    with col3:
+
+        st.metric(
+            "Intervention",
+            f"{dashboard.intervention_rate:.1f}%",
+        )
+
+    st.divider()
+
+    st.markdown("## Key Business Observations")
+
     observations: list[str] = []
 
     if dashboard.retention_rate >= 90:
+
         observations.append(
-            "✅ Retention is currently exceeding target."
+            "Retention currently exceeds institutional targets."
         )
+
     else:
+
         observations.append(
-            "⚠ Retention has fallen below the desired target."
+            "Retention has fallen below the desired target."
         )
 
     if dashboard.at_risk_learners > 0:
+
         observations.append(
-            f"⚠ {dashboard.at_risk_learners:,} learners are currently identified as at risk."
+            f"{dashboard.at_risk_learners:,} learners require intervention."
         )
 
-    if dashboard.intervention_rate > 0:
-        observations.append(
-            f"📈 Intervention rate: {dashboard.intervention_rate:.1f}%"
-        )
+    if dashboard.intervention_rate > 10:
 
-    st.markdown("### Key Business Observations")
+        observations.append(
+            "Advisor workload is increasing."
+        )
 
     for observation in observations:
-        st.write(observation)
+
+        st.write(f"• {observation}")
 
     st.divider()
 
-    # --------------------------------------------------
-    # Executive AI Advisor
-    # --------------------------------------------------
-
-    st.subheader("🧠 Executive AI Advisor")
+    st.markdown("## 🧠 Executive AI Advisor")
 
     for recommendation in recommendations:
 
-        if recommendation.priority == "High":
+        with st.container(border=True):
 
-            st.error(
-                f"**{recommendation.title}**\n\n"
-                f"{recommendation.explanation}\n\n"
-                f"**Recommended Action:** {recommendation.action}"
+            left, right = st.columns(
+                [2, 1],
             )
 
-        elif recommendation.priority == "Medium":
+            with left:
 
-            st.warning(
-                f"**{recommendation.title}**\n\n"
-                f"{recommendation.explanation}\n\n"
-                f"**Recommended Action:** {recommendation.action}"
-            )
+                st.markdown(
+                    f"### {recommendation.title}"
+                )
 
-        else:
+                st.write(
+                    recommendation.explanation
+                )
 
-            st.success(
-                f"**{recommendation.title}**\n\n"
-                f"{recommendation.explanation}\n\n"
-                f"**Recommended Action:** {recommendation.action}"
-            )
+                st.info(
+                    recommendation.action
+                )
+
+            with right:
+
+                st.metric(
+                    "Priority",
+                    recommendation.priority,
+                )
+
+                st.metric(
+                    "Confidence",
+                    f"{recommendation.confidence:.0%}",
+                )
+
+                st.metric(
+                    "Business Impact",
+                    recommendation.business_impact,
+                )
+
+                st.metric(
+                    "Expected Benefit",
+                    recommendation.expected_time,
+                )
 
     st.divider()
+
+    st.markdown("## Learner Analytics")
 
     attendance_chart = px.histogram(
         dashboard.learner_df,

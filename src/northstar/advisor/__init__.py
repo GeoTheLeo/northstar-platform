@@ -2,8 +2,8 @@
 NorthStar Executive Advisor package.
 """
 
-from northstar.advisor.advisor import ExecutiveAdvisor
-from northstar.advisor.recommendation import Recommendation
+from .advisor import ExecutiveAdvisor
+from .recommendation import Recommendation
 
 __all__ = [
     "ExecutiveAdvisor",

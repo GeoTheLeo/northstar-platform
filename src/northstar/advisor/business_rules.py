@@ -1,5 +1,5 @@
 """
-Business rules used by the Executive AI Advisor.
+Business recommendation rules.
 """
 
 from northstar.advisor.recommendation import Recommendation
@@ -22,13 +22,14 @@ def generate_recommendations(
                 priority="High",
                 title="Retention Below Target",
                 explanation=(
-                    "Institutional retention has fallen below "
-                    "the desired operating threshold."
+                    "Institutional retention is below the target threshold."
                 ),
                 action=(
-                    "Increase learner intervention efforts and "
-                    "advisor outreach."
+                    "Increase learner intervention efforts."
                 ),
+                confidence=0.97,
+                business_impact="Very High",
+                expected_time="2-4 Weeks",
             )
         )
 
@@ -37,15 +38,16 @@ def generate_recommendations(
         recommendations.append(
             Recommendation(
                 priority="High",
-                title="Elevated Learner Risk",
+                title="High Learner Risk",
                 explanation=(
-                    "A significant number of learners are "
-                    "currently predicted to be at risk."
+                    "Multiple learners require immediate support."
                 ),
                 action=(
-                    "Review Early Warning predictions and "
-                    "prioritize coaching resources."
+                    "Prioritize advisor outreach."
                 ),
+                confidence=0.94,
+                business_impact="High",
+                expected_time="1-2 Weeks",
             )
         )
 
@@ -54,15 +56,16 @@ def generate_recommendations(
         recommendations.append(
             Recommendation(
                 priority="Medium",
-                title="Intervention Demand Increasing",
+                title="Growing Intervention Demand",
                 explanation=(
-                    "The current intervention workload "
-                    "continues to grow."
+                    "Support workload is increasing."
                 ),
                 action=(
-                    "Review staffing capacity and automate "
-                    "routine learner follow-ups."
+                    "Review staffing and automation opportunities."
                 ),
+                confidence=0.90,
+                business_impact="Medium",
+                expected_time="3-6 Weeks",
             )
         )
 
@@ -71,15 +74,16 @@ def generate_recommendations(
         recommendations.append(
             Recommendation(
                 priority="Low",
-                title="Platform Is Performing Well",
+                title="Platform Healthy",
                 explanation=(
-                    "Current KPIs remain within expected "
-                    "operational thresholds."
+                    "Current KPIs remain within expected limits."
                 ),
                 action=(
-                    "Continue monitoring all key performance "
-                    "indicators."
+                    "Continue monitoring."
                 ),
+                confidence=0.99,
+                business_impact="Low",
+                expected_time="Continuous",
             )
         )
 
