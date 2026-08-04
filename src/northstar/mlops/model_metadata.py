@@ -7,7 +7,7 @@ from datetime import datetime
 from pathlib import Path
 
 
-@dataclass(slots=True, frozen=True)
+@dataclass(slots=True)
 class ModelMetadata:
     """
     Metadata describing a registered model.
@@ -23,6 +23,16 @@ class ModelMetadata:
 
     description: str
 
+    artifact: str
+
+    status: str
+
+    stage: str
+
     registered_at: datetime
 
     path: Path
+
+    load_count: int = 0
+
+    inference_count: int = 0

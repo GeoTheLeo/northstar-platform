@@ -2,6 +2,7 @@
 NorthStar UI package.
 """
 
+from .activity import render_activity
 from .analytics import render_analytics
 from .assistant import render_assistant
 from .copilot import render_copilot
@@ -11,6 +12,7 @@ from .theme import load_theme
 
 __all__ = [
     "load_theme",
+    "render_activity",
     "render_analytics",
     "render_assistant",
     "render_copilot",

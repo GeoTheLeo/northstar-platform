@@ -1,5 +1,8 @@
 """
-NorthStar model registry.
+NorthStar Model Registry.
+
+Registers all machine learning models available
+within the NorthStar platform.
 """
 
 from datetime import datetime
@@ -11,13 +14,22 @@ from northstar.mlops.model_registry import ModelRegistry
 
 registry = ModelRegistry()
 
+# ---------------------------------------------------------------------
+# Early Warning Model
+# ---------------------------------------------------------------------
+
 registry.register(
     ModelMetadata(
         name="early_warning",
         version="1.0.0",
         algorithm="RandomForestClassifier",
         task="Binary Classification",
-        description="Predicts learners at risk of academic disengagement.",
+        description=(
+            "Predicts learners at risk of academic disengagement."
+        ),
+        artifact="early_warning_model.pkl",
+        status="ACTIVE",
+        stage="Production",
         registered_at=datetime.now(),
         path=(
             Path(__file__).resolve().parents[1]
@@ -28,13 +40,22 @@ registry.register(
     )
 )
 
+# ---------------------------------------------------------------------
+# Learner Segmentation Model
+# ---------------------------------------------------------------------
+
 registry.register(
     ModelMetadata(
         name="segmentation",
         version="1.0.0",
         algorithm="KMeans",
         task="Clustering",
-        description="Segments learners into behavioral cohorts.",
+        description=(
+            "Segments learners into behavioral cohorts."
+        ),
+        artifact="segmentation_model.pkl",
+        status="ACTIVE",
+        stage="Production",
         registered_at=datetime.now(),
         path=(
             Path(__file__).resolve().parents[1]
@@ -44,6 +65,10 @@ registry.register(
         ),
     )
 )
+
+# ---------------------------------------------------------------------
+# Shared Loader
+# ---------------------------------------------------------------------
 
 loader = ModelLoader(
     registry,

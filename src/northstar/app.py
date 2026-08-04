@@ -18,6 +18,7 @@ from northstar.config import (
 )
 from northstar.controller import NorthStarController
 from northstar.logging import logger
+from northstar.ui.activity import render_activity
 from northstar.ui.analytics import render_analytics
 from northstar.ui.assistant import render_assistant
 from northstar.ui.copilot import render_copilot
@@ -36,7 +37,10 @@ def main() -> None:
     st.set_page_config(
         page_title=PAGE_TITLE,
         page_icon=PAGE_ICON,
-        layout=cast(Literal["centered", "wide"], LAYOUT),
+        layout=cast(
+            Literal["centered", "wide"],
+            LAYOUT,
+        ),
         initial_sidebar_state=cast(
             Literal["auto", "expanded", "collapsed"],
             INITIAL_SIDEBAR_STATE,
@@ -64,25 +68,59 @@ Unified Applied AI Platform integrating:
 
     dashboard = controller.dashboard()
 
-    render_metrics(dashboard)
+    # ----------------------------------------------------------
+    # Executive Metrics
+    # ----------------------------------------------------------
+
+    render_metrics(
+        dashboard,
+    )
 
     st.divider()
 
-    render_analytics(dashboard)
+    # ----------------------------------------------------------
+    # Analytics Workspace
+    # ----------------------------------------------------------
+
+    render_analytics(
+        dashboard,
+    )
 
     st.divider()
+
+    # ----------------------------------------------------------
+    # Executive Copilot
+    # ----------------------------------------------------------
 
     render_copilot()
 
     st.divider()
 
+    # ----------------------------------------------------------
+    # Knowledge Assistant
+    # ----------------------------------------------------------
+
     render_assistant()
 
     st.divider()
 
+    # ----------------------------------------------------------
+    # MLOps Operations
+    # ----------------------------------------------------------
+
     render_model_registry()
 
-    st.caption(CAPTION)
+    st.divider()
+
+    # ----------------------------------------------------------
+    # Platform Activity
+    # ----------------------------------------------------------
+
+    render_activity()
+
+    st.caption(
+        CAPTION,
+    )
 
 
 if __name__ == "__main__":

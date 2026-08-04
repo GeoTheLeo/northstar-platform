@@ -6,6 +6,7 @@ from typing import Any
 
 import joblib
 
+from northstar.activity import activity_log
 from northstar.mlops.model_registry import (
     ModelRegistry,
 )
@@ -30,6 +31,15 @@ class ModelLoader:
 
         metadata = self._registry.get(
             name,
+        )
+
+        self._registry.increment_load(
+            name,
+        )
+
+        activity_log.record(
+            "MLOps",
+            f"Loaded model '{name}'.",
         )
 
         return joblib.load(

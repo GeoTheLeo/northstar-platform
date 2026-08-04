@@ -7,7 +7,7 @@ from northstar.mlops.model_metadata import ModelMetadata
 
 class ModelRegistry:
     """
-    Registry of available machine learning models.
+    Registry of machine learning models.
     """
 
     def __init__(
@@ -20,9 +20,6 @@ class ModelRegistry:
         self,
         metadata: ModelMetadata,
     ) -> None:
-        """
-        Register a model.
-        """
 
         self._models[
             metadata.name
@@ -32,18 +29,12 @@ class ModelRegistry:
         self,
         name: str,
     ) -> ModelMetadata:
-        """
-        Retrieve model metadata.
-        """
 
         return self._models[name]
 
     def names(
         self,
     ) -> list[str]:
-        """
-        Return registered model names.
-        """
 
         return sorted(
             self._models.keys(),
@@ -52,11 +43,22 @@ class ModelRegistry:
     def all(
         self,
     ) -> list[ModelMetadata]:
-        """
-        Return all registered models.
-        """
 
         return sorted(
             self._models.values(),
             key=lambda model: model.name,
         )
+
+    def increment_load(
+        self,
+        name: str,
+    ) -> None:
+
+        self._models[name].load_count += 1
+
+    def increment_inference(
+        self,
+        name: str,
+    ) -> None:
+
+        self._models[name].inference_count += 1

@@ -15,24 +15,35 @@ def render_model_registry() -> None:
     st.subheader("⚙️ MLOps Operations")
 
     st.caption(
-        "Machine learning models currently registered "
-        "within the NorthStar platform."
+        "Operational view of registered machine learning models."
     )
 
     for model in registry.all():
 
         with st.container(border=True):
 
-            st.markdown(f"### {model.name}")
+            st.markdown(f"## {model.name}")
 
-            left, right = st.columns(2)
+            col1, col2, col3 = st.columns(3)
 
-            with left:
+            with col1:
+
+                st.metric(
+                    "Status",
+                    model.status,
+                )
+
+                st.metric(
+                    "Stage",
+                    model.stage,
+                )
 
                 st.metric(
                     "Version",
                     model.version,
                 )
+
+            with col2:
 
                 st.metric(
                     "Algorithm",
@@ -44,7 +55,22 @@ def render_model_registry() -> None:
                     model.task,
                 )
 
-            with right:
+                st.metric(
+                    "Artifact",
+                    model.artifact,
+                )
+
+            with col3:
+
+                st.metric(
+                    "Loads",
+                    model.load_count,
+                )
+
+                st.metric(
+                    "Inferences",
+                    model.inference_count,
+                )
 
                 st.metric(
                     "Registered",
@@ -53,13 +79,12 @@ def render_model_registry() -> None:
                     ),
                 )
 
-                st.write("Description")
+            st.markdown("**Description**")
 
-                st.write(
-                    model.description,
-                )
+            st.write(
+                model.description,
+            )
 
-            st.code(
-                str(model.path),
-                language="text",
+            st.success(
+                "Production Ready"
             )
