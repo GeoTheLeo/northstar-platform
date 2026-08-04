@@ -3,6 +3,7 @@ Model metadata.
 """
 
 from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
 
 
@@ -19,5 +20,9 @@ class ModelMetadata:
     algorithm: str
 
     task: str
+
+    description: str
+
+    registered_at: datetime
 
     path: Path

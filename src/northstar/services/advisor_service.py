@@ -7,6 +7,7 @@ executive decision support.
 
 from northstar.advisor import ExecutiveAdvisor
 from northstar.advisor.recommendation import Recommendation
+from northstar.mlops.registry import registry
 from northstar.models.dashboard_data import DashboardData
 
 
@@ -33,3 +34,12 @@ class AdvisorService:
         return self._advisor.advise(
             dashboard,
         )
+
+    def registered_models(
+        self,
+    ) -> list[str]:
+        """
+        Return registered model names.
+        """
+
+        return registry.names()

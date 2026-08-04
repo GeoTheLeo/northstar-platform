@@ -2,16 +2,12 @@
 Model registry implementation.
 """
 
-from pathlib import Path
-
-from northstar.mlops.model_metadata import (
-    ModelMetadata,
-)
+from northstar.mlops.model_metadata import ModelMetadata
 
 
 class ModelRegistry:
     """
-    Registry of available models.
+    Registry of available machine learning models.
     """
 
     def __init__(
@@ -24,6 +20,9 @@ class ModelRegistry:
         self,
         metadata: ModelMetadata,
     ) -> None:
+        """
+        Register a model.
+        """
 
         self._models[
             metadata.name
@@ -33,13 +32,31 @@ class ModelRegistry:
         self,
         name: str,
     ) -> ModelMetadata:
+        """
+        Retrieve model metadata.
+        """
 
         return self._models[name]
 
     def names(
         self,
     ) -> list[str]:
+        """
+        Return registered model names.
+        """
 
         return sorted(
             self._models.keys(),
+        )
+
+    def all(
+        self,
+    ) -> list[ModelMetadata]:
+        """
+        Return all registered models.
+        """
+
+        return sorted(
+            self._models.values(),
+            key=lambda model: model.name,
         )
