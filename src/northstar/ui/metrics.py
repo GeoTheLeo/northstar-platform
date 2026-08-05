@@ -1,66 +1,107 @@
 """
-NorthStar Metrics View
+NorthStar Executive Metrics View.
 """
-
-from typing import Any
 
 import streamlit as st
 
+from northstar.kpi import calculate_platform_health
 from northstar.models.dashboard_data import DashboardData
 
 
-def _metric_card(
-    title: str,
-    value: Any,
-) -> None:
+def _status_icon(status: str) -> str:
     """
-    Render a single executive KPI card.
+    Return an icon representing KPI health.
     """
 
-    html = (
-        f'<div class="metric-card">'
-        f'<div class="metric-title">{title}</div>'
-        f'<div class="metric-value">{value}</div>'
-        f"</div>"
-    )
-
-    st.markdown(
-        html,
-        unsafe_allow_html=True,
-    )
+    return {
+        "Excellent": "🟢",
+        "Healthy": "🟢",
+        "Warning": "🟡",
+        "Critical": "🔴",
+    }.get(status, "⚪")
 
 
 def render_metrics(
     dashboard: DashboardData,
 ) -> None:
     """
-    Render the Executive KPI overview.
+    Render executive KPI metrics.
     """
 
-    st.subheader("Executive Overview")
+    st.subheader("📈 Executive KPI Command Center")
 
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3 = st.columns(3)
 
-    with col1:
-        _metric_card(
-            "Learners",
-            dashboard.total_learners,
+    col1.metric(
+        "Retention",
+        f"{dashboard.retention_rate:.1f}%",
+    )
+
+    col2.metric(
+        "Churn",
+        f"{dashboard.churn_rate:.1f}%",
+    )
+
+    col3.metric(
+        "Intervention",
+        f"{dashboard.intervention_rate:.1f}%",
+    )
+
+    st.divider()
+
+    st.markdown("### Platform Health")
+
+    statuses = calculate_platform_health(
+        dashboard,
+    )
+
+    columns = st.columns(
+        len(statuses),
+    )
+
+    total_score = 0.0
+
+    for column, status in zip(
+        columns,
+        statuses,
+    ):
+
+        total_score += status.score
+
+        with column:
+
+            st.metric(
+                status.label,
+                f"{status.score:.1f}%",
+                status.trend,
+            )
+
+            st.write(
+                f"{_status_icon(status.status)} "
+                f"{status.status}"
+            )
+
+    st.divider()
+
+    platform_score = round(
+        total_score / len(statuses),
+        1,
+    )
+
+    if platform_score >= 90:
+
+        st.success(
+            f"Overall Platform Health: {platform_score:.1f}%"
         )
 
-    with col2:
-        _metric_card(
-            "At-Risk Learners",
-            dashboard.at_risk_learners,
+    elif platform_score >= 80:
+
+        st.warning(
+            f"Overall Platform Health: {platform_score:.1f}%"
         )
 
-    with col3:
-        _metric_card(
-            "Retention",
-            f"{dashboard.retention_rate:.1f}%",
-        )
+    else:
 
-    with col4:
-        _metric_card(
-            "Churn",
-            f"{dashboard.churn_rate:.1f}%",
+        st.error(
+            f"Overall Platform Health: {platform_score:.1f}%"
         )

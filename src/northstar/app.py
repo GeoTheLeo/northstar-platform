@@ -68,9 +68,7 @@ Unified Applied AI Platform integrating:
 
     dashboard = controller.dashboard()
 
-    # ----------------------------------------------------------
-    # Executive Metrics
-    # ----------------------------------------------------------
+    # Executive KPI Command Center
 
     render_metrics(
         dashboard,
@@ -78,9 +76,7 @@ Unified Applied AI Platform integrating:
 
     st.divider()
 
-    # ----------------------------------------------------------
-    # Analytics Workspace
-    # ----------------------------------------------------------
+    # Analytics
 
     render_analytics(
         dashboard,
@@ -88,33 +84,25 @@ Unified Applied AI Platform integrating:
 
     st.divider()
 
-    # ----------------------------------------------------------
     # Executive Copilot
-    # ----------------------------------------------------------
 
     render_copilot()
 
     st.divider()
 
-    # ----------------------------------------------------------
     # Knowledge Assistant
-    # ----------------------------------------------------------
 
     render_assistant()
 
     st.divider()
 
-    # ----------------------------------------------------------
     # MLOps Operations
-    # ----------------------------------------------------------
 
     render_model_registry()
 
     st.divider()
 
-    # ----------------------------------------------------------
     # Platform Activity
-    # ----------------------------------------------------------
 
     render_activity()
 
