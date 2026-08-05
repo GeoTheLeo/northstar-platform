@@ -18,71 +18,55 @@ from northstar.models.dashboard_data import DashboardData
 def _render_recommendation(
     recommendation: Recommendation,
 ) -> None:
-    """
-    Render a single executive recommendation.
-    """
 
-    priority = recommendation.priority.upper()
-
-    if priority == "HIGH":
-        container = st.error
-    elif priority == "MEDIUM":
-        container = st.warning
-    else:
-        container = st.success
-
-    container(
-        (
+    if recommendation.priority == "HIGH":
+        st.error(
             f"**{recommendation.title}**\n\n"
-            f"**Reason:** {recommendation.rationale}\n\n"
-            f"**Recommended Action:** {recommendation.action}"
+            f"{recommendation.rationale}\n\n"
+            f"**Action:** {recommendation.action}"
         )
-    )
+
+    elif recommendation.priority == "MEDIUM":
+        st.warning(
+            f"**{recommendation.title}**\n\n"
+            f"{recommendation.rationale}\n\n"
+            f"**Action:** {recommendation.action}"
+        )
+
+    else:
+        st.success(
+            f"**{recommendation.title}**\n\n"
+            f"{recommendation.rationale}\n\n"
+            f"**Action:** {recommendation.action}"
+        )
 
 
 def render_analytics(
     dashboard: DashboardData,
 ) -> None:
-    """
-    Render the Executive Analytics workspace.
-    """
 
     st.subheader("📊 Executive Analytics")
 
-    summary = dashboard.executive_summary
+    if dashboard.executive_insight is not None:
 
-    severity = summary.severity.lower()
-
-    if severity == "success":
-        st.success(summary.headline)
-
-    elif severity == "warning":
-        st.warning(summary.headline)
-
-    else:
-        st.error(summary.headline)
-
-    st.write(summary.recommendation)
+        st.info(
+            f"### 🧠 Executive AI Insight\n\n"
+            f"**{dashboard.executive_insight.headline}**\n\n"
+            f"{dashboard.executive_insight.summary}\n\n"
+            f"Confidence: "
+            f"{dashboard.executive_insight.confidence:.0%}"
+        )
 
     st.divider()
 
-    # ----------------------------------------------------------
-    # Executive Recommendation Engine
-    # ----------------------------------------------------------
-
-    st.markdown("## 🧠 Executive Recommendation Engine")
+    st.markdown("## Executive Recommendation Engine")
 
     for recommendation in dashboard.recommendations:
-
         _render_recommendation(
             recommendation,
         )
 
     st.divider()
-
-    # ----------------------------------------------------------
-    # Analytics
-    # ----------------------------------------------------------
 
     attendance_chart = px.histogram(
         dashboard.learner_df,

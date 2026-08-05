@@ -1,8 +1,5 @@
 """
 Dashboard Domain Model
-
-Defines the application data returned by the
-DashboardService and consumed by the UI layer.
 """
 
 from dataclasses import dataclass, field
@@ -10,6 +7,7 @@ from dataclasses import dataclass, field
 import pandas as pd
 
 from northstar.advisor.recommendation import Recommendation
+from northstar.insights.executive_insight import ExecutiveInsight
 from northstar.models.executive_summary import ExecutiveSummary
 
 
@@ -31,6 +29,8 @@ class DashboardData:
 
     executive_summary: ExecutiveSummary
 
+    executive_insight: ExecutiveInsight | None = None
+
     recommendations: list[Recommendation] = field(
         default_factory=list,
     )
@@ -39,16 +39,11 @@ class DashboardData:
     def total_learners(
         self,
     ) -> int:
-        """
-        Total learners represented.
-        """
 
         return int(
             self.kpis.get(
                 "total_students",
-                len(
-                    self.learner_df,
-                ),
+                len(self.learner_df),
             )
         )
 
@@ -56,9 +51,6 @@ class DashboardData:
     def at_risk_learners(
         self,
     ) -> int:
-        """
-        Learners predicted to be at risk.
-        """
 
         return int(
             self.risk_metrics.get(
@@ -71,12 +63,8 @@ class DashboardData:
     def retention_rate(
         self,
     ) -> float:
-        """
-        Estimated retention percentage.
-        """
 
         if self.total_learners == 0:
-
             return 0.0
 
         retained = (
@@ -95,12 +83,8 @@ class DashboardData:
     def churn_rate(
         self,
     ) -> float:
-        """
-        Estimated churn percentage.
-        """
 
         if self.total_learners == 0:
-
             return 0.0
 
         return round(
@@ -114,8 +98,5 @@ class DashboardData:
     def intervention_rate(
         self,
     ) -> float:
-        """
-        Intervention percentage.
-        """
 
         return self.churn_rate

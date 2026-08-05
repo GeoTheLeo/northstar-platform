@@ -5,6 +5,7 @@ Coordinates dashboard data retrieval and executive intelligence.
 """
 
 from northstar.advisor import ExecutiveAdvisor
+from northstar.insights import ExecutiveInsightService
 from northstar.logging import logger
 from northstar.models.dashboard_data import DashboardData
 from northstar.repositories.csv.dashboard_repository import (
@@ -38,15 +39,21 @@ class DashboardService:
         executive_summary: ExecutiveSummaryService | None = None,
     ) -> None:
         self.repository = (
-            repository if repository is not None else CsvDashboardRepository()
+            repository
+            if repository is not None
+            else CsvDashboardRepository()
         )
 
         self.early_warning = (
-            early_warning if early_warning is not None else EarlyWarningService()
+            early_warning
+            if early_warning is not None
+            else EarlyWarningService()
         )
 
         self.segmentation = (
-            segmentation if segmentation is not None else SegmentationService()
+            segmentation
+            if segmentation is not None
+            else SegmentationService()
         )
 
         self.business_intelligence = (
@@ -63,12 +70,18 @@ class DashboardService:
 
         self.advisor = ExecutiveAdvisor()
 
-    def load_dashboard(self) -> DashboardData:
+        self.insights = ExecutiveInsightService()
+
+    def load_dashboard(
+        self,
+    ) -> DashboardData:
         """
         Load, enrich, and assemble the dashboard model.
         """
 
-        logger.info("Dashboard generation started.")
+        logger.info(
+            "Dashboard generation started."
+        )
 
         learner_df = self.repository.load_dashboard_data()
 
@@ -135,6 +148,13 @@ class DashboardService:
             )
         )
 
+        dashboard.executive_insight = (
+            self.insights.generate(
+                retention_rate=dashboard.retention_rate,
+                at_risk_learners=dashboard.at_risk_learners,
+            )
+        )
+
         logger.info(
             "Generated %d executive recommendations.",
             len(
@@ -143,7 +163,7 @@ class DashboardService:
         )
 
         logger.info(
-            "Dashboard successfully generated.",
+            "Dashboard successfully generated."
         )
 
         return dashboard
