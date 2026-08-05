@@ -4,9 +4,12 @@ Dashboard Service
 Coordinates dashboard data retrieval and executive intelligence.
 """
 
+from northstar.advisor import ExecutiveAdvisor
 from northstar.logging import logger
 from northstar.models.dashboard_data import DashboardData
-from northstar.repositories.csv.dashboard_repository import CsvDashboardRepository
+from northstar.repositories.csv.dashboard_repository import (
+    CsvDashboardRepository,
+)
 from northstar.services.business_intelligence_service import (
     BusinessIntelligenceService,
 )
@@ -58,6 +61,8 @@ class DashboardService:
             else ExecutiveSummaryService()
         )
 
+        self.advisor = ExecutiveAdvisor()
+
     def load_dashboard(self) -> DashboardData:
         """
         Load, enrich, and assemble the dashboard model.
@@ -67,9 +72,13 @@ class DashboardService:
 
         learner_df = self.repository.load_dashboard_data()
 
-        predictions_df = self.early_warning.predict(learner_df)
+        predictions_df = self.early_warning.predict(
+            learner_df,
+        )
 
-        segments_df = self.segmentation.segment(learner_df)
+        segments_df = self.segmentation.segment(
+            learner_df,
+        )
 
         metrics = self.business_intelligence.build_metrics(
             learner_df,
@@ -95,12 +104,21 @@ class DashboardService:
             0.0
             if total_learners == 0
             else round(
-                (total_learners - at_risk_learners) / total_learners * 100,
+                (
+                    total_learners
+                    - at_risk_learners
+                )
+                / total_learners
+                * 100,
                 1,
             )
         )
 
-        executive_summary = self.executive_summary.build(retention_rate)
+        executive_summary = (
+            self.executive_summary.build(
+                retention_rate,
+            )
+        )
 
         dashboard = DashboardData(
             learner_df=learner_df,
@@ -111,6 +129,21 @@ class DashboardService:
             executive_summary=executive_summary,
         )
 
-        logger.info("Dashboard successfully generated.")
+        dashboard.recommendations = (
+            self.advisor.advise(
+                dashboard,
+            )
+        )
+
+        logger.info(
+            "Generated %d executive recommendations.",
+            len(
+                dashboard.recommendations,
+            ),
+        )
+
+        logger.info(
+            "Dashboard successfully generated.",
+        )
 
         return dashboard

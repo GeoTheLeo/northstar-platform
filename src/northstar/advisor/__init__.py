@@ -1,8 +1,8 @@
 """
-NorthStar Executive Advisor package.
+NorthStar Executive Advisor.
 """
 
-from .advisor import ExecutiveAdvisor
+from .advisor_service import ExecutiveAdvisor
 from .recommendation import Recommendation
 
 __all__ = [

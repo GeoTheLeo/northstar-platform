@@ -15,12 +15,6 @@ class Recommendation:
 
     title: str
 
-    explanation: str
+    rationale: str
 
     action: str
-
-    confidence: float
-
-    business_impact: str
-
-    expected_time: str
