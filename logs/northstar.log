@@ -1077,3 +1077,278 @@ ConnectionResetError: [WinError 10054] An existing connection was forcibly close
 2026-08-06 00:49:57,388 | INFO     | Executive metrics assembled quite nicely.
 2026-08-06 00:49:57,388 | INFO     | Generated 3 executive recommendations.
 2026-08-06 00:49:57,388 | INFO     | Dashboard successfully generated.
+2026-08-06 01:43:10,376 | INFO     | No device provided, using cpu
+2026-08-06 01:43:11,071 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 01:43:11,106 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-08-06 01:43:11,257 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 01:43:11,258 | WARNING  | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-08-06 01:43:11,278 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-08-06 01:43:11,295 | INFO     | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-08-06 01:43:11,431 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 01:43:11,453 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-08-06 01:43:11,585 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 01:43:11,602 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-08-06 01:43:11,777 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 01:43:11,813 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-08-06 01:43:11,957 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 01:43:11,976 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-08-06 01:43:12,113 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-08-06 01:43:12,247 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 01:43:12,266 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-08-06 01:43:12,747 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-08-06 01:43:12,882 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-08-06 01:43:13,020 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-08-06 01:43:13,163 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-08-06 01:43:13,294 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 01:43:13,316 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 01:43:13,458 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 01:43:13,476 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-08-06 01:43:13,616 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 01:43:13,642 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-08-06 01:43:13,783 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 01:43:13,801 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 01:43:13,953 | INFO     | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-08-06 01:43:14,103 | INFO     | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-08-06 01:43:14,332 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 01:43:14,363 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-08-06 01:43:14,513 | INFO     | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-08-06 14:18:11,934 | INFO     | No device provided, using cpu
+2026-08-06 14:18:12,578 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:18:12,582 | WARNING  | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-08-06 14:18:12,604 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-08-06 14:18:12,763 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:18:12,789 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-08-06 14:18:12,816 | INFO     | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-08-06 14:18:12,961 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:18:12,983 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-08-06 14:18:13,217 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:18:13,236 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-08-06 14:18:13,395 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:18:13,416 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-08-06 14:18:13,579 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:18:13,598 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-08-06 14:18:13,753 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-08-06 14:18:13,891 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:18:13,912 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-08-06 14:18:14,393 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-08-06 14:18:14,581 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-08-06 14:18:14,793 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-08-06 14:18:14,934 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-08-06 14:18:15,074 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:18:15,100 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 14:18:15,257 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:18:15,279 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-08-06 14:18:15,418 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:18:15,439 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-08-06 14:18:15,578 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:18:15,597 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 14:18:15,748 | INFO     | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-08-06 14:18:15,889 | INFO     | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-08-06 14:18:16,173 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:18:16,191 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-08-06 14:18:16,520 | INFO     | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-08-06 14:18:16,555 | INFO     | NorthStar started.
+2026-08-06 14:18:16,717 | INFO     | Dashboard generation started.
+2026-08-06 14:18:16,717 | INFO     | Using CSV repository.
+2026-08-06 14:18:16,745 | INFO     | Loaded 20 learner records.
+2026-08-06 14:18:16,746 | INFO     | Predicting learner risk for 20 learners.
+2026-08-06 14:18:16,746 | INFO     | Loading model from registry.
+2026-08-06 14:18:16,897 | INFO     | Prediction complete.
+2026-08-06 14:18:16,898 | INFO     | Segmenting 20 learners.
+2026-08-06 14:18:19,859 | INFO     | Generated 4 learner clusters.
+2026-08-06 14:18:19,860 | INFO     | Cluster distribution: {0: 4, 1: 6, 2: 6, 3: 4}
+2026-08-06 14:18:19,860 | INFO     | Learner segmentation complete.
+2026-08-06 14:18:19,860 | INFO     | Calculating executive business metrics.
+2026-08-06 14:18:19,862 | INFO     | Calculated 4 KPIs.
+2026-08-06 14:18:19,863 | INFO     | Calculated 3 risk metrics.
+2026-08-06 14:18:19,863 | INFO     | Calculated 3 segmentation metrics.
+2026-08-06 14:18:19,863 | INFO     | Executive metrics assembled quite nicely.
+2026-08-06 14:18:19,864 | INFO     | Generated 3 executive recommendations.
+2026-08-06 14:18:19,864 | INFO     | Dashboard successfully generated.
+2026-08-06 14:37:28,793 | INFO     | No device provided, using cpu
+2026-08-06 14:37:29,295 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:37:29,297 | WARNING  | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-08-06 14:37:29,311 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-08-06 14:37:29,472 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:37:29,494 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-08-06 14:37:29,500 | INFO     | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-08-06 14:37:29,631 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:37:29,649 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-08-06 14:37:29,782 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:37:29,796 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-08-06 14:37:29,932 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:37:29,954 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-08-06 14:37:30,087 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:37:30,106 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-08-06 14:37:30,242 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-08-06 14:37:30,375 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:37:30,396 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-08-06 14:37:30,756 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-08-06 14:37:30,890 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-08-06 14:37:31,026 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-08-06 14:37:31,170 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-08-06 14:37:31,301 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:37:31,326 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 14:37:31,469 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:37:31,493 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-08-06 14:37:31,642 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:37:31,661 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-08-06 14:37:31,795 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:37:31,818 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 14:37:31,958 | INFO     | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-08-06 14:37:32,095 | INFO     | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-08-06 14:37:32,312 | INFO     | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 14:37:32,338 | INFO     | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-08-06 14:37:32,473 | INFO     | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-08-06 14:37:32,504 | INFO     | NorthStar started.
+2026-08-06 14:37:32,610 | INFO     | Dashboard generation started.
+2026-08-06 14:37:32,610 | INFO     | Using CSV repository.
+2026-08-06 14:37:32,621 | INFO     | Loaded 20 learner records.
+2026-08-06 14:37:32,622 | INFO     | Predicting learner risk for 20 learners.
+2026-08-06 14:37:32,622 | INFO     | Loading model from registry.
+2026-08-06 14:37:32,692 | INFO     | Prediction complete.
+2026-08-06 14:37:32,692 | INFO     | Segmenting 20 learners.
+2026-08-06 14:37:33,363 | ERROR    | Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Program Files\Python311\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Program Files\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-06 14:37:34,939 | INFO     | Generated 4 learner clusters.
+2026-08-06 14:37:34,939 | INFO     | Cluster distribution: {0: 4, 1: 6, 2: 6, 3: 4}
+2026-08-06 14:37:34,939 | INFO     | Learner segmentation complete.
+2026-08-06 14:37:34,940 | INFO     | Calculating executive business metrics.
+2026-08-06 14:37:34,942 | INFO     | Calculated 4 KPIs.
+2026-08-06 14:37:34,942 | INFO     | Calculated 3 risk metrics.
+2026-08-06 14:37:34,942 | INFO     | Calculated 3 segmentation metrics.
+2026-08-06 14:37:34,942 | INFO     | Executive metrics assembled quite nicely.
+2026-08-06 14:37:34,943 | INFO     | Generated 3 executive recommendations.
+2026-08-06 14:37:34,943 | INFO     | Dashboard successfully generated.
+2026-08-06 14:39:34,320 | INFO     | NorthStar started.
+2026-08-06 14:39:34,323 | INFO     | Dashboard generation started.
+2026-08-06 14:39:34,324 | INFO     | Using CSV repository.
+2026-08-06 14:39:34,327 | INFO     | Loaded 20 learner records.
+2026-08-06 14:39:34,328 | INFO     | Predicting learner risk for 20 learners.
+2026-08-06 14:39:34,330 | INFO     | Loading model from registry.
+2026-08-06 14:39:34,368 | INFO     | Prediction complete.
+2026-08-06 14:39:34,368 | INFO     | Segmenting 20 learners.
+2026-08-06 14:39:34,409 | INFO     | Generated 4 learner clusters.
+2026-08-06 14:39:34,409 | INFO     | Cluster distribution: {0: 4, 1: 6, 2: 6, 3: 4}
+2026-08-06 14:39:34,409 | INFO     | Learner segmentation complete.
+2026-08-06 14:39:34,409 | INFO     | Calculating executive business metrics.
+2026-08-06 14:39:34,411 | INFO     | Calculated 4 KPIs.
+2026-08-06 14:39:34,412 | INFO     | Calculated 3 risk metrics.
+2026-08-06 14:39:34,412 | INFO     | Calculated 3 segmentation metrics.
+2026-08-06 14:39:34,412 | INFO     | Executive metrics assembled quite nicely.
+2026-08-06 14:39:34,413 | INFO     | Generated 3 executive recommendations.
+2026-08-06 14:39:34,413 | INFO     | Dashboard successfully generated.
+2026-08-06 14:39:36,708 | INFO     | NorthStar started.
+2026-08-06 14:39:36,711 | INFO     | Dashboard generation started.
+2026-08-06 14:39:36,712 | INFO     | Using CSV repository.
+2026-08-06 14:39:36,714 | INFO     | Loaded 20 learner records.
+2026-08-06 14:39:36,714 | INFO     | Predicting learner risk for 20 learners.
+2026-08-06 14:39:36,716 | INFO     | Loading model from registry.
+2026-08-06 14:39:36,764 | INFO     | Prediction complete.
+2026-08-06 14:39:36,765 | INFO     | Segmenting 20 learners.
+2026-08-06 14:39:36,803 | INFO     | Generated 4 learner clusters.
+2026-08-06 14:39:36,803 | INFO     | Cluster distribution: {0: 4, 1: 6, 2: 6, 3: 4}
+2026-08-06 14:39:36,803 | INFO     | Learner segmentation complete.
+2026-08-06 14:39:36,803 | INFO     | Calculating executive business metrics.
+2026-08-06 14:39:36,805 | INFO     | Calculated 4 KPIs.
+2026-08-06 14:39:36,806 | INFO     | Calculated 3 risk metrics.
+2026-08-06 14:39:36,806 | INFO     | Calculated 3 segmentation metrics.
+2026-08-06 14:39:36,806 | INFO     | Executive metrics assembled quite nicely.
+2026-08-06 14:39:36,806 | INFO     | Generated 3 executive recommendations.
+2026-08-06 14:39:36,807 | INFO     | Dashboard successfully generated.
+2026-08-06 14:39:38,847 | INFO     | NorthStar started.
+2026-08-06 14:39:38,850 | INFO     | Dashboard generation started.
+2026-08-06 14:39:38,850 | INFO     | Using CSV repository.
+2026-08-06 14:39:38,853 | INFO     | Loaded 20 learner records.
+2026-08-06 14:39:38,853 | INFO     | Predicting learner risk for 20 learners.
+2026-08-06 14:39:38,854 | INFO     | Loading model from registry.
+2026-08-06 14:39:38,893 | INFO     | Prediction complete.
+2026-08-06 14:39:38,893 | INFO     | Segmenting 20 learners.
+2026-08-06 14:39:38,929 | INFO     | Generated 4 learner clusters.
+2026-08-06 14:39:38,929 | INFO     | Cluster distribution: {0: 4, 1: 6, 2: 6, 3: 4}
+2026-08-06 14:39:38,930 | INFO     | Learner segmentation complete.
+2026-08-06 14:39:38,930 | INFO     | Calculating executive business metrics.
+2026-08-06 14:39:38,931 | INFO     | Calculated 4 KPIs.
+2026-08-06 14:39:38,932 | INFO     | Calculated 3 risk metrics.
+2026-08-06 14:39:38,932 | INFO     | Calculated 3 segmentation metrics.
+2026-08-06 14:39:38,932 | INFO     | Executive metrics assembled quite nicely.
+2026-08-06 14:39:38,932 | INFO     | Generated 3 executive recommendations.
+2026-08-06 14:39:38,933 | INFO     | Dashboard successfully generated.
+2026-08-06 14:39:41,080 | INFO     | NorthStar started.
+2026-08-06 14:39:41,082 | INFO     | Dashboard generation started.
+2026-08-06 14:39:41,083 | INFO     | Using CSV repository.
+2026-08-06 14:39:41,085 | INFO     | Loaded 20 learner records.
+2026-08-06 14:39:41,086 | INFO     | Predicting learner risk for 20 learners.
+2026-08-06 14:39:41,086 | INFO     | Loading model from registry.
+2026-08-06 14:39:41,128 | INFO     | Prediction complete.
+2026-08-06 14:39:41,128 | INFO     | Segmenting 20 learners.
+2026-08-06 14:39:41,164 | INFO     | Generated 4 learner clusters.
+2026-08-06 14:39:41,164 | INFO     | Cluster distribution: {0: 4, 1: 6, 2: 6, 3: 4}
+2026-08-06 14:39:41,164 | INFO     | Learner segmentation complete.
+2026-08-06 14:39:41,164 | INFO     | Calculating executive business metrics.
+2026-08-06 14:39:41,165 | INFO     | Calculated 4 KPIs.
+2026-08-06 14:39:41,166 | INFO     | Calculated 3 risk metrics.
+2026-08-06 14:39:41,166 | INFO     | Calculated 3 segmentation metrics.
+2026-08-06 14:39:41,166 | INFO     | Executive metrics assembled quite nicely.
+2026-08-06 14:39:41,166 | INFO     | Generated 3 executive recommendations.
+2026-08-06 14:39:41,167 | INFO     | Dashboard successfully generated.
+2026-08-06 14:39:45,019 | INFO     | NorthStar started.
+2026-08-06 14:39:45,022 | INFO     | Dashboard generation started.
+2026-08-06 14:39:45,022 | INFO     | Using CSV repository.
+2026-08-06 14:39:45,025 | INFO     | Loaded 20 learner records.
+2026-08-06 14:39:45,025 | INFO     | Predicting learner risk for 20 learners.
+2026-08-06 14:39:45,026 | INFO     | Loading model from registry.
+2026-08-06 14:39:45,069 | INFO     | Prediction complete.
+2026-08-06 14:39:45,070 | INFO     | Segmenting 20 learners.
+2026-08-06 14:39:45,107 | INFO     | Generated 4 learner clusters.
+2026-08-06 14:39:45,107 | INFO     | Cluster distribution: {0: 4, 1: 6, 2: 6, 3: 4}
+2026-08-06 14:39:45,107 | INFO     | Learner segmentation complete.
+2026-08-06 14:39:45,107 | INFO     | Calculating executive business metrics.
+2026-08-06 14:39:45,109 | INFO     | Calculated 4 KPIs.
+2026-08-06 14:39:45,109 | INFO     | Calculated 3 risk metrics.
+2026-08-06 14:39:45,110 | INFO     | Calculated 3 segmentation metrics.
+2026-08-06 14:39:45,110 | INFO     | Executive metrics assembled quite nicely.
+2026-08-06 14:39:45,111 | INFO     | Generated 3 executive recommendations.
+2026-08-06 14:39:45,111 | INFO     | Dashboard successfully generated.
+2026-08-06 14:39:49,445 | INFO     | NorthStar started.
+2026-08-06 14:39:49,447 | INFO     | Dashboard generation started.
+2026-08-06 14:39:49,448 | INFO     | Using CSV repository.
+2026-08-06 14:39:49,451 | INFO     | Loaded 20 learner records.
+2026-08-06 14:39:49,451 | INFO     | Predicting learner risk for 20 learners.
+2026-08-06 14:39:49,451 | INFO     | Loading model from registry.
+2026-08-06 14:39:49,494 | INFO     | Prediction complete.
+2026-08-06 14:39:49,495 | INFO     | Segmenting 20 learners.
+2026-08-06 14:39:49,530 | INFO     | Generated 4 learner clusters.
+2026-08-06 14:39:49,530 | INFO     | Cluster distribution: {0: 4, 1: 6, 2: 6, 3: 4}
+2026-08-06 14:39:49,530 | INFO     | Learner segmentation complete.
+2026-08-06 14:39:49,531 | INFO     | Calculating executive business metrics.
+2026-08-06 14:39:49,532 | INFO     | Calculated 4 KPIs.
+2026-08-06 14:39:49,532 | INFO     | Calculated 3 risk metrics.
+2026-08-06 14:39:49,532 | INFO     | Calculated 3 segmentation metrics.
+2026-08-06 14:39:49,532 | INFO     | Executive metrics assembled quite nicely.
+2026-08-06 14:39:49,533 | INFO     | Generated 3 executive recommendations.
+2026-08-06 14:39:49,533 | INFO     | Dashboard successfully generated.
+2026-08-06 14:39:53,745 | INFO     | NorthStar started.
+2026-08-06 14:39:53,747 | INFO     | Dashboard generation started.
+2026-08-06 14:39:53,747 | INFO     | Using CSV repository.
+2026-08-06 14:39:53,751 | INFO     | Loaded 20 learner records.
+2026-08-06 14:39:53,751 | INFO     | Predicting learner risk for 20 learners.
+2026-08-06 14:39:53,751 | INFO     | Loading model from registry.
+2026-08-06 14:39:53,791 | INFO     | Prediction complete.
+2026-08-06 14:39:53,791 | INFO     | Segmenting 20 learners.
+2026-08-06 14:39:53,825 | INFO     | Generated 4 learner clusters.
+2026-08-06 14:39:53,825 | INFO     | Cluster distribution: {0: 4, 1: 6, 2: 6, 3: 4}
+2026-08-06 14:39:53,825 | INFO     | Learner segmentation complete.
+2026-08-06 14:39:53,827 | INFO     | Calculating executive business metrics.
+2026-08-06 14:39:53,829 | INFO     | Calculated 4 KPIs.
+2026-08-06 14:39:53,829 | INFO     | Calculated 3 risk metrics.
+2026-08-06 14:39:53,830 | INFO     | Calculated 3 segmentation metrics.
+2026-08-06 14:39:53,830 | INFO     | Executive metrics assembled quite nicely.
+2026-08-06 14:39:53,830 | INFO     | Generated 3 executive recommendations.
+2026-08-06 14:39:53,830 | INFO     | Dashboard successfully generated.
