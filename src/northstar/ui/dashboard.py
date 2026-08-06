@@ -38,6 +38,6 @@ def render_dashboard(
 
     st.divider()
 
-    st.subheader("📈 Recent Activity")
+    st.subheader("📈 Recent Platform Activity")
 
     render_activity()

@@ -19,21 +19,28 @@ from northstar.config import (
 from northstar.controller import NorthStarController
 from northstar.logging import logger
 from northstar.navigation import render_workspace_selector
+from northstar.status import render_status_bar
+from northstar.ui.activity import render_activity
 from northstar.ui.analytics import render_analytics
 from northstar.ui.assistant import render_assistant
 from northstar.ui.copilot import render_copilot
 from northstar.ui.dashboard import render_dashboard
 from northstar.ui.model_registry import render_model_registry
 from northstar.ui.platform_health import render_platform_health
+from northstar.ui.scenario_simulator import (
+    render_scenario_simulator,
+)
 from northstar.ui.theme import load_theme
 
 
 def main() -> None:
     """
-    Launch NorthStar.
+    Launch the NorthStar Executive Platform.
     """
 
-    logger.info("NorthStar started.")
+    logger.info(
+        "NorthStar application started."
+    )
 
     st.set_page_config(
         page_title=PAGE_TITLE,
@@ -54,7 +61,11 @@ def main() -> None:
 
     load_theme()
 
-    st.title(APP_NAME)
+    st.title(
+        APP_NAME,
+    )
+
+    render_status_bar()
 
     controller = NorthStarController()
 
@@ -80,6 +91,12 @@ def main() -> None:
             dashboard,
         )
 
+    elif workspace == "🎮 Scenario Simulator":
+
+        render_scenario_simulator(
+            dashboard,
+        )
+
     elif workspace == "🤖 Executive Copilot":
 
         render_copilot()
@@ -98,11 +115,11 @@ def main() -> None:
 
     elif workspace == "📈 Activity Timeline":
 
-        from northstar.ui.activity import render_activity
-
         render_activity()
 
-    st.caption(CAPTION)
+    st.caption(
+        CAPTION,
+    )
 
 
 if __name__ == "__main__":

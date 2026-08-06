@@ -4,20 +4,12 @@ NorthStar Application Container
 Creates and wires application services.
 """
 
+from northstar.analysis import DashboardAnalysisService
 from northstar.repositories.repository_factory import (
     RepositoryFactory,
 )
-from northstar.services.business_intelligence_service import (
-    BusinessIntelligenceService,
-)
 from northstar.services.dashboard_service import (
     DashboardService,
-)
-from northstar.services.early_warning_service import (
-    EarlyWarningService,
-)
-from northstar.services.segmentation_service import (
-    SegmentationService,
 )
 
 
@@ -26,18 +18,21 @@ class ApplicationContainer:
     Simple dependency container.
     """
 
-    def __init__(self) -> None:
-        repository = RepositoryFactory.create_dashboard_repository()
+    def __init__(
+        self,
+    ) -> None:
 
-        early_warning = EarlyWarningService()
+        repository = (
+            RepositoryFactory.create_dashboard_repository()
+        )
 
-        segmentation = SegmentationService()
+        analysis = (
+            DashboardAnalysisService()
+        )
 
-        business_intelligence = BusinessIntelligenceService()
-
-        self.dashboard_service = DashboardService(
-            repository=repository,
-            early_warning=early_warning,
-            segmentation=segmentation,
-            business_intelligence=business_intelligence,
+        self.dashboard_service = (
+            DashboardService(
+                repository=repository,
+                analysis=analysis,
+            )
         )
