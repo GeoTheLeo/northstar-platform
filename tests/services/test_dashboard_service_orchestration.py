@@ -2,67 +2,67 @@
 Tests for DashboardService orchestration.
 """
 
+from unittest.mock import Mock
+
 import pandas as pd
 
-from northstar.models.dashboard_metrics import DashboardMetrics
+from northstar.models.dashboard_data import DashboardData
 from northstar.models.executive_summary import ExecutiveSummary
 from northstar.services.dashboard_service import DashboardService
 
 
-def test_dashboard_service_orchestrates_dependencies(mocker):
-    learner_df = pd.DataFrame({"attendance": [90, 85]})
-    predictions_df = pd.DataFrame({"risk": [0, 1]})
-    segments_df = pd.DataFrame({"segment": [0, 1]})
+def test_dashboard_service_orchestrates_dependencies() -> None:
+    """
+    DashboardService should delegate analysis to the
+    DashboardAnalysisService.
+    """
 
-    repository = mocker.Mock()
-    repository.load_dashboard_data.return_value = learner_df
-
-    early_warning = mocker.Mock()
-    early_warning.predict.return_value = predictions_df
-
-    segmentation = mocker.Mock()
-    segmentation.segment.return_value = segments_df
-
-    metrics = DashboardMetrics(
-        kpis={"retention_rate": 92.0},
-        risk_metrics={"at_risk": 1},
-        segment_metrics={"cluster_0": 1},
+    learner_df = pd.DataFrame(
+        {
+            "attendance": [90],
+            "engagement_score": [80],
+            "assessment_score": [85],
+        }
     )
-
-    business = mocker.Mock()
-    business.build_metrics.return_value = metrics
 
     summary = ExecutiveSummary(
         headline="Retention is strong.",
-        recommendation="Keep monitoring.",
+        recommendation="Maintain current strategy.",
         severity="success",
     )
 
-    executive = mocker.Mock()
-    executive.build.return_value = summary
+    dashboard = DashboardData(
+        learner_df=learner_df,
+        segments_df=learner_df.copy(),
+        kpis={
+            "total_students": 1,
+        },
+        risk_metrics={
+            "at_risk_students": 0,
+        },
+        segment_metrics={
+            "total_segments": 1,
+        },
+        executive_summary=summary,
+    )
+
+    repository = Mock()
+    repository.load_dashboard_data.return_value = learner_df
+
+    analysis = Mock()
+    analysis.analyse.return_value = dashboard
 
     service = DashboardService(
         repository=repository,
-        early_warning=early_warning,
-        segmentation=segmentation,
-        business_intelligence=business,
-        executive_summary=executive,
+        analysis=analysis,
     )
 
-    dashboard = service.load_dashboard()
+    result = service.load_dashboard()
 
-    repository.load_dashboard_data.assert_called_once_with()
+    repository.load_dashboard_data.assert_called_once()
 
-    early_warning.predict.assert_called_once_with(learner_df)
-
-    segmentation.segment.assert_called_once_with(learner_df)
-
-    business.build_metrics.assert_called_once_with(
+    analysis.analyse.assert_called_once_with(
         learner_df,
-        predictions_df,
-        segments_df,
     )
 
-    executive.build.assert_called_once()
-
-    assert dashboard.executive_summary == summary
+    assert result is dashboard

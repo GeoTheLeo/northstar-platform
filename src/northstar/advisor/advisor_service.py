@@ -5,8 +5,12 @@ Generates business recommendations from
 dashboard intelligence.
 """
 
+from typing import TYPE_CHECKING
+
 from northstar.advisor.recommendation import Recommendation
-from northstar.models.dashboard_data import DashboardData
+
+if TYPE_CHECKING:
+    from northstar.models.dashboard_data import DashboardData
 
 
 class ExecutiveAdvisor:
@@ -16,7 +20,7 @@ class ExecutiveAdvisor:
 
     def advise(
         self,
-        dashboard: DashboardData,
+        dashboard: "DashboardData",
     ) -> list[Recommendation]:
         """
         Produce executive recommendations.

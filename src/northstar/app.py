@@ -17,6 +17,7 @@ from northstar.config import (
     PAGE_TITLE,
 )
 from northstar.controller import NorthStarController
+from northstar.demo import render_demo_selector
 from northstar.logging import logger
 from northstar.navigation import render_workspace_selector
 from northstar.status import render_status_bar
@@ -68,6 +69,16 @@ def main() -> None:
     render_status_bar()
 
     controller = NorthStarController()
+
+    #
+    # Release Candidate:
+    # Demo mode is selected but not yet connected to
+    # the dashboard pipeline.
+    #
+    demo = render_demo_selector()
+
+    # Temporary until RC-2
+    _ = demo
 
     dashboard = controller.dashboard()
 
