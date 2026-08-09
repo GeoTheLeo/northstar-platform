@@ -1,222 +1,102 @@
-# NorthStar AI Learning Intelligence Platform
+<p align="center">
+  <img src="docs/images/northstar_banner.png" alt="NorthStar Banner" width="100%">
+</p>
+
+# NorthStar
+
+## Enterprise Applied AI Decision Intelligence Platform
+
+> **Predictive Analytics • Business Intelligence • Retrieval-Augmented Generation • Executive Decision Support • MLOps**
+
+![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/scikit--learn-Machine%20Learning-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![RAG](https://img.shields.io/badge/RAG-Knowledge%20Retrieval-5C2D91?style=for-the-badge)
+![MLOps](https://img.shields.io/badge/MLOps-Production%20AI-0A7E8C?style=for-the-badge)
+
+---
 
 ## Executive Summary
 
-NorthStar is an end-to-end AI Learning Intelligence Platform designed to support educational institutions through predictive analytics, behavioral segmentation, business intelligence, retrieval-augmented AI, and cloud-native MLOps.
+NorthStar is an **enterprise Applied AI Decision Intelligence Platform** that unifies predictive analytics, business intelligence, retrieval-augmented generation (RAG), executive decision support, and production-inspired MLOps into a single intelligent software platform.
 
-The platform integrates machine learning, analytics engineering, decision intelligence, and generative AI into a unified ecosystem that enables proactive intervention, institutional insight generation, and executive decision support.
+Rather than treating analytics, machine learning, and generative AI as isolated capabilities, NorthStar integrates them into one operational workflow that enables educational organizations to identify learner risk, discover behavioral patterns, generate executive insights, and interact with institutional knowledge through natural language.
 
----
-
-## Business Problem
-
-Educational institutions often struggle to:
-
-- Identify at-risk learners before performance declines
-- Understand behavioral patterns across learner populations
-- Generate actionable insights from fragmented data sources
-- Provide institutional knowledge access at scale
-- Operationalize machine learning systems in production
-
-NorthStar addresses these challenges through an integrated intelligence platform.
+Built as the flagship project of an Applied AI engineering portfolio, NorthStar demonstrates modern software engineering practices including modular architecture, dependency injection, machine learning pipelines, repository abstraction, retrieval-augmented generation, and enterprise-oriented design.
 
 ---
 
-## Platform Architecture
+## Why NorthStar?
 
-![NorthStar Architecture](docs/screenshots/northstar_ai_platform_architecture.png)
+Modern educational institutions generate vast amounts of operational and learner data, yet much of that information remains fragmented across reporting systems, spreadsheets, and institutional knowledge bases.
 
----
+NorthStar consolidates these capabilities into a unified decision platform that empowers institutional leaders to move from reactive reporting to proactive, AI-assisted decision making.
 
-## Platform Components
-
-### Early Warning System
-
-Predictive analytics engine that identifies learners at risk of disengagement or underperformance.
-
-Features:
-
-- Classification Models
-- Risk Scoring
-- Intervention Support
-- Model Monitoring
+The platform combines predictive machine learning, executive analytics, semantic search, and AI-powered recommendations into a cohesive experience designed around real organizational workflows rather than isolated technical demonstrations.
 
 ---
 
-### Learner Segmentation Engine
+## Platform Highlights
 
-Behavioral analytics engine that discovers meaningful learner groups using unsupervised learning.
-
-Features:
-
-- Clustering
-- Behavioral Profiling
-- Engagement Analysis
-- Segment Discovery
-
----
-
-### BI Decision Command Center
-
-Executive analytics dashboard providing real-time institutional visibility.
-
-Features:
-
-- KPI Monitoring
-- Trend Analysis
-- Performance Reporting
-- Interactive Visualizations
+| Capability | Business Outcome |
+|------------|------------------|
+| 🎯 Early Warning System | Predict learners at risk before performance declines |
+| 👥 Learner Segmentation | Discover behavioral cohorts for targeted interventions |
+| 📊 Executive BI Dashboard | Deliver institution-wide KPIs and strategic insights |
+| 🤖 AI Knowledge Assistant | Enable semantic search across institutional knowledge |
+| 🧠 Executive Copilot | Generate AI-powered executive briefings and recommendations |
+| ⚙️ MLOps Foundation | Demonstrate production-inspired deployment and monitoring practices |
 
 ---
 
-### AI Knowledge Assistant
+---
 
-Retrieval-Augmented Generation (RAG) system providing contextual access to institutional knowledge.
+# Business Challenge
 
-Features:
+Educational institutions generate large volumes of learner, engagement, and operational data every day. Despite this abundance of information, many organizations continue to rely on fragmented reporting systems, manual analysis, and reactive intervention strategies.
 
-- Semantic Search
-- Sentence Embeddings
-- Knowledge Retrieval
-- Citation-Based Responses
+As a result, institutional leaders often struggle to:
+
+- Identify learners at risk before performance declines
+- Understand behavioural patterns across diverse learner populations
+- Transform operational data into executive decision intelligence
+- Provide staff with fast, contextual access to institutional knowledge
+- Operationalize machine learning models beyond experimentation
+- Deliver consistent, data-driven intervention strategies across departments
+
+NorthStar addresses these challenges through a unified Applied AI platform that combines predictive analytics, business intelligence, semantic knowledge retrieval, and executive decision support into a single operational ecosystem.
 
 ---
 
-### Executive Copilot
+# Business Value
 
-AI-powered decision-support assistant capable of generating executive briefings and recommendations.
+NorthStar was designed with a business-first philosophy. Every technical capability exists to improve a measurable organisational outcome rather than simply demonstrate an AI technique.
 
-Features:
+| Platform Capability | Business Outcome |
+|---------------------|------------------|
+| 🎯 Early Warning System | Detect learner risk early and support proactive intervention |
+| 👥 Learner Segmentation | Personalise engagement strategies using behavioural analytics |
+| 📊 Executive BI Dashboard | Provide leadership with institution-wide operational visibility |
+| 🤖 AI Knowledge Assistant | Accelerate access to institutional knowledge through semantic search |
+| 🧠 Executive Copilot | Generate executive briefings and strategic recommendations |
+| ⚙️ MLOps Foundation | Demonstrate production-inspired model lifecycle management |
 
-- Executive Summaries
-- Operational Insights
-- Platform Status Reporting
-- Strategic Recommendations
-
----
-
-### MLOps Foundation
-
-Cloud-native operational layer supporting deployment and monitoring of machine learning systems.
-
-Features:
-
-- CI/CD Pipelines
-- Model Registry
-- Monitoring
-- Deployment Automation
+By integrating these capabilities into a single platform, NorthStar demonstrates how Applied AI can move beyond isolated machine learning models to become an operational decision intelligence system.
 
 ---
 
-## Technology Stack
+# Design Principles
 
-### Data Layer
+NorthStar was engineered around a set of architectural principles commonly found in enterprise software systems.
 
-- Python
-- Pandas
-- NumPy
-- SQL
+- **Business-first architecture** where technical components serve measurable organisational objectives.
+- **Modular service design** allowing individual capabilities to evolve independently.
+- **Separation of concerns** through clearly defined domain boundaries.
+- **Dependency injection** to reduce coupling and improve maintainability.
+- **Unified analytics pipeline** that orchestrates predictive analytics, segmentation, business intelligence, and AI-driven recommendations.
+- **Production-inspired engineering practices** including testing, type checking, repository abstraction, and MLOps concepts.
 
-### Machine Learning
-
-- Scikit-Learn
-- Classification Models
-- K-Means Clustering
-
-### Analytics
-
-- Streamlit
-- Plotly
-
-### Generative AI
-
-- Sentence Transformers
-- Semantic Retrieval
-- Retrieval-Augmented Generation (RAG)
-
-### MLOps
-
-- Docker
-- GitHub Actions
-- Model Monitoring
+These principles guided every architectural decision throughout the project and helped create a platform that is both extensible and maintainable.
 
 ---
-
-## System Workflow
-
-Data Sources
-→ Data Engineering
-→ Early Warning
-→ Segmentation
-→ Business Intelligence
-→ Knowledge Assistant
-→ Executive Copilot
-→ Decision Support
-
----
-
-## Key Features
-
-- Predictive Risk Detection
-- Learner Segmentation
-- Executive Dashboards
-- Semantic Search
-- AI-Powered Recommendations
-- Executive Briefings
-- MLOps Integration
-
----
-
-## Screenshots
-
-### Executive Platform
-
-![Executive Platform](docs/screenshots/northstar_overview.png)
-
-### Analytics Dashboard
-
-![Analytics Dashboard](docs/screenshots/northstar_analytics.png)
-
-### Executive Copilot
-
-![Executive Copilot](docs/screenshots/northstar_copilot.png)
-
-### Knowledge Assistant
-
-![AI Knowledge Assistant](docs/screenshots/northstar_rag_assistant.png)
-
----
-
-## Repository Structure
-
-```text
-northstar-platform/
-
-├── src/
-├── data/
-├── docs/
-├── deployment/
-├── infrastructure/
-├── notebooks/
-├── tests/
-└── README.md
-```
-
----
-
-## Future Roadmap
-
-- Azure Deployment
-- Vector Database Integration
-- LLM-Powered Recommendation Engine
-- Real-Time Data Streaming
-- Advanced MLOps Monitoring
-- Multi-Tenant Architecture
-
----
-
-## Author
-
-George Smith
-
-Data Science | Business Intelligence | Machine Learning | AI Engineering
