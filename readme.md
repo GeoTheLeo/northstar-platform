@@ -100,3 +100,74 @@ NorthStar was engineered around a set of architectural principles commonly found
 These principles guided every architectural decision throughout the project and helped create a platform that is both extensible and maintainable.
 
 ---
+
+# Platform Capabilities
+
+NorthStar combines six complementary capabilities into a unified Applied AI decision intelligence platform. Each capability contributes to a measurable organisational outcome while remaining modular and independently maintainable.
+
+| Capability | Description | Business Outcome |
+|------------|-------------|------------------|
+| 🎯 Early Warning System | Predicts learners at risk using supervised machine learning. | Enables proactive intervention before performance declines. |
+| 👥 Learner Segmentation | Groups learners into behavioural cohorts using clustering. | Supports targeted engagement strategies. |
+| 📊 Executive BI Dashboard | Presents KPIs, trends, and executive analytics. | Improves institutional visibility and strategic planning. |
+| 🤖 AI Knowledge Assistant | Uses Retrieval-Augmented Generation (RAG) for semantic search. | Accelerates access to institutional knowledge. |
+| 🧠 Executive Copilot | Generates executive summaries and recommendations. | Supports faster executive decision making. |
+| ⚙️ MLOps Foundation | Demonstrates production-inspired model lifecycle management. | Supports maintainable and scalable AI deployment. |
+
+---
+# Technology Stack
+
+| Layer | Technologies |
+|-------|--------------|
+| Programming | Python 3.11, SQL |
+| Data Engineering | Pandas, NumPy |
+| Machine Learning | Scikit-learn, K-Means Clustering |
+| Business Intelligence | Streamlit, Plotly |
+| Generative AI | Sentence Transformers, Retrieval-Augmented Generation (RAG) |
+| MLOps | Docker, GitHub Actions, Model Monitoring |
+| Architecture | Dependency Injection, Repository Pattern, Modular Services |
+
+---
+# Platform Workflow
+
+```text
+Educational Data
+        │
+        ▼
+Data Engineering
+        │
+        ├──────────────┐
+        ▼              ▼
+Early Warning    Learner Segmentation
+        │              │
+        └──────┬───────┘
+               ▼
+Business Intelligence
+               │
+               ▼
+Executive Decision Layer
+        ├───────────────┐
+        ▼               ▼
+Executive Copilot   Knowledge Assistant (RAG)
+               │
+               ▼
+Institutional Decision Support
+```
+
+---
+# Platform Architecture
+
+NorthStar follows a layered architecture that separates presentation, orchestration, analytics, machine learning services, and infrastructure into clearly defined modules.
+
+This modular approach enables each capability to evolve independently while maintaining a cohesive and maintainable enterprise application.
+
+### Architectural Characteristics
+
+- Business-first architecture
+- Modular service design
+- Dependency injection
+- Repository abstraction
+- Layered application architecture
+- Production-inspired engineering practices
+
+---
