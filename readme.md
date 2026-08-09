@@ -171,3 +171,98 @@ This modular approach enables each capability to evolve independently while main
 - Production-inspired engineering practices
 
 ---
+# Repository Tour
+
+NorthStar is organised into modular packages that separate business capabilities, machine learning workflows, infrastructure, and user interface concerns.
+
+| Package | Responsibility |
+|----------|----------------|
+| `advisor/` | Generates executive recommendations using business rules and AI-assisted reasoning. |
+| `analysis/` | Coordinates the unified analytics pipeline that powers the platform. |
+| `bi/` | Business Intelligence metrics, KPIs, dashboards, and reporting utilities. |
+| `core/` | Shared interfaces, configuration, protocols, and common utilities. |
+| `demo/` | Demonstration scenarios and presentation modes used throughout the platform. |
+| `early_warning/` | Predictive machine learning pipeline for learner risk detection. |
+| `executive/` | Executive workspace components and strategic overview functionality. |
+| `feature_store/` | Centralised feature definitions and reusable feature engineering assets. |
+| `insights/` | Executive insight generation and strategic analysis. |
+| `logging/` | Centralised application logging infrastructure. |
+| `mlops/` | Model registry, metadata, loading, and deployment support. |
+| `models/` | Shared domain models used throughout the application. |
+| `monitoring/` | Platform health monitoring and operational diagnostics. |
+| `navigation/` | Workspace navigation and application routing. |
+| `repositories/` | Repository abstraction supporting multiple data sources. |
+| `segmentation/` | Behavioural clustering and learner segmentation services. |
+| `services/` | Business services coordinating platform workflows. |
+| `simulation/` | Scenario simulation and executive planning tools. |
+| `status/` | Platform status components displayed throughout the UI. |
+| `ui/` | Streamlit presentation layer and user interface components. |
+
+---
+# Engineering Decisions
+
+NorthStar was intentionally engineered as a modular software platform rather than a collection of independent machine learning notebooks.
+
+Several architectural decisions guided the implementation:
+
+- Business capabilities are organised into independent packages with clearly defined responsibilities.
+- Machine learning services remain isolated from presentation logic.
+- Shared domain models minimise duplication across services.
+- Repository abstraction allows future migration to alternative data sources without changing business logic.
+- Dependency injection reduces coupling and improves maintainability.
+- The platform emphasises readability, extensibility, and long-term maintainability over unnecessary complexity.
+
+These principles reflect production-inspired engineering practices commonly found in enterprise AI systems.
+
+---
+# Quality Assurance
+
+NorthStar follows a release-oriented development workflow designed to improve long-term maintainability and reliability.
+
+Quality practices include:
+
+- Static type checking with **mypy**
+- Code quality enforcement with **ruff**
+- Automated testing with **pytest**
+- Modular architecture with dependency injection
+- Repository abstraction
+- Production-inspired MLOps concepts
+- Release candidate stabilisation before publication
+
+This engineering discipline mirrors the software delivery practices used by professional development teams.
+
+---
+# Repository Structure
+
+```text
+northstar-platform/
+│
+├── src/
+│   └── northstar/
+│       ├── advisor/
+│       ├── analysis/
+│       ├── bi/
+│       ├── core/
+│       ├── demo/
+│       ├── early_warning/
+│       ├── executive/
+│       ├── feature_store/
+│       ├── insights/
+│       ├── logging/
+│       ├── mlops/
+│       ├── models/
+│       ├── monitoring/
+│       ├── navigation/
+│       ├── repositories/
+│       ├── segmentation/
+│       ├── services/
+│       ├── simulation/
+│       ├── status/
+│       └── ui/
+│
+├── docs/
+├── tests/
+└── README.md
+```
+
+---
