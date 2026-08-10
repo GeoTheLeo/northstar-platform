@@ -11,58 +11,87 @@ def render_executive_overview(
     dashboard: DashboardData,
 ) -> None:
     """
-    Render a concise executive summary.
+    Render the executive AI briefing.
     """
-
-    st.subheader("🎯 Executive Overview")
-
-    col1, col2, col3 = st.columns(3)
-
-    col1.metric(
-        "Retention",
-        f"{dashboard.retention_rate:.1f}%",
-    )
-
-    col2.metric(
-        "At-Risk Learners",
-        dashboard.at_risk_learners,
-    )
-
-    col3.metric(
-        "Active Recommendations",
-        len(
-            dashboard.recommendations,
-        ),
-    )
-
-    st.divider()
 
     if dashboard.executive_insight is not None:
 
-        st.info(
-            f"""
-### 🧠 Executive AI Insight
+        with st.container(
+            border=True,
+        ):
 
-**{dashboard.executive_insight.headline}**
+            st.markdown(
+                "## 🧠 Executive AI Briefing"
+            )
 
-{dashboard.executive_insight.summary}
+            st.markdown(
+                f"### {dashboard.executive_insight.headline}"
+            )
 
-**Confidence:** {dashboard.executive_insight.confidence:.0%}
-"""
-        )
+            st.write(
+                dashboard.executive_insight.summary
+            )
 
-    st.divider()
+            st.progress(
+                dashboard.executive_insight.confidence
+            )
+
+            st.caption(
+                f"Confidence Score: "
+                f"{dashboard.executive_insight.confidence:.0%}"
+            )
+
+    st.write("")
 
     st.markdown(
-        "### 🚀 Top Recommendations"
+        "## 🚀 Priority Actions"
     )
 
-    for recommendation in dashboard.recommendations[:3]:
+    priority_icons = {
+        "HIGH": "🔴",
+        "MEDIUM": "🟡",
+        "LOW": "🟢",
+    }
 
-        st.markdown(
-            f"""
-**{recommendation.priority}** — {recommendation.title}
+    for recommendation in dashboard.recommendations:
 
-{recommendation.action}
-"""
+        icon = priority_icons.get(
+            recommendation.priority,
+            "⚪",
         )
+
+        with st.container(
+            border=True,
+        ):
+
+            left, right = st.columns(
+                [1, 8],
+            )
+
+            with left:
+
+                st.markdown(
+                    f"# {icon}"
+                )
+
+            with right:
+
+                st.markdown(
+                    f"### {recommendation.title}"
+                )
+
+                st.caption(
+                    recommendation.priority
+                )
+
+                st.write(
+                    recommendation.rationale
+                )
+
+                st.markdown(
+                    f"**Recommended Action**"
+                )
+
+                st.write(
+                    recommendation.action
+                )

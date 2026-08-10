@@ -1,6 +1,8 @@
 """
-NorthStar Platform Health View.
+NorthStar Platform Services View.
 """
+
+import math
 
 import streamlit as st
 
@@ -9,16 +11,12 @@ from northstar.monitoring import PlatformMonitor
 
 def render_platform_health() -> None:
     """
-    Render platform operational status.
+    Render platform operational services.
     """
 
     monitor = PlatformMonitor()
 
     checks = monitor.run()
-
-    st.subheader(
-        "🖥️ Platform Health"
-    )
 
     healthy = sum(
         check.healthy
@@ -26,45 +24,83 @@ def render_platform_health() -> None:
     )
 
     score = round(
-        healthy
-        / len(checks)
-        * 100,
+        healthy / len(checks) * 100,
         1,
     )
+
+    # --------------------------------------------------
+    # Platform Status Banner
+    # --------------------------------------------------
 
     if score == 100:
 
         st.success(
-            f"Overall Platform Health: {score:.0f}%"
+            f"🟢 All platform services operational ({score:.0f}%)"
         )
 
     elif score >= 80:
 
         st.warning(
-            f"Overall Platform Health: {score:.0f}%"
+            f"🟡 Platform operational with warnings ({score:.0f}%)"
         )
 
     else:
 
         st.error(
-            f"Overall Platform Health: {score:.0f}%"
+            f"🔴 Platform requires attention ({score:.0f}%)"
         )
 
-    st.divider()
+    st.write("")
 
-    for check in checks:
+    # --------------------------------------------------
+    # Platform Services
+    # --------------------------------------------------
 
-        icon = (
-            "🟢"
-            if check.healthy
-            else "🔴"
+    st.subheader("🖥 Platform Services")
+
+    columns_per_row = 2
+
+    total_rows = math.ceil(
+        len(checks) / columns_per_row
+    )
+
+    for row in range(total_rows):
+
+        left, right = st.columns(
+            2,
+            gap="large",
         )
 
-        st.write(
-            f"{icon} "
-            f"**{check.component}**"
-        )
+        row_checks = checks[
+            row * columns_per_row:
+            (row + 1) * columns_per_row
+        ]
 
-        st.caption(
-            check.message
-        )
+        for column, check in zip(
+            [left, right],
+            row_checks,
+        ):
+
+            with column:
+
+                with st.container(
+                    border=True,
+                ):
+
+                    status = (
+                        "🟢 Online"
+                        if check.healthy
+                        else "🔴 Offline"
+                    )
+
+                    st.markdown(
+                        f"### {check.component}"
+                    )
+
+                    st.markdown(
+                        f"**Status:** {status}"
+                    )
+
+                    st.caption(
+                        check.message
+                    )

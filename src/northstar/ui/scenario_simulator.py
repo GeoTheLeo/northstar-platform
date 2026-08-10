@@ -15,113 +15,248 @@ def render_scenario_simulator(
     dashboard: DashboardData,
 ) -> None:
     """
-    Render executive simulator.
+    Render the Executive Scenario Simulator.
     """
 
     st.header(
         "🎮 Executive Scenario Simulator"
     )
 
-    attendance = st.slider(
-        "Attendance Change (%)",
-        -30,
-        30,
-        0,
+    st.markdown(
+        """
+Model the impact of strategic interventions before
+implementation. Adjust key institutional variables and
+evaluate the projected effect on learner retention and
+risk.
+"""
     )
 
-    engagement = st.slider(
-        "Engagement Change (%)",
-        -30,
-        30,
-        0,
+    st.divider()
+
+    # --------------------------------------------------
+    # Scenario Controls
+    # --------------------------------------------------
+
+    left, right = st.columns(
+        [3, 2],
+        gap="large",
     )
 
-    assessment = st.slider(
-        "Assessment Change (%)",
-        -30,
-        30,
-        0,
-    )
+    with left:
 
-    if not st.button(
-        "Run Simulation",
-    ):
+        st.subheader(
+            "Scenario Inputs"
+        )
+
+        attendance = st.slider(
+            "Attendance Change (%)",
+            -30,
+            30,
+            0,
+            help="Simulate improvements or declines in learner attendance.",
+        )
+
+        engagement = st.slider(
+            "Engagement Change (%)",
+            -30,
+            30,
+            0,
+            help="Adjust overall learner engagement.",
+        )
+
+        assessment = st.slider(
+            "Assessment Change (%)",
+            -30,
+            30,
+            0,
+            help="Model changes in assessment performance.",
+        )
+
+        run = st.button(
+            "🚀 Run Executive Simulation",
+            use_container_width=True,
+        )
+
+    with right:
+
+        st.subheader(
+            "Simulation Overview"
+        )
+
+        st.metric(
+            "Current Retention",
+            f"{dashboard.retention_rate:.1f}%",
+            border=True,
+        )
+
+        st.metric(
+            "Current At-Risk",
+            dashboard.at_risk_learners,
+            border=True,
+        )
+
+        st.info(
+            """
+The simulator projects how operational
+changes may influence institutional
+performance before implementation.
+"""
+        )
+
+    if not run:
         return
 
-    simulator = ScenarioSimulator()
+    # --------------------------------------------------
+    # Execute Simulation
+    # --------------------------------------------------
 
-    simulated_dashboard = simulator.analyse(
-        dashboard.learner_df,
-        Scenario(
-            attendance_delta=attendance / 100,
-            engagement_delta=engagement / 100,
-            assessment_delta=assessment / 100,
-        ),
+    with st.spinner(
+        "Running executive simulation..."
+    ):
+
+        simulator = ScenarioSimulator()
+
+        simulated_dashboard = simulator.analyse(
+            dashboard.learner_df,
+            Scenario(
+                attendance_delta=attendance / 100,
+                engagement_delta=engagement / 100,
+                assessment_delta=assessment / 100,
+            ),
+        )
+
+    st.success(
+        "Simulation completed successfully."
     )
+
+    st.divider()
+
+    # --------------------------------------------------
+    # Before vs After
+    # --------------------------------------------------
 
     st.subheader(
-        "Executive Impact"
+        "📈 Projected Institutional Impact"
     )
 
-    before, after = st.columns(2)
+    before, after = st.columns(
+        2,
+        gap="large",
+    )
 
     with before:
 
-        st.metric(
-            "Retention",
-            f"{dashboard.retention_rate:.1f}%",
-        )
+        with st.container(border=True):
 
-        st.metric(
-            "At-Risk Learners",
-            dashboard.at_risk_learners,
-        )
+            st.markdown(
+                "### Current State"
+            )
+
+            st.metric(
+                "Retention",
+                f"{dashboard.retention_rate:.1f}%",
+            )
+
+            st.metric(
+                "At-Risk Learners",
+                dashboard.at_risk_learners,
+            )
 
     with after:
 
-        st.metric(
-            "Retention",
-            f"{simulated_dashboard.retention_rate:.1f}%",
-        )
+        with st.container(border=True):
 
-        st.metric(
-            "At-Risk Learners",
-            simulated_dashboard.at_risk_learners,
-        )
+            st.markdown(
+                "### Simulated Outcome"
+            )
+
+            st.metric(
+                "Retention",
+                f"{simulated_dashboard.retention_rate:.1f}%",
+                delta=(
+                    f"{simulated_dashboard.retention_rate - dashboard.retention_rate:+.1f}%"
+                ),
+            )
+
+            st.metric(
+                "At-Risk Learners",
+                simulated_dashboard.at_risk_learners,
+                delta=(
+                    simulated_dashboard.at_risk_learners
+                    - dashboard.at_risk_learners
+                ),
+            )
 
     st.divider()
+
+    # --------------------------------------------------
+    # Executive Assessment
+    # --------------------------------------------------
 
     if simulated_dashboard.executive_insight:
 
         insight = simulated_dashboard.executive_insight
 
-        st.info(
-            f"""
-### Executive Assessment
+        with st.container(border=True):
 
-**{insight.headline}**
+            st.subheader(
+                "🧠 Executive Assessment"
+            )
 
-{insight.summary}
+            st.markdown(
+                f"### {insight.headline}"
+            )
 
-Confidence:
-{insight.confidence:.0%}
-"""
-        )
+            st.write(
+                insight.summary
+            )
+
+            st.progress(
+                insight.confidence
+            )
+
+            st.caption(
+                f"Confidence Score: "
+                f"{insight.confidence:.0%}"
+            )
 
     st.divider()
 
-    st.markdown(
-        "### Top Recommendations"
+    # --------------------------------------------------
+    # Recommended Actions
+    # --------------------------------------------------
+
+    st.subheader(
+        "🚀 Recommended Actions"
     )
+
+    priority_icons = {
+        "HIGH": "🔴",
+        "MEDIUM": "🟡",
+        "LOW": "🟢",
+    }
 
     for recommendation in simulated_dashboard.recommendations[:3]:
 
-        st.markdown(
-            f"""
-**{recommendation.priority}**
-
-{recommendation.title}
-
-{recommendation.action}
-"""
+        icon = priority_icons.get(
+            recommendation.priority,
+            "⚪",
         )
+
+        with st.container(border=True):
+
+            st.markdown(
+                f"### {icon} {recommendation.title}"
+            )
+
+            st.write(
+                recommendation.rationale
+            )
+
+            st.markdown(
+                "**Recommended Action**"
+            )
+
+            st.write(
+                recommendation.action
+            )

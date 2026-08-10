@@ -17,3 +17,10 @@ outputs/
 # OS
 .DS_Store
 Thumbs.db
+
+# Backup bundles
+*.bundle
+
+# Runtime logs
+logs/
+*.log

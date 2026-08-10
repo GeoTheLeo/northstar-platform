@@ -28,28 +28,49 @@ def render_metrics(
     Render executive KPI metrics.
     """
 
-    st.subheader("📈 Executive KPI Command Center")
+    # --------------------------------------------------
+    # Executive KPI Command Center
+    # --------------------------------------------------
 
-    col1, col2, col3 = st.columns(3)
-
-    col1.metric(
-        "Retention",
-        f"{dashboard.retention_rate:.1f}%",
+    retention_col, churn_col, intervention_col = st.columns(
+        3,
+        gap="large",
     )
 
-    col2.metric(
-        "Churn",
-        f"{dashboard.churn_rate:.1f}%",
-    )
+    with retention_col:
 
-    col3.metric(
-        "Intervention",
-        f"{dashboard.intervention_rate:.1f}%",
-    )
+        st.metric(
+            label="🎯 Retention Rate",
+            value=f"{dashboard.retention_rate:.1f}%",
+            delta="Target 90%",
+            border=True,
+        )
 
-    st.divider()
+    with churn_col:
 
-    st.markdown("### Platform Health")
+        st.metric(
+            label="📉 Churn Rate",
+            value=f"{dashboard.churn_rate:.1f}%",
+            delta="Lower is better",
+            border=True,
+        )
+
+    with intervention_col:
+
+        st.metric(
+            label="🚀 Intervention Rate",
+            value=f"{dashboard.intervention_rate:.1f}%",
+            delta="Learner Success",
+            border=True,
+        )
+
+    st.write("")
+
+    # --------------------------------------------------
+    # Platform Health
+    # --------------------------------------------------
+
+    st.subheader("🖥 Platform Health Overview")
 
     statuses = calculate_platform_health(
         dashboard,
@@ -57,6 +78,7 @@ def render_metrics(
 
     columns = st.columns(
         len(statuses),
+        gap="large",
     )
 
     total_score = 0.0
@@ -71,17 +93,22 @@ def render_metrics(
         with column:
 
             st.metric(
-                status.label,
-                f"{status.score:.1f}%",
-                status.trend,
+                label=status.label,
+                value=f"{status.score:.1f}%",
+                delta=status.trend,
+                border=True,
             )
 
-            st.write(
+            st.caption(
                 f"{_status_icon(status.status)} "
                 f"{status.status}"
             )
 
-    st.divider()
+    st.write("")
+
+    # --------------------------------------------------
+    # Overall Platform Score
+    # --------------------------------------------------
 
     platform_score = round(
         total_score / len(statuses),
@@ -91,17 +118,17 @@ def render_metrics(
     if platform_score >= 90:
 
         st.success(
-            f"Overall Platform Health: {platform_score:.1f}%"
+            f"🟢 Overall Platform Health: {platform_score:.1f}%"
         )
 
     elif platform_score >= 80:
 
         st.warning(
-            f"Overall Platform Health: {platform_score:.1f}%"
+            f"🟡 Overall Platform Health: {platform_score:.1f}%"
         )
 
     else:
 
         st.error(
-            f"Overall Platform Health: {platform_score:.1f}%"
+            f"🔴 Overall Platform Health: {platform_score:.1f}%"
         )

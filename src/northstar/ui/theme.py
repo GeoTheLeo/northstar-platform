@@ -1,7 +1,7 @@
 """
 Platform Theme
 
-Loads the shared stylesheet used throughout the
+Loads my shared stylesheet used throughout the
 NorthStar Streamlit application.
 """
 

@@ -1,34 +1,141 @@
-.metric-card {
+/* ==========================================================
+   NorthStar Executive Platform Theme
+   ========================================================== */
+
+/* ---------- Layout ---------- */
+
+.block-container {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    max-width: 1500px;
+}
+
+/* ---------- Headers ---------- */
+
+h1 {
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+h2 {
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+    font-weight: 650;
+}
+
+h3 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+/* ---------- Metric Cards ---------- */
+
+div[data-testid="stMetric"] {
+
     background: linear-gradient(
         135deg,
-        rgba(17,24,39,0.95),
-        rgba(30,41,59,0.95)
+        rgba(20, 27, 45, 0.96),
+        rgba(31, 41, 55, 0.96)
     );
 
-    padding: 24px;
+    border: 1px solid rgba(82, 163, 255, 0.18);
 
     border-radius: 16px;
 
+    padding: 1.15rem;
+
     box-shadow:
-        0px 8px 24px rgba(0,0,0,0.35);
+        0 10px 25px rgba(0,0,0,0.30);
 
-    border: 1px solid rgba(255,255,255,0.08);
-
-    text-align: center;
-
-    margin-bottom: 10px;
+    transition: 0.25s ease;
 }
 
-.metric-title {
-    font-size: 14px;
-    color: #BFC7D5;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+div[data-testid="stMetric"]:hover {
+
+    transform: translateY(-2px);
+
+    border-color: rgba(82,163,255,0.45);
 }
 
-.metric-value {
-    font-size: 36px;
+/* ---------- Metric Label ---------- */
+
+div[data-testid="stMetricLabel"] {
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    color: #CBD5E1;
+}
+
+/* ---------- Metric Value ---------- */
+
+div[data-testid="stMetricValue"] {
+
+    font-size: 2rem;
+
     font-weight: 700;
+
     color: white;
+}
+
+/* ---------- Metric Delta ---------- */
+
+div[data-testid="stMetricDelta"] {
+
+    font-size: 0.85rem;
+}
+
+/* ---------- Containers ---------- */
+
+div[data-testid="stVerticalBlockBorderWrapper"] {
+
+    border-radius: 16px;
+}
+
+/* ---------- Status Boxes ---------- */
+
+div[data-testid="stAlert"] {
+
+    border-radius: 14px;
+}
+
+/* ---------- Progress ---------- */
+
+div[data-testid="stProgressBar"] {
+
+    height: 10px;
+}
+
+/* ---------- Sidebar ---------- */
+
+section[data-testid="stSidebar"] {
+
+    border-right: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ---------- Buttons ---------- */
+
+button[kind="primary"] {
+
+    border-radius: 12px;
+}
+
+/* ---------- Tables ---------- */
+
+thead tr th {
+
+    font-weight: 700;
+}
+
+/* ---------- Dividers ---------- */
+
+hr {
+
+    margin-top: 1.5rem;
+
+    margin-bottom: 1.5rem;
+
+    opacity: 0.25;
 }

@@ -12,29 +12,34 @@ def render_activity() -> None:
     Render platform activity.
     """
 
-    st.subheader("📈 Executive Activity Timeline")
-
     events = activity_log.recent()
 
     if not events:
 
-        st.info("No activity recorded.")
+        st.info(
+            "No activity recorded."
+        )
 
         return
 
     for event in events:
 
-        with st.container(border=True):
+        with st.container(
+            border=True,
+        ):
 
             left, right = st.columns(
-                [1, 5],
+                [1, 7],
+                gap="medium",
             )
 
             with left:
 
+                st.markdown("### ⏱")
+
                 st.caption(
                     event.timestamp.strftime(
-                        "%H:%M:%S",
+                        "%H:%M"
                     )
                 )
 
@@ -45,5 +50,5 @@ def render_activity() -> None:
                 )
 
                 st.write(
-                    event.message,
+                    event.message
                 )

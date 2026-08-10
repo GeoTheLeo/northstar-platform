@@ -20,24 +20,65 @@ def render_dashboard(
 
     st.header("🏠 Executive Dashboard")
 
-    render_metrics(
-        dashboard,
+    st.markdown(
+        """
+Executive summary of institutional performance,
+AI-generated insights,
+platform health,
+and operational activity.
+"""
     )
 
-    st.divider()
+    st.write("")
 
-    render_executive_overview(
-        dashboard,
+    # ==================================================
+    # Executive Hero Area
+    # ==================================================
+
+    left, right = st.columns(
+        [5, 4],
+        gap="large",
     )
 
+    with left:
+
+        st.subheader(
+            "📊 Executive KPI Command Center"
+        )
+
+        render_metrics(
+            dashboard,
+        )
+
+    with right:
+
+        st.subheader(
+            "🧠 Executive Summary"
+        )
+
+        render_executive_overview(
+            dashboard,
+        )
+
     st.divider()
 
-    st.subheader("🖥 Platform Status")
+    # ==================================================
+    # Operations
+    # ==================================================
 
-    render_platform_health()
+    operations, activity = st.columns(
+        [2, 3],
+        gap="large",
+    )
 
-    st.divider()
+    with operations:
 
-    st.subheader("📈 Recent Platform Activity")
+        render_platform_health()
 
-    render_activity()
+    with activity:
+
+        st.subheader(
+            "📈 Recent Platform Activity"
+        )
+
+        render_activity()
