@@ -449,6 +449,41 @@ RAG Generation
        ↓
 Grounded Response
 
+## 🖥 Platform Health
+
+The Platform Health workspace provides operational visibility into the services supporting the NorthStar decision-intelligence platform.
+
+While the executive workspaces focus on institutional performance and strategic decision support, Platform Health provides visibility into whether the underlying platform services are functioning as expected.
+
+### Platform Services
+
+![Platform Health](docs/screenshots/platform_health.png)
+
+The workspace presents an immediate operational status for the services supporting NorthStar.
+
+Platform monitoring provides visibility into components such as:
+
+- **Data Services** — availability of the data resources supporting platform analytics.
+- **Analytics Services** — readiness of analytical processing and KPI generation.
+- **AI Services** — operational status of intelligent decision-support capabilities.
+- **Platform Components** — service-level readiness across the application ecosystem.
+
+The interface is deliberately designed for rapid interpretation: operational services can be identified without requiring users to inspect infrastructure logs or diagnostic output.
+
+### Operational Awareness
+
+Platform Health introduces an important distinction between **business intelligence** and **platform intelligence**.
+
+```text
+Business Intelligence
+        ↓
+What is happening within the organization?
+
+
+Platform Intelligence
+        ↓
+Are the systems producing that intelligence operational?
+
 # Technology Stack
 
 ## Data
