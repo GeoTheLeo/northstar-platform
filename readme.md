@@ -417,6 +417,37 @@ Executive Briefing
 Leadership Review
        ↓
 Strategic Action
+## 💬 Knowledge Assistant
+
+The NorthStar Knowledge Assistant provides a conversational interface for retrieving and exploring institutional knowledge through a Retrieval-Augmented Generation (RAG) workflow.
+
+Rather than relying solely on a generative model's internal knowledge, the assistant is designed to ground responses in the platform's available knowledge sources.
+
+### Conversational Knowledge Retrieval
+
+The assistant provides a natural-language interface for executive and operational questions.
+
+Users can ask questions directly rather than manually navigating documents, analytical outputs, or institutional information.
+
+The workflow is designed around:
+
+- **Natural-language questions** — users interact conversationally rather than through predefined queries.
+- **Semantic retrieval** — relevant knowledge is identified based on meaning rather than simple keyword matching.
+- **Contextual generation** — retrieved information provides context for the generated response.
+- **Executive accessibility** — complex institutional information can be explored through a straightforward conversational interface.
+
+### RAG Decision Flow
+
+```text
+Executive Question
+       ↓
+Semantic Retrieval
+       ↓
+Relevant Context
+       ↓
+RAG Generation
+       ↓
+Grounded Response
 
 # Technology Stack
 
