@@ -397,6 +397,27 @@ AI Assessment
        ↓
 Strategic Recommendation
 
+## 🤖 Executive Copilot
+
+The NorthStar Executive Copilot provides an AI-assisted executive briefing interface designed to convert platform intelligence into concise leadership-oriented summaries.
+
+Rather than requiring executives to navigate individual analytical workspaces, the Copilot provides a focused mechanism for generating an executive-level briefing from the platform's available intelligence.
+
+### Executive Briefing
+
+The Copilot is designed around a simple executive workflow:
+
+```text
+Platform Intelligence
+       ↓
+AI Synthesis
+       ↓
+Executive Briefing
+       ↓
+Leadership Review
+       ↓
+Strategic Action
+
 # Technology Stack
 
 ## Data
