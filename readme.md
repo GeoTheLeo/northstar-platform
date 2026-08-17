@@ -193,7 +193,7 @@ deployment readiness, metadata, and model versioning across the
 NorthStar platform.
 
 ------------------------------------------------------------------------
-# 📈 Activity Timeline
+## 📈 Activity Timeline
 
 ![Activity Timeline](docs/screenshots/activity_timeline.png)
 
@@ -201,6 +201,101 @@ Chronological operational events provide executive visibility into
 platform activity.
 
 ------------------------------------------------------------------------
+# 🖥 Product Tour
+
+The NorthStar application provides a collection of purpose-built executive workspaces, each designed around a specific decision-support responsibility.
+
+The following sections demonstrate the platform from an executive user's perspective.
+
+---
+
+## 🏠 Executive Dashboard
+
+The Executive Dashboard serves as the primary command center for institutional leadership.
+
+It consolidates platform health, executive KPIs, AI-generated intelligence, and prioritized actions into a single decision-support workspace.
+
+### Executive Overview
+
+![Executive Dashboard Overview](docs/screenshots/executive_dashboard_overview.png)
+
+The overview provides an immediate snapshot of institutional performance and operational readiness.
+
+Key information is surfaced through:
+
+- **Platform Status** — immediate visibility into system readiness.
+- **Executive KPIs** — retention, churn, and intervention indicators.
+- **Executive AI Briefing** — concise interpretation of current institutional conditions.
+- **Priority Actions** — recommendations surfaced for executive attention.
+
+The interface is deliberately designed to minimize the distance between **data, interpretation, and action**.
+
+### Operational Intelligence
+
+![Executive Dashboard Operations](docs/screenshots/executive_dashboard_details.png)
+
+The operational view extends the executive workspace with platform health and recent activity.
+
+This provides leadership with visibility into both **institutional performance** and the operational systems supporting that intelligence.
+
+### Decision-Support Role
+
+The Executive Dashboard is not intended to replace detailed analytical workflows.
+
+Instead, it functions as the platform's **executive entry point**:
+
+```text
+Institutional Data
+       ↓
+Executive KPIs
+       ↓
+AI Interpretation
+       ↓
+Priority Actions
+       ↓
+Executive Decision
+
+## 📊 Analytics Workspace
+
+The Analytics Workspace provides the analytical layer behind NorthStar's executive decision-support experience.
+
+Rather than presenting isolated visualizations, the workspace connects behavioral data, learner outcomes, segmentation, and executive recommendations to help identify the factors influencing institutional performance.
+
+### Executive Analytics
+
+![Analytics Overview](docs/screenshots/analytics_overview.png)
+
+The workspace provides an analytical view of institutional behavior and performance, allowing users to move from high-level executive indicators into the underlying evidence.
+
+Key analytical capabilities include:
+
+- **Attendance Analysis** — examine participation patterns across the learner population.
+- **Engagement Analysis** — evaluate relationships between engagement and assessment outcomes.
+- **Behavioral Segmentation** — identify distinct learner groups through clustering.
+- **Executive Recommendations** — connect analytical findings to prioritized actions.
+
+### Engagement & Outcome Analysis
+
+![Analytics Engagement](docs/screenshots/analytics_engagement.png)
+
+The engagement analysis provides a deeper view of the relationship between learner engagement and assessment performance.
+
+This helps move the platform from descriptive reporting toward **diagnostic intelligence**: identifying patterns that may explain why outcomes differ across populations.
+
+### Analytical Decision Flow
+
+```text
+Behavioral Data
+       ↓
+Exploratory Analysis
+       ↓
+Pattern Detection
+       ↓
+Segmentation
+       ↓
+Performance Interpretation
+       ↓
+Executive Recommendation
 
 # Technology Stack
 
