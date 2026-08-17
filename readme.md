@@ -344,6 +344,59 @@ Strategic Recommendation
        ↓
 Executive Action
 
+## 🎮 Executive Scenario Simulator
+
+The Executive Scenario Simulator extends NorthStar from observation and diagnosis into **prospective decision support**.
+
+Executives can test hypothetical changes to key institutional drivers and evaluate their projected impact before implementing an intervention.
+
+### Scenario Configuration
+
+![Scenario Inputs](docs/screenshots/scenario_inputs.png)
+
+The simulator allows decision-makers to adjust:
+
+- **Attendance**
+- **Engagement**
+- **Assessment Performance**
+
+Each variable can be modified independently to model potential changes in institutional conditions.
+
+This creates a controlled environment for exploring **what-if scenarios** rather than relying solely on historical analysis.
+
+### Projected Executive Impact
+
+![Scenario Results](docs/screenshots/scenario_results_1.png)
+
+The simulator compares baseline performance against the projected scenario, allowing executives to evaluate potential changes in:
+
+- **Retention**
+- **At-Risk Learners**
+- **Institutional Performance**
+
+The comparison makes the potential effect of an intervention immediately visible.
+
+### AI-Assisted Scenario Assessment
+
+![Scenario Results Continued](docs/screenshots/scenario_results_2.png)
+
+Scenario results are further interpreted through executive assessment and prioritized recommendations.
+
+This connects simulation with the broader NorthStar decision-intelligence workflow:
+
+```text
+Current State
+       ↓
+Scenario Definition
+       ↓
+Simulation
+       ↓
+Projected Impact
+       ↓
+AI Assessment
+       ↓
+Strategic Recommendation
+
 # Technology Stack
 
 ## Data
