@@ -484,6 +484,33 @@ Platform Intelligence
         ↓
 Are the systems producing that intelligence operational?
 
+## 📦 Model Registry
+
+The Model Registry provides a centralized view of the machine learning assets supporting the NorthStar platform.
+
+It represents the transition from individual machine learning experiments toward **managed, reusable, and operationally visible model assets**.
+
+### Model Lifecycle Visibility
+
+![Model Registry](docs/screenshots/model_registry.png)
+
+The registry provides visibility into the models used across the platform and their associated operational metadata.
+
+This supports a structured model lifecycle:
+
+```text
+Model Development
+       ↓
+Model Evaluation
+       ↓
+Model Registration
+       ↓
+Model Deployment
+       ↓
+Model Monitoring
+       ↓
+Model Lifecycle Management
+
 # Technology Stack
 
 ## Data
