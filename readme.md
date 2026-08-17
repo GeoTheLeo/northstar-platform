@@ -297,6 +297,53 @@ Performance Interpretation
        ↓
 Executive Recommendation
 
+## 🧠 AI Insights
+
+The AI Insights workspace transforms analytical signals into concise, decision-oriented intelligence for institutional leadership.
+
+Rather than presenting AI as an isolated chatbot, NorthStar positions intelligent interpretation directly within the analytical workflow.
+
+### AI-Powered Analysis
+
+![AI Insights Analysis](docs/screenshots/ai_insights_analysis.png)
+
+The analysis workspace connects institutional performance indicators with AI-generated interpretation.
+
+It is designed to help executives quickly understand:
+
+- **What is changing**
+- **Where risk is emerging**
+- **Which learner populations require attention**
+- **What the analytical signals suggest**
+- **Where intervention may be appropriate**
+
+This creates an intelligence layer between quantitative analysis and executive decision-making.
+
+### Strategic Recommendations
+
+![AI Insights Recommendations](docs/screenshots/ai_insights_recommendations.png)
+
+NorthStar converts analytical findings into prioritized strategic recommendations.
+
+Recommendations are presented with explicit priority levels and actionable guidance so that executives can move from **insight to intervention** without manually translating analytical findings into operational steps.
+
+### Decision Intelligence
+
+The AI Insights workflow can be summarized as:
+
+```text
+Analytical Signals
+       ↓
+Pattern Interpretation
+       ↓
+Risk Identification
+       ↓
+AI-Generated Insight
+       ↓
+Strategic Recommendation
+       ↓
+Executive Action
+
 # Technology Stack
 
 ## Data
