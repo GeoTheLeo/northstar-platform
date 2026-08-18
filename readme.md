@@ -511,6 +511,50 @@ Model Monitoring
        ↓
 Model Lifecycle Management
 
+## 📈 Activity Timeline
+
+The Activity Timeline provides operational visibility into recent platform events and system activity.
+
+It gives executives and platform operators a concise chronological view of what the NorthStar platform has been doing, providing additional context around analytical and AI workflows.
+
+### Recent Platform Activity
+
+![Activity Timeline](docs/screenshots/activity_timeline.png)
+
+The timeline presents recent platform events in a compact, chronological format.
+
+This provides visibility into:
+
+- **Platform Events** — recent activity occurring across the application.
+- **Operational Context** — additional context surrounding platform operations.
+- **System Transparency** — a visible record of recent activity rather than an opaque application state.
+- **Executive Awareness** — a concise view of activity relevant to platform oversight.
+
+### Operational Visibility
+
+The Activity Timeline complements Platform Health.
+
+**Platform Health** answers:
+
+> Is the platform operational?
+
+**Activity Timeline** answers:
+
+> What has the platform been doing?
+
+Together, they provide a broader operational perspective:
+
+```text
+Platform Health
+       ↓
+Service Readiness
+       ↓
+Activity Timeline
+       ↓
+Recent Platform Events
+       ↓
+Operational Awareness
+
 # Technology Stack
 
 ## Data
