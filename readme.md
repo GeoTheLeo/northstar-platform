@@ -586,6 +586,58 @@ Operational Awareness
 -   Docker
 -   GitHub Actions
 
+# Engineering Highlights
+
+NorthStar is designed as an applied AI platform rather than a collection of isolated machine learning experiments.
+
+The engineering approach emphasizes maintainability, separation of concerns, operational visibility, and clear interfaces between analytical and AI capabilities.
+
+### Architecture & Software Engineering
+
+- **Layered Architecture** — separates platform responsibilities into clear application layers.
+- **Repository Pattern** — isolates data access from application and analytical logic.
+- **Modular UI Architecture** — individual executive workspaces are implemented as independent components.
+- **Typed Domain Models** — structured models provide explicit contracts between platform components.
+- **Configuration Management** — shared application configuration is centralized rather than duplicated.
+- **Reusable Services** — analytical, monitoring, AI, and decision-support capabilities are designed as reusable components.
+
+### Applied AI Engineering
+
+- **Predictive Analytics** — machine learning models identify institutional risk patterns.
+- **Behavioral Segmentation** — clustering identifies meaningful learner populations.
+- **Retrieval-Augmented Generation** — semantic retrieval provides contextual grounding for AI responses.
+- **Executive Decision Support** — analytical signals are transformed into prioritized recommendations.
+- **Scenario Simulation** — hypothetical interventions can be evaluated before implementation.
+- **AI-Assisted Briefing** — platform intelligence can be synthesized into executive-oriented summaries.
+
+### MLOps & Operational Design
+
+- **Model Registry** — provides visibility into machine learning assets and lifecycle management.
+- **Platform Monitoring** — operational health is surfaced directly within the application.
+- **Activity Logging** — recent platform activity provides operational context and transparency.
+- **Containerization** — Docker-oriented deployment supports reproducible application environments.
+- **Observability** — operational status and system activity are treated as first-class platform concerns.
+
+### Engineering Philosophy
+
+NorthStar is intentionally designed around the principle that an effective enterprise AI system requires more than a high-performing model.
+
+A production-oriented platform must connect:
+
+```text
+Data
+  ↓
+Analytics
+  ↓
+Machine Learning
+  ↓
+AI Intelligence
+  ↓
+Decision Support
+  ↓
+Application Experience
+  ↓
+Operational Monitoring
 ------------------------------------------------------------------------
 
 # Repository Structure
