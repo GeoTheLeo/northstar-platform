@@ -1,0 +1,16 @@
+name: Keep Streamlit App Warm
+
+on:
+  schedule:
+    - cron: "*/20 * * * *"
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Streamlit Cloud app
+        run: |
+          curl -sSf --max-time 30 \
+            "https://northstar-platform-cczqh4zin3yk8emg2ciaor.streamlit.app/" \
+            > /dev/null
