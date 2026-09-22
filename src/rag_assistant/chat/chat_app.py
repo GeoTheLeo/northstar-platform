@@ -3,8 +3,11 @@ NorthStar AI Knowledge Assistant Web Application.
 """
 
 import streamlit as st
+from dotenv import load_dotenv
 
 from rag_assistant.chat.assistant import ask_assistant
+
+load_dotenv()
 
 
 def main() -> None:
