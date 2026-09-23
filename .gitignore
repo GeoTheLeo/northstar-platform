@@ -29,3 +29,6 @@ Thumbs.db
 # Runtime logs
 logs/
 *.log
+
+# Agentic Intervention Copilot - generated demo/audit output, not fixture data
+data/intervention_audit_log.csv
