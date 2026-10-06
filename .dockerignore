@@ -12,3 +12,4 @@ notebooks/
 sql/
 logs/
 data/warehouse/
+data/vector_store/

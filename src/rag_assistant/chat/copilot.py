@@ -4,26 +4,11 @@ NorthStar Executive Copilot.
 Generates executive-level platform briefings, grounded in live platform metrics.
 """
 
-import os
-
-from openai import OpenAI
-
+from rag_assistant import llm
 from rag_assistant.data.platform_context import (
     get_platform_context,
 )
-
-MODEL = "gpt-4o-mini"
-
-_client = None
-
-
-def _get_client():
-    global _client
-
-    if _client is None:
-        _client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-
-    return _client
+from rag_assistant.observability.tracing import get_tracer
 
 
 def generate_executive_brief() -> str:
@@ -36,28 +21,30 @@ def generate_executive_brief() -> str:
 
     try:
 
-        response = _get_client().chat.completions.create(
-            model=MODEL,
-            messages=[
-                {
-                    "role": "system",
-                    "content": (
-                        "You are the NorthStar Executive Copilot. Write a concise executive "
-                        "briefing for school leadership using ONLY the metrics provided below "
-                        "— do not invent numbers not present in them. Structure the briefing "
-                        "as: a short 'Current Platform Status' paragraph, then 3-4 numbered "
-                        "'Recommendations', then a brief 'Executive Outlook' paragraph."
-                    ),
-                },
-                {
-                    "role": "user",
-                    "content": metrics,
-                },
-            ],
-            temperature=0.3,
-        )
+        with get_tracer().start_as_current_span("copilot.executive_brief"):
 
-        brief = response.choices[0].message.content
+            response = llm.chat(
+                [
+                    {
+                        "role": "system",
+                        "content": (
+                            "You are the NorthStar Executive Copilot. Write a concise executive "
+                            "briefing for school leadership using ONLY the metrics provided below "
+                            "— do not invent numbers not present in them. Structure the briefing "
+                            "as: a short 'Current Platform Status' paragraph, then 3-4 numbered "
+                            "'Recommendations', then a brief 'Executive Outlook' paragraph."
+                        ),
+                    },
+                    {
+                        "role": "user",
+                        "content": metrics,
+                    },
+                ],
+                temperature=0.3,
+                purpose="executive_brief",
+            )
+
+        brief = response.text
 
     except Exception as e:
 

@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project status
 
-NorthStar is an early-stage AI learning-intelligence platform for educational institutions: a BI dashboard, an early-warning (at-risk student) model, and a learner-segmentation model. Most of the tree is scaffolding — `tests/`, `deployment/{cloud,docker,kubernetes}/`, `infrastructure/{ci_cd,logging,monitoring}/`, `src/rag_assistant/`, and `src/mlops/northstar_mlops/{model_registry,training_manager}.py` are empty placeholders. There is no build system, linter, or test runner configured yet. `readme.md` and `docs/README.md` are empty.
+NorthStar is an early-stage AI learning-intelligence platform for educational institutions: a BI dashboard, an early-warning (at-risk student) model, and a learner-segmentation model. Parts of the tree are still scaffolding (`deployment/{cloud,docker,kubernetes}/`, `infrastructure/{ci_cd,logging,monitoring}/`, `src/mlops/northstar_mlops/{model_registry,training_manager}.py`). Tests run with pytest (`pytest.ini`), and `pyproject.toml` holds a strict mypy config that CI does not run. `readme.md` and `docs/README.md` are empty.
 
-There is no root `.gitignore`; `.venv/` is currently tracked in git. Be careful not to add more noise from the virtualenv when staging changes.
+A root `.gitignore` covers `.venv/`, `.env`, `logs/`, and generated artifacts. `logs/northstar.log` is still tracked despite the ignore rule, so running the app modifies it; don't commit those changes.
 
 ## Setup and running
 
@@ -32,7 +32,7 @@ Run the learner segmentation pipeline — reads `data/raw/learner_segmentation_d
 python src/segmentation/run_segmentation.py
 ```
 
-There are no tests, lint, or type-check commands configured (`tests/` is empty).
+Run tests with `python -m pytest` from the repo root. There is no lint command configured.
 
 ## Architecture
 
@@ -44,6 +44,12 @@ The core app lives under `src/` as three loosely-coupled Python packages, each i
 - **`src/mlops/northstar_mlops/`** — intended as shared MLOps infrastructure (model registry, training manager) for the `early_warning` and `segmentation` services; currently just a constants stub (`platform.py`) plus empty files. Not yet wired into either pipeline.
 
 Both `early_warning` and `segmentation` follow the identical feature → train → persist (joblib pickle, checked into the repo under `src/`) → service (load pickle, predict on a dict) structure. When extending one, mirror the same shape in the other unless there's a reason to diverge.
+
+### Knowledge Assistant (RAG)
+
+`src/rag_assistant/` backs the dashboard's Knowledge Assistant page (`src/northstar/ui/assistant.py`). Qdrant vector index (embedded at `data/vector_store/`, git-ignored and rebuilt automatically when documents change; `QDRANT_URL` switches to a server), three grounding guardrails (relevance gate, cited generation with refusal token, LLM grounding check), and OpenTelemetry tracing to `logs/traces.jsonl` (plus OTLP when `OTEL_EXPORTER_OTLP_ENDPOINT` is set). Knowledge-base documents live in `src/rag_assistant/data/documents/`; after editing them, re-run `python src/rag_assistant/evals/run_evals.py --e2e` and check the golden-set numbers. See `src/rag_assistant/README.md`.
+
+Tests: `python -m pytest` from the repo root (`pytest.ini` sets `pythonpath = src`); CI also installs `pytest` and `pytest-mock`.
 
 ### Embedded unrelated repository
 

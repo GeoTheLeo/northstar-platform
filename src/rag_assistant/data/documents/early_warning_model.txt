@@ -1,0 +1,9 @@
+The NorthStar Early Warning System predicts which learners are at risk of falling behind.
+
+It uses three inputs for every learner: attendance, engagement score, and assessment score. Each input is a score from 0 to 100. Before prediction, each score is divided by 100 to produce an attendance ratio, an engagement ratio, and an assessment ratio.
+
+The model is a Random Forest classifier with 100 trees. It is trained on the labelled learner dataset, where each learner is marked at risk or not at risk, using an 80/20 train and test split.
+
+The trained model is saved to disk and loaded by the prediction service, which scores one learner record at a time. A fixed denominator of 100 is used instead of a per-batch maximum, so a single learner is scored the same way as a whole class.
+
+The Early Warning System flags risk. It does not decide interventions on its own; educators review flagged learners before acting.

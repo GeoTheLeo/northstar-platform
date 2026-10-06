@@ -1,0 +1,7 @@
+The NorthStar Agentic Intervention Copilot is an AI agent that finds at-risk learners and proposes interventions.
+
+The agent works in two phases. First it writes a plan of one to six steps. Then it executes the plan by calling tools, such as listing at-risk learners or looking up one learner's details. The tools call NorthStar's real early warning and segmentation models through an HTTP API.
+
+The agent cannot take action on its own. Its only side-effecting tool, propose intervention, adds a pending item to an approval queue. Nothing happens to a learner until a staff member reviews the proposal and approves it in the queue.
+
+This human-in-the-loop design keeps people responsible for decisions about learners, while the agent does the investigation and drafting.

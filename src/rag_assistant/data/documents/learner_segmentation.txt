@@ -1,0 +1,7 @@
+The NorthStar Learner Segmentation Engine groups learners with similar behaviour so that support can be planned per group instead of per individual.
+
+Segmentation uses the same three features as the Early Warning System: attendance ratio, engagement ratio, and assessment ratio.
+
+The model is KMeans clustering with 4 clusters, so NorthStar creates 4 learner segments. Each learner is assigned to exactly one segment. The segment assignments are written to a file that the dashboard reads to show segment sizes and the largest segment.
+
+Segments describe patterns, not grades. A segment with high attendance but low assessment scores calls for different support than a segment with low attendance and low engagement.

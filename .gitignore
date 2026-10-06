@@ -32,3 +32,6 @@ logs/
 
 # Agentic Intervention Copilot - generated demo/audit output, not fixture data
 data/intervention_audit_log.csv
+
+# RAG assistant - local Qdrant index, rebuilt automatically from the documents
+data/vector_store/

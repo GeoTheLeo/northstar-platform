@@ -1,0 +1,552 @@
+{
+  "run_at": "2026-10-06T13:50:39+00:00",
+  "retrieval": {
+    "hit_at_1": 0.95,
+    "hit_at_3": 1.0,
+    "min_answerable_score": 0.401,
+    "max_off_topic_score": 0.132,
+    "answerable_above_threshold": 1.0,
+    "off_topic_gated": 1.0,
+    "threshold": 0.25,
+    "answerable": [
+      {
+        "question": "What machine learning model does the early warning system use?",
+        "top_score": 0.771,
+        "hit_at_1": true,
+        "hit_at_k": true
+      },
+      {
+        "question": "How many trees are in the at-risk classifier?",
+        "top_score": 0.692,
+        "hit_at_1": true,
+        "hit_at_k": true
+      },
+      {
+        "question": "Which inputs are used to predict learner risk?",
+        "top_score": 0.576,
+        "hit_at_1": true,
+        "hit_at_k": true
+      },
+      {
+        "question": "How is the early warning model trained and tested?",
+        "top_score": 0.739,
+        "hit_at_1": true,
+        "hit_at_k": true
+      },
+      {
+        "question": "Does the early warning system decide interventions by itself?",
+        "top_score": 0.638,
+        "hit_at_1": true,
+        "hit_at_k": true
+      },
+      {
+        "question": "How many learner segments does NorthStar create?",
+        "top_score": 0.777,
+        "hit_at_1": true,
+        "hit_at_k": true
+      },
+      {
+        "question": "What clustering algorithm is used for learner segmentation?",
+        "top_score": 0.663,
+        "hit_at_1": true,
+        "hit_at_k": true
+      },
+      {
+        "question": "What happens when the retention rate drops below 85 percent?",
+        "top_score": 0.401,
+        "hit_at_1": true,
+        "hit_at_k": true
+      },
+      {
+        "question": "When does the advisor recommend prioritising advisor outreach?",
+        "top_score": 0.535,
+        "hit_at_1": true,
+        "hit_at_k": true
+      },
+      {
+        "question": "What does the advisor report when no rule fires?",
+        "top_score": 0.459,
+        "hit_at_1": true,
+        "hit_at_k": true
+      },
+      {
+        "question": "How long does it take to see impact from the growing intervention demand recommendation?",
+        "top_score": 0.73,
+        "hit_at_1": true,
+        "hit_at_k": true
+      },
+      {
+        "question": "Can the intervention copilot act on a learner without approval?",
+        "top_score": 0.803,
+        "hit_at_1": true,
+        "hit_at_k": true
+      },
+      {
+        "question": "How many steps can the copilot's plan have?",
+        "top_score": 0.464,
+        "hit_at_1": true,
+        "hit_at_k": true
+      },
+      {
+        "question": "What tools does the intervention copilot call?",
+        "top_score": 0.639,
+        "hit_at_1": true,
+        "hit_at_k": true
+      },
+      {
+        "question": "What should happen for high-risk learners?",
+        "top_score": 0.664,
+        "hit_at_1": true,
+        "hit_at_k": true
+      },
+      {
+        "question": "How often should educators review learner progress?",
+        "top_score": 0.575,
+        "hit_at_1": true,
+        "hit_at_k": true
+      },
+      {
+        "question": "What modules does the NorthStar platform include?",
+        "top_score": 0.61,
+        "hit_at_1": true,
+        "hit_at_k": true
+      },
+      {
+        "question": "How does NorthStar support student success?",
+        "top_score": 0.586,
+        "hit_at_1": false,
+        "hit_at_k": true
+      },
+      {
+        "question": "What does the assistant do when the knowledge base has no answer?",
+        "top_score": 0.621,
+        "hit_at_1": true,
+        "hit_at_k": true
+      },
+      {
+        "question": "What does the model registry record?",
+        "top_score": 0.71,
+        "hit_at_1": true,
+        "hit_at_k": true
+      }
+    ],
+    "unanswerable": [
+      {
+        "question": "What is the capital of France?",
+        "kind": "off_topic",
+        "top_score": 0.08,
+        "gated": true
+      },
+      {
+        "question": "Who won the football World Cup in 2022?",
+        "kind": "off_topic",
+        "top_score": 0.063,
+        "gated": true
+      },
+      {
+        "question": "How do I reset my email password?",
+        "kind": "off_topic",
+        "top_score": 0.058,
+        "gated": true
+      },
+      {
+        "question": "Write me a poem about the ocean.",
+        "kind": "off_topic",
+        "top_score": 0.128,
+        "gated": true
+      },
+      {
+        "question": "What is the weather in Berlin tomorrow?",
+        "kind": "off_topic",
+        "top_score": 0.132,
+        "gated": true
+      },
+      {
+        "question": "How much does a NorthStar licence cost per school?",
+        "kind": "near_domain",
+        "top_score": 0.358,
+        "gated": false
+      },
+      {
+        "question": "Which teacher is assigned to learner 12?",
+        "kind": "near_domain",
+        "top_score": 0.379,
+        "gated": false
+      },
+      {
+        "question": "What is the accuracy of the early warning model on the test set?",
+        "kind": "near_domain",
+        "top_score": 0.636,
+        "gated": false
+      },
+      {
+        "question": "What are the names of the four learner segments?",
+        "kind": "near_domain",
+        "top_score": 0.57,
+        "gated": false
+      },
+      {
+        "question": "Which cloud provider hosts the NorthStar database?",
+        "kind": "near_domain",
+        "top_score": 0.484,
+        "gated": false
+      }
+    ]
+  },
+  "end_to_end": {
+    "answer_correctness": 1.0,
+    "false_refusal_rate": 0.0,
+    "grounded_rate_of_answered": 1.0,
+    "unanswerable_refused": 1.0,
+    "refused_by_relevance_gate": 5,
+    "refused_by_model": 5,
+    "withheld_by_grounding_check": 0,
+    "hallucinated_answers": 0,
+    "latency_ms_median": 2547.6499999999996,
+    "latency_ms_p95": 3825.7,
+    "total_tokens": 13216,
+    "total_cost_usd": 0.002346,
+    "rows": [
+      {
+        "question": "What machine learning model does the early warning system use?",
+        "expected": "answer",
+        "status": "answered",
+        "correct": true,
+        "grounded": true,
+        "latency_ms": 6601.9,
+        "tokens": 627,
+        "cost_usd": 0.0001071,
+        "trace_id": "b47406565b0a63a1ad15d8c60fce04d5"
+      },
+      {
+        "question": "How many trees are in the at-risk classifier?",
+        "expected": "answer",
+        "status": "answered",
+        "correct": true,
+        "grounded": true,
+        "latency_ms": 3153.0,
+        "tokens": 580,
+        "cost_usd": 0.00010004999999999999,
+        "trace_id": "d77b561985c8cc7a125882a8089ef156"
+      },
+      {
+        "question": "Which inputs are used to predict learner risk?",
+        "expected": "answer",
+        "status": "answered",
+        "correct": true,
+        "grounded": true,
+        "latency_ms": 2489.3,
+        "tokens": 637,
+        "cost_usd": 0.00010994999999999999,
+        "trace_id": "b641c52428b01afa9bf4aa4d53ff346a"
+      },
+      {
+        "question": "How is the early warning model trained and tested?",
+        "expected": "answer",
+        "status": "answered",
+        "correct": true,
+        "grounded": true,
+        "latency_ms": 3482.5,
+        "tokens": 592,
+        "cost_usd": 0.00011535000000000001,
+        "trace_id": "18fab43c37fe2362fec8c4527146c44b"
+      },
+      {
+        "question": "Does the early warning system decide interventions by itself?",
+        "expected": "answer",
+        "status": "answered",
+        "correct": true,
+        "grounded": true,
+        "latency_ms": 3708.9,
+        "tokens": 580,
+        "cost_usd": 0.00010319999999999999,
+        "trace_id": "6bc288bff5ba9ab7a5b32e1570d80ce5"
+      },
+      {
+        "question": "How many learner segments does NorthStar create?",
+        "expected": "answer",
+        "status": "answered",
+        "correct": true,
+        "grounded": true,
+        "latency_ms": 2826.3,
+        "tokens": 507,
+        "cost_usd": 8.639999999999999e-05,
+        "trace_id": "14d903c2d196408fda18660826752175"
+      },
+      {
+        "question": "What clustering algorithm is used for learner segmentation?",
+        "expected": "answer",
+        "status": "answered",
+        "correct": true,
+        "grounded": true,
+        "latency_ms": 2323.7,
+        "tokens": 505,
+        "cost_usd": 8.79e-05,
+        "trace_id": "701663412e6c4aad005adcb4c17486f2"
+      },
+      {
+        "question": "What happens when the retention rate drops below 85 percent?",
+        "expected": "answer",
+        "status": "answered",
+        "correct": true,
+        "grounded": true,
+        "latency_ms": 3464.0,
+        "tokens": 700,
+        "cost_usd": 0.00013335,
+        "trace_id": "ea383d7816457069cfd0321e2d0b86b8"
+      },
+      {
+        "question": "When does the advisor recommend prioritising advisor outreach?",
+        "expected": "answer",
+        "status": "answered",
+        "correct": true,
+        "grounded": true,
+        "latency_ms": 2654.9,
+        "tokens": 588,
+        "cost_usd": 0.00010754999999999999,
+        "trace_id": "adc8e2517bf1ddc3f7fc57e41bf4270b"
+      },
+      {
+        "question": "What does the advisor report when no rule fires?",
+        "expected": "answer",
+        "status": "answered",
+        "correct": true,
+        "grounded": true,
+        "latency_ms": 3825.7,
+        "tokens": 644,
+        "cost_usd": 0.00010874999999999999,
+        "trace_id": "f77d625dda71d83f288b391b1c07caab"
+      },
+      {
+        "question": "How long does it take to see impact from the growing intervention demand recommendation?",
+        "expected": "answer",
+        "status": "answered",
+        "correct": true,
+        "grounded": true,
+        "latency_ms": 4537.1,
+        "tokens": 663,
+        "cost_usd": 0.00011475,
+        "trace_id": "f4f7935b660924a9f61cbc02bbff4908"
+      },
+      {
+        "question": "Can the intervention copilot act on a learner without approval?",
+        "expected": "answer",
+        "status": "answered",
+        "correct": true,
+        "grounded": true,
+        "latency_ms": 2748.5,
+        "tokens": 652,
+        "cost_usd": 0.00012165,
+        "trace_id": "13fbc572a5e30e035c4cc04cfea44e7e"
+      },
+      {
+        "question": "How many steps can the copilot's plan have?",
+        "expected": "answer",
+        "status": "answered",
+        "correct": true,
+        "grounded": true,
+        "latency_ms": 2244.4,
+        "tokens": 599,
+        "cost_usd": 0.00010199999999999999,
+        "trace_id": "5c8ca237087a95aad8287a5154c7083c"
+      },
+      {
+        "question": "What tools does the intervention copilot call?",
+        "expected": "answer",
+        "status": "answered",
+        "correct": true,
+        "grounded": true,
+        "latency_ms": 2545.2,
+        "tokens": 613,
+        "cost_usd": 0.00010769999999999999,
+        "trace_id": "e230896e60e96ed916c22f285d11703e"
+      },
+      {
+        "question": "What should happen for high-risk learners?",
+        "expected": "answer",
+        "status": "answered",
+        "correct": true,
+        "grounded": true,
+        "latency_ms": 2683.3,
+        "tokens": 484,
+        "cost_usd": 8.834999999999998e-05,
+        "trace_id": "c08fdc47be4c797c1d4fb1a7290421a3"
+      },
+      {
+        "question": "How often should educators review learner progress?",
+        "expected": "answer",
+        "status": "answered",
+        "correct": true,
+        "grounded": true,
+        "latency_ms": 2050.4,
+        "tokens": 502,
+        "cost_usd": 8.565e-05,
+        "trace_id": "140ea43cecf5372969b6a49946f52b6e"
+      },
+      {
+        "question": "What modules does the NorthStar platform include?",
+        "expected": "answer",
+        "status": "answered",
+        "correct": true,
+        "grounded": true,
+        "latency_ms": 3131.6,
+        "tokens": 559,
+        "cost_usd": 0.00010589999999999999,
+        "trace_id": "0ca2ba09597ecf12610d46beef56e5c1"
+      },
+      {
+        "question": "How does NorthStar support student success?",
+        "expected": "answer",
+        "status": "answered",
+        "correct": true,
+        "grounded": true,
+        "latency_ms": 3461.6,
+        "tokens": 640,
+        "cost_usd": 0.00012885,
+        "trace_id": "8297c19cf579c2a6fede42db54b02cbd"
+      },
+      {
+        "question": "What does the assistant do when the knowledge base has no answer?",
+        "expected": "answer",
+        "status": "answered",
+        "correct": true,
+        "grounded": true,
+        "latency_ms": 2550.1,
+        "tokens": 611,
+        "cost_usd": 0.00010604999999999999,
+        "trace_id": "74a5ccbc55d95f3c98bb024e9fd94847"
+      },
+      {
+        "question": "What does the model registry record?",
+        "expected": "answer",
+        "status": "answered",
+        "correct": true,
+        "grounded": true,
+        "latency_ms": 3408.4,
+        "tokens": 583,
+        "cost_usd": 0.00010769999999999999,
+        "trace_id": "93efaf8f8a5c9a95cac6ce204337ae58"
+      },
+      {
+        "question": "What is the capital of France?",
+        "expected": "refuse",
+        "kind": "off_topic",
+        "status": "refused_low_relevance",
+        "correct": true,
+        "grounded": null,
+        "latency_ms": 26.5,
+        "tokens": 0,
+        "cost_usd": 0.0,
+        "trace_id": "224bcdad54c967422c12556521d3e216"
+      },
+      {
+        "question": "Who won the football World Cup in 2022?",
+        "expected": "refuse",
+        "kind": "off_topic",
+        "status": "refused_low_relevance",
+        "correct": true,
+        "grounded": null,
+        "latency_ms": 22.5,
+        "tokens": 0,
+        "cost_usd": 0.0,
+        "trace_id": "54d59936f0419512adb0795eb95891a8"
+      },
+      {
+        "question": "How do I reset my email password?",
+        "expected": "refuse",
+        "kind": "off_topic",
+        "status": "refused_low_relevance",
+        "correct": true,
+        "grounded": null,
+        "latency_ms": 17.8,
+        "tokens": 0,
+        "cost_usd": 0.0,
+        "trace_id": "7204e2ae13a96d043843899ce1d716d1"
+      },
+      {
+        "question": "Write me a poem about the ocean.",
+        "expected": "refuse",
+        "kind": "off_topic",
+        "status": "refused_low_relevance",
+        "correct": true,
+        "grounded": null,
+        "latency_ms": 17.5,
+        "tokens": 0,
+        "cost_usd": 0.0,
+        "trace_id": "7319d9b6488a0771badc7061857bb0c4"
+      },
+      {
+        "question": "What is the weather in Berlin tomorrow?",
+        "expected": "refuse",
+        "kind": "off_topic",
+        "status": "refused_low_relevance",
+        "correct": true,
+        "grounded": null,
+        "latency_ms": 16.7,
+        "tokens": 0,
+        "cost_usd": 0.0,
+        "trace_id": "10f7409a33ec035bc66f88c0bfda2568"
+      },
+      {
+        "question": "How much does a NorthStar licence cost per school?",
+        "expected": "refuse",
+        "kind": "near_domain",
+        "status": "refused_not_in_kb",
+        "correct": true,
+        "grounded": null,
+        "latency_ms": 1260.3,
+        "tokens": 298,
+        "cost_usd": 4.7850000000000004e-05,
+        "trace_id": "bb8e5edf76cecb0c33273bcd2f21810a"
+      },
+      {
+        "question": "Which teacher is assigned to learner 12?",
+        "expected": "refuse",
+        "kind": "near_domain",
+        "status": "refused_not_in_kb",
+        "correct": true,
+        "grounded": null,
+        "latency_ms": 1185.6,
+        "tokens": 251,
+        "cost_usd": 4.08e-05,
+        "trace_id": "a81b0ca794c929fd75c609c884805ffa"
+      },
+      {
+        "question": "What is the accuracy of the early warning model on the test set?",
+        "expected": "refuse",
+        "kind": "near_domain",
+        "status": "refused_not_in_kb",
+        "correct": true,
+        "grounded": null,
+        "latency_ms": 1410.8,
+        "tokens": 307,
+        "cost_usd": 4.92e-05,
+        "trace_id": "417121c9c55e91e4bdf7dd3c4c0be057"
+      },
+      {
+        "question": "What are the names of the four learner segments?",
+        "expected": "refuse",
+        "kind": "near_domain",
+        "status": "refused_not_in_kb",
+        "correct": true,
+        "grounded": null,
+        "latency_ms": 994.3,
+        "tokens": 245,
+        "cost_usd": 3.99e-05,
+        "trace_id": "6aceccd19c22d8634f1d95f90126f9e1"
+      },
+      {
+        "question": "Which cloud provider hosts the NorthStar database?",
+        "expected": "refuse",
+        "kind": "near_domain",
+        "status": "refused_not_in_kb",
+        "correct": true,
+        "grounded": null,
+        "latency_ms": 1145.2,
+        "tokens": 249,
+        "cost_usd": 4.05e-05,
+        "trace_id": "0dcc7bd60388f90b61b2ada5fbdda20c"
+      }
+    ]
+  }
+}

@@ -1,44 +1,39 @@
-from sklearn.metrics.pairwise import (
-    cosine_similarity,
+from rag_assistant.ingestion.document_loader import (
+    load_document_chunks,
+)
+from rag_assistant.vectorstore.qdrant_store import (
+    KnowledgeIndex,
+    make_client,
 )
 
-from rag_assistant.embeddings.embedding_generator import (
-    generate_embeddings,
-)
+_index: KnowledgeIndex | None = None
+
+
+def get_index() -> KnowledgeIndex:
+    """
+    Process-wide knowledge index. Embedded Qdrant locks its directory, so
+    one client per process is required, not just cheaper.
+    """
+
+    global _index
+
+    if _index is None:
+
+        _index = KnowledgeIndex(
+            load_document_chunks(),
+            make_client(),
+        )
+
+    return _index
 
 
 def retrieve_documents(
     query,
-    chunks,
     top_k=3,
+    index: KnowledgeIndex | None = None,
 ):
 
-    chunk_texts = [chunk["content"] for chunk in chunks]
-
-    chunk_embeddings = generate_embeddings(chunk_texts)
-
-    query_embedding = generate_embeddings([query])
-
-    similarities = cosine_similarity(
-        query_embedding,
-        chunk_embeddings,
-    )[0]
-
-    ranked_indices = similarities.argsort()[::-1]
-
-    results = []
-
-    for idx in ranked_indices[:top_k]:
-
-        results.append(
-            {
-                "document": chunks[idx]["document"],
-                "content": chunks[idx]["content"],
-                "score": round(
-                    float(similarities[idx]),
-                    3,
-                ),
-            }
-        )
-
-    return results
+    return (index or get_index()).search(
+        query,
+        top_k=top_k,
+    )

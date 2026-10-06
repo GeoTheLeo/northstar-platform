@@ -1,0 +1,9 @@
+The NorthStar Executive Advisor turns dashboard KPIs into prioritised recommendations using fixed business rules.
+
+If the retention rate is below 85 percent, the advisor raises a High priority recommendation called Retention Below Target, with the action to increase learner intervention efforts. Expected time to impact is 2 to 4 weeks.
+
+If more than 10 learners are at risk, the advisor raises a High priority recommendation called High Learner Risk, with the action to prioritise advisor outreach. Expected time to impact is 1 to 2 weeks.
+
+If the intervention rate is above 10 percent, the advisor raises a Medium priority recommendation called Growing Intervention Demand, with the action to review staffing and automation opportunities. Expected time to impact is 3 to 6 weeks.
+
+If none of these rules fire, the advisor reports Platform Healthy with the action to continue monitoring.

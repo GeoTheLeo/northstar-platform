@@ -1,0 +1,36 @@
+{
+  "answerable": [
+    {"question": "What machine learning model does the early warning system use?", "expected_document": "early_warning_model.txt", "must_include": ["random forest"]},
+    {"question": "How many trees are in the at-risk classifier?", "expected_document": "early_warning_model.txt", "must_include": ["100"]},
+    {"question": "Which inputs are used to predict learner risk?", "expected_document": "early_warning_model.txt", "must_include": ["attendance", "engagement", "assessment"]},
+    {"question": "How is the early warning model trained and tested?", "expected_document": "early_warning_model.txt", "must_include": ["80"]},
+    {"question": "Does the early warning system decide interventions by itself?", "expected_document": "early_warning_model.txt", "must_include": ["educator"]},
+    {"question": "How many learner segments does NorthStar create?", "expected_document": "learner_segmentation.txt", "must_include": ["4"]},
+    {"question": "What clustering algorithm is used for learner segmentation?", "expected_document": "learner_segmentation.txt", "must_include": ["kmeans"]},
+    {"question": "What happens when the retention rate drops below 85 percent?", "expected_document": "executive_recommendation_rules.txt", "must_include": ["retention below target"]},
+    {"question": "When does the advisor recommend prioritising advisor outreach?", "expected_document": "executive_recommendation_rules.txt", "must_include": ["10"]},
+    {"question": "What does the advisor report when no rule fires?", "expected_document": "executive_recommendation_rules.txt", "must_include": ["healthy"]},
+    {"question": "How long does it take to see impact from the growing intervention demand recommendation?", "expected_document": "executive_recommendation_rules.txt", "must_include": ["3"]},
+    {"question": "Can the intervention copilot act on a learner without approval?", "expected_document": "intervention_copilot.txt", "must_include": ["approv"]},
+    {"question": "How many steps can the copilot's plan have?", "expected_document": "intervention_copilot.txt", "must_include": ["six"]},
+    {"question": "What tools does the intervention copilot call?", "expected_document": "intervention_copilot.txt", "must_include": ["at-risk"]},
+    {"question": "What should happen for high-risk learners?", "expected_document": "intervention_guide.txt", "must_include": ["outreach"]},
+    {"question": "How often should educators review learner progress?", "expected_document": "intervention_guide.txt", "must_include": ["weekly"]},
+    {"question": "What modules does the NorthStar platform include?", "expected_document": "northstar_platform_overview.txt", "must_include": ["early warning"]},
+    {"question": "How does NorthStar support student success?", "expected_document": "student_success_framework.txt", "must_include": ["personalized"]},
+    {"question": "What does the assistant do when the knowledge base has no answer?", "expected_document": "data_privacy_and_governance.txt", "must_include": ["says so"]},
+    {"question": "What does the model registry record?", "expected_document": "data_privacy_and_governance.txt", "must_include": ["version"]}
+  ],
+  "unanswerable": [
+    {"question": "What is the capital of France?", "kind": "off_topic"},
+    {"question": "Who won the football World Cup in 2022?", "kind": "off_topic"},
+    {"question": "How do I reset my email password?", "kind": "off_topic"},
+    {"question": "Write me a poem about the ocean.", "kind": "off_topic"},
+    {"question": "What is the weather in Berlin tomorrow?", "kind": "off_topic"},
+    {"question": "How much does a NorthStar licence cost per school?", "kind": "near_domain"},
+    {"question": "Which teacher is assigned to learner 12?", "kind": "near_domain"},
+    {"question": "What is the accuracy of the early warning model on the test set?", "kind": "near_domain"},
+    {"question": "What are the names of the four learner segments?", "kind": "near_domain"},
+    {"question": "Which cloud provider hosts the NorthStar database?", "kind": "near_domain"}
+  ]
+}

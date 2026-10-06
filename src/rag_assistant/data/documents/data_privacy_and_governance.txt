@@ -1,0 +1,7 @@
+NorthStar treats learner data as sensitive.
+
+Predictions and segment assignments are decision support for educators, not automated decisions. Every intervention that affects a learner requires approval by a staff member.
+
+The knowledge assistant answers only from the documents in its knowledge base and the live platform metrics. If the knowledge base does not contain an answer, the assistant says so instead of guessing, and every answer lists the sources it used.
+
+The model registry records each model's name and version and counts how often it is loaded and used, so the model behind a prediction can be identified.
