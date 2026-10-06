@@ -154,8 +154,7 @@ before generating each response.
                 render_trace(message["trace"])
 
     question = st.chat_input(
-        "Ask NorthStar a question...",
-        submit_mode="disable",
+        "Ask NorthStar a question..."
     )
 
     if not question:
