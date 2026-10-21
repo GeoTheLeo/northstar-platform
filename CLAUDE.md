@@ -47,7 +47,7 @@ Both `early_warning` and `segmentation` follow the identical feature â†’ train â
 
 ### Knowledge Assistant (RAG)
 
-`src/rag_assistant/` backs the dashboard's Knowledge Assistant page (`src/northstar/ui/assistant.py`). Qdrant vector index (embedded at `data/vector_store/`, git-ignored and rebuilt automatically when documents change; `QDRANT_URL` switches to a server), three grounding guardrails (relevance gate, cited generation with refusal token, LLM grounding check), and OpenTelemetry tracing to `logs/traces.jsonl` (plus OTLP when `OTEL_EXPORTER_OTLP_ENDPOINT` is set). Knowledge-base documents live in `src/rag_assistant/data/documents/`; after editing them, re-run `python src/rag_assistant/evals/run_evals.py --e2e` and check the golden-set numbers. See `src/rag_assistant/README.md`.
+`src/rag_assistant/` backs the dashboard's Knowledge Assistant page (`src/northstar/ui/assistant.py`). Qdrant vector index (embedded at `data/vector_store/`, git-ignored and rebuilt automatically when documents change; `QDRANT_URL` switches to a server) with hybrid retrieval (dense + BM25, fused) and cross-encoder reranking by default, three grounding guardrails (relevance gate, cited generation with refusal token, LLM grounding check), and OpenTelemetry tracing to `logs/traces.jsonl` (plus OTLP when `OTEL_EXPORTER_OTLP_ENDPOINT` is set). Knowledge-base documents live in `src/rag_assistant/data/documents/`; after editing them, re-run `python src/rag_assistant/evals/run_evals.py --e2e` and check the golden-set numbers. See `src/rag_assistant/README.md`.
 
 Tests: `python -m pytest` from the repo root (`pytest.ini` sets `pythonpath = src`); CI also installs `pytest` and `pytest-mock`.
 

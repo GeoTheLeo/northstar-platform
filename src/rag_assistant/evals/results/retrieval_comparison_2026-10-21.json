@@ -1,0 +1,2445 @@
+{
+  "run_at": "2026-10-21T10:49:56+00:00",
+  "retrieval": {
+    "hit_at_1": 0.95,
+    "hit_at_3": 1.0,
+    "mrr": 0.975,
+    "keyword_hit_at_1": 1.0,
+    "keyword_hit_at_3": 1.0,
+    "keyword_mrr": 1.0,
+    "latency_ms_mean": 133.9,
+    "min_answerable_score": 0.388,
+    "max_off_topic_score": 0.132,
+    "answerable_above_threshold": 1.0,
+    "off_topic_gated": 1.0,
+    "threshold": 0.25,
+    "answerable": [
+      {
+        "question": "What machine learning model does the early warning system use?",
+        "top_score": 0.702,
+        "retrieved": [
+          "early_warning_model.txt",
+          "northstar_platform_overview.txt",
+          "intervention_copilot.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "How many trees are in the at-risk classifier?",
+        "top_score": 0.692,
+        "retrieved": [
+          "early_warning_model.txt",
+          "executive_recommendation_rules.txt",
+          "early_warning_model.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "Which inputs are used to predict learner risk?",
+        "top_score": 0.576,
+        "retrieved": [
+          "early_warning_model.txt",
+          "early_warning_model.txt",
+          "executive_recommendation_rules.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "How is the early warning model trained and tested?",
+        "top_score": 0.739,
+        "retrieved": [
+          "early_warning_model.txt",
+          "early_warning_model.txt",
+          "early_warning_model.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "Does the early warning system decide interventions by itself?",
+        "top_score": 0.638,
+        "retrieved": [
+          "early_warning_model.txt",
+          "early_warning_model.txt",
+          "intervention_copilot.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "How many learner segments does NorthStar create?",
+        "top_score": 0.777,
+        "retrieved": [
+          "learner_segmentation.txt",
+          "learner_segmentation.txt",
+          "northstar_platform_overview.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "What clustering algorithm is used for learner segmentation?",
+        "top_score": 0.663,
+        "retrieved": [
+          "learner_segmentation.txt",
+          "learner_segmentation.txt",
+          "northstar_platform_overview.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "What happens when the retention rate drops below 85 percent?",
+        "top_score": 0.401,
+        "retrieved": [
+          "executive_recommendation_rules.txt",
+          "executive_recommendation_rules.txt",
+          "executive_recommendation_rules.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "When does the advisor recommend prioritising advisor outreach?",
+        "top_score": 0.535,
+        "retrieved": [
+          "executive_recommendation_rules.txt",
+          "executive_recommendation_rules.txt",
+          "executive_recommendation_rules.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "What does the advisor report when no rule fires?",
+        "top_score": 0.459,
+        "retrieved": [
+          "executive_recommendation_rules.txt",
+          "executive_recommendation_rules.txt",
+          "executive_recommendation_rules.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "How long does it take to see impact from the growing intervention demand recommendation?",
+        "top_score": 0.73,
+        "retrieved": [
+          "executive_recommendation_rules.txt",
+          "executive_recommendation_rules.txt",
+          "executive_recommendation_rules.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "Can the intervention copilot act on a learner without approval?",
+        "top_score": 0.803,
+        "retrieved": [
+          "intervention_copilot.txt",
+          "intervention_copilot.txt",
+          "data_privacy_and_governance.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "How many steps can the copilot's plan have?",
+        "top_score": 0.388,
+        "retrieved": [
+          "intervention_copilot.txt",
+          "executive_recommendation_rules.txt",
+          "early_warning_model.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "What tools does the intervention copilot call?",
+        "top_score": 0.634,
+        "retrieved": [
+          "intervention_copilot.txt",
+          "intervention_copilot.txt",
+          "executive_recommendation_rules.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "What should happen for high-risk learners?",
+        "top_score": 0.664,
+        "retrieved": [
+          "intervention_guide.txt",
+          "executive_recommendation_rules.txt",
+          "early_warning_model.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "How often should educators review learner progress?",
+        "top_score": 0.575,
+        "retrieved": [
+          "intervention_guide.txt",
+          "executive_recommendation_rules.txt",
+          "intervention_guide.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "What modules does the NorthStar platform include?",
+        "top_score": 0.61,
+        "retrieved": [
+          "northstar_platform_overview.txt",
+          "data_privacy_and_governance.txt",
+          "early_warning_model.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "How does NorthStar support student success?",
+        "top_score": 0.537,
+        "retrieved": [
+          "data_privacy_and_governance.txt",
+          "student_success_framework.txt",
+          "learner_segmentation.txt"
+        ],
+        "hit_at_1": false,
+        "hit_at_k": true,
+        "reciprocal_rank": 0.5
+      },
+      {
+        "question": "What does the assistant do when the knowledge base has no answer?",
+        "top_score": 0.621,
+        "retrieved": [
+          "data_privacy_and_governance.txt",
+          "northstar_platform_overview.txt",
+          "northstar_platform_overview.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "What does the model registry record?",
+        "top_score": 0.71,
+        "retrieved": [
+          "data_privacy_and_governance.txt",
+          "early_warning_model.txt",
+          "early_warning_model.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      }
+    ],
+    "keyword_queries": [
+      {
+        "question": "80/20 split",
+        "top_score": 0.121,
+        "retrieved": [
+          "early_warning_model.txt",
+          "early_warning_model.txt",
+          "executive_recommendation_rules.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "fixed denominator of 100",
+        "top_score": 0.084,
+        "retrieved": [
+          "early_warning_model.txt",
+          "early_warning_model.txt",
+          "early_warning_model.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "Growing Intervention Demand",
+        "top_score": 0.587,
+        "retrieved": [
+          "executive_recommendation_rules.txt",
+          "executive_recommendation_rules.txt",
+          "intervention_guide.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "Platform Healthy",
+        "top_score": 0.298,
+        "retrieved": [
+          "executive_recommendation_rules.txt",
+          "northstar_platform_overview.txt",
+          "data_privacy_and_governance.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "Retention Below Target time to impact",
+        "top_score": 0.529,
+        "retrieved": [
+          "executive_recommendation_rules.txt",
+          "executive_recommendation_rules.txt",
+          "executive_recommendation_rules.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "propose intervention tool",
+        "top_score": 0.648,
+        "retrieved": [
+          "intervention_copilot.txt",
+          "intervention_copilot.txt",
+          "intervention_guide.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "HTTP API",
+        "top_score": 0.138,
+        "retrieved": [
+          "intervention_copilot.txt",
+          "intervention_copilot.txt",
+          "student_success_framework.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "BI Decision Command Center",
+        "top_score": 0.323,
+        "retrieved": [
+          "northstar_platform_overview.txt",
+          "data_privacy_and_governance.txt",
+          "northstar_platform_overview.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "MLOps Foundation",
+        "top_score": 0.409,
+        "retrieved": [
+          "northstar_platform_overview.txt",
+          "northstar_platform_overview.txt",
+          "intervention_guide.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "personalized learning pathways",
+        "top_score": 0.584,
+        "retrieved": [
+          "student_success_framework.txt",
+          "northstar_platform_overview.txt",
+          "intervention_guide.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "academic coaching",
+        "top_score": 0.353,
+        "retrieved": [
+          "intervention_guide.txt",
+          "student_success_framework.txt",
+          "intervention_guide.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "model registry version",
+        "top_score": 0.566,
+        "retrieved": [
+          "data_privacy_and_governance.txt",
+          "early_warning_model.txt",
+          "early_warning_model.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "KMeans 4 clusters",
+        "top_score": 0.513,
+        "retrieved": [
+          "learner_segmentation.txt",
+          "northstar_platform_overview.txt",
+          "learner_segmentation.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "largest segment",
+        "top_score": 0.358,
+        "retrieved": [
+          "learner_segmentation.txt",
+          "learner_segmentation.txt",
+          "learner_segmentation.txt"
+        ],
+        "hit_at_1": true,
+        "hit_at_k": true,
+        "reciprocal_rank": 1.0
+      }
+    ],
+    "unanswerable": [
+      {
+        "question": "What is the capital of France?",
+        "kind": "off_topic",
+        "top_score": 0.054,
+        "gated": true
+      },
+      {
+        "question": "Who won the football World Cup in 2022?",
+        "kind": "off_topic",
+        "top_score": 0.052,
+        "gated": true
+      },
+      {
+        "question": "How do I reset my email password?",
+        "kind": "off_topic",
+        "top_score": 0.041,
+        "gated": true
+      },
+      {
+        "question": "Write me a poem about the ocean.",
+        "kind": "off_topic",
+        "top_score": 0.031,
+        "gated": true
+      },
+      {
+        "question": "What is the weather in Berlin tomorrow?",
+        "kind": "off_topic",
+        "top_score": 0.132,
+        "gated": true
+      },
+      {
+        "question": "How much does a NorthStar licence cost per school?",
+        "kind": "near_domain",
+        "top_score": 0.358,
+        "gated": false
+      },
+      {
+        "question": "Which teacher is assigned to learner 12?",
+        "kind": "near_domain",
+        "top_score": 0.379,
+        "gated": false
+      },
+      {
+        "question": "What is the accuracy of the early warning model on the test set?",
+        "kind": "near_domain",
+        "top_score": 0.583,
+        "gated": false
+      },
+      {
+        "question": "What are the names of the four learner segments?",
+        "kind": "near_domain",
+        "top_score": 0.562,
+        "gated": false
+      },
+      {
+        "question": "Which cloud provider hosts the NorthStar database?",
+        "kind": "near_domain",
+        "top_score": 0.484,
+        "gated": false
+      }
+    ]
+  },
+  "comparison": {
+    "dense": {
+      "hit_at_1": 0.95,
+      "hit_at_3": 1.0,
+      "mrr": 0.975,
+      "keyword_hit_at_1": 0.7857142857142857,
+      "keyword_hit_at_3": 0.9285714285714286,
+      "keyword_mrr": 0.8452380952380951,
+      "latency_ms_mean": 10.8,
+      "min_answerable_score": 0.401,
+      "max_off_topic_score": 0.132,
+      "answerable_above_threshold": 1.0,
+      "off_topic_gated": 1.0,
+      "threshold": 0.25,
+      "answerable": [
+        {
+          "question": "What machine learning model does the early warning system use?",
+          "top_score": 0.771,
+          "retrieved": [
+            "early_warning_model.txt",
+            "early_warning_model.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How many trees are in the at-risk classifier?",
+          "top_score": 0.692,
+          "retrieved": [
+            "early_warning_model.txt",
+            "early_warning_model.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Which inputs are used to predict learner risk?",
+          "top_score": 0.576,
+          "retrieved": [
+            "early_warning_model.txt",
+            "early_warning_model.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How is the early warning model trained and tested?",
+          "top_score": 0.739,
+          "retrieved": [
+            "early_warning_model.txt",
+            "early_warning_model.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Does the early warning system decide interventions by itself?",
+          "top_score": 0.638,
+          "retrieved": [
+            "early_warning_model.txt",
+            "early_warning_model.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How many learner segments does NorthStar create?",
+          "top_score": 0.777,
+          "retrieved": [
+            "learner_segmentation.txt",
+            "northstar_platform_overview.txt",
+            "northstar_platform_overview.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What clustering algorithm is used for learner segmentation?",
+          "top_score": 0.663,
+          "retrieved": [
+            "learner_segmentation.txt",
+            "learner_segmentation.txt",
+            "learner_segmentation.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What happens when the retention rate drops below 85 percent?",
+          "top_score": 0.401,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "student_success_framework.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "When does the advisor recommend prioritising advisor outreach?",
+          "top_score": 0.535,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "intervention_guide.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What does the advisor report when no rule fires?",
+          "top_score": 0.459,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How long does it take to see impact from the growing intervention demand recommendation?",
+          "top_score": 0.73,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Can the intervention copilot act on a learner without approval?",
+          "top_score": 0.803,
+          "retrieved": [
+            "intervention_copilot.txt",
+            "intervention_copilot.txt",
+            "intervention_copilot.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How many steps can the copilot's plan have?",
+          "top_score": 0.464,
+          "retrieved": [
+            "intervention_copilot.txt",
+            "intervention_copilot.txt",
+            "intervention_copilot.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What tools does the intervention copilot call?",
+          "top_score": 0.639,
+          "retrieved": [
+            "intervention_copilot.txt",
+            "intervention_copilot.txt",
+            "intervention_copilot.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What should happen for high-risk learners?",
+          "top_score": 0.664,
+          "retrieved": [
+            "intervention_guide.txt",
+            "executive_recommendation_rules.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How often should educators review learner progress?",
+          "top_score": 0.575,
+          "retrieved": [
+            "intervention_guide.txt",
+            "executive_recommendation_rules.txt",
+            "student_success_framework.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What modules does the NorthStar platform include?",
+          "top_score": 0.61,
+          "retrieved": [
+            "northstar_platform_overview.txt",
+            "learner_segmentation.txt",
+            "northstar_platform_overview.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How does NorthStar support student success?",
+          "top_score": 0.586,
+          "retrieved": [
+            "northstar_platform_overview.txt",
+            "student_success_framework.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": false,
+          "hit_at_k": true,
+          "reciprocal_rank": 0.5
+        },
+        {
+          "question": "What does the assistant do when the knowledge base has no answer?",
+          "top_score": 0.621,
+          "retrieved": [
+            "data_privacy_and_governance.txt",
+            "intervention_copilot.txt",
+            "intervention_copilot.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What does the model registry record?",
+          "top_score": 0.71,
+          "retrieved": [
+            "data_privacy_and_governance.txt",
+            "early_warning_model.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        }
+      ],
+      "keyword_queries": [
+        {
+          "question": "80/20 split",
+          "top_score": 0.17,
+          "retrieved": [
+            "learner_segmentation.txt",
+            "learner_segmentation.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": false,
+          "hit_at_k": true,
+          "reciprocal_rank": 0.3333333333333333
+        },
+        {
+          "question": "fixed denominator of 100",
+          "top_score": 0.099,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "early_warning_model.txt",
+            "intervention_copilot.txt"
+          ],
+          "hit_at_1": false,
+          "hit_at_k": true,
+          "reciprocal_rank": 0.5
+        },
+        {
+          "question": "Growing Intervention Demand",
+          "top_score": 0.587,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "intervention_copilot.txt",
+            "intervention_guide.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Platform Healthy",
+          "top_score": 0.298,
+          "retrieved": [
+            "northstar_platform_overview.txt",
+            "northstar_platform_overview.txt",
+            "data_privacy_and_governance.txt"
+          ],
+          "hit_at_1": false,
+          "hit_at_k": false,
+          "reciprocal_rank": 0.0
+        },
+        {
+          "question": "Retention Below Target time to impact",
+          "top_score": 0.529,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "propose intervention tool",
+          "top_score": 0.648,
+          "retrieved": [
+            "intervention_copilot.txt",
+            "intervention_guide.txt",
+            "intervention_copilot.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "HTTP API",
+          "top_score": 0.138,
+          "retrieved": [
+            "intervention_copilot.txt",
+            "data_privacy_and_governance.txt",
+            "data_privacy_and_governance.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "BI Decision Command Center",
+          "top_score": 0.323,
+          "retrieved": [
+            "northstar_platform_overview.txt",
+            "northstar_platform_overview.txt",
+            "data_privacy_and_governance.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "MLOps Foundation",
+          "top_score": 0.409,
+          "retrieved": [
+            "northstar_platform_overview.txt",
+            "northstar_platform_overview.txt",
+            "data_privacy_and_governance.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "personalized learning pathways",
+          "top_score": 0.584,
+          "retrieved": [
+            "student_success_framework.txt",
+            "northstar_platform_overview.txt",
+            "learner_segmentation.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "academic coaching",
+          "top_score": 0.353,
+          "retrieved": [
+            "intervention_guide.txt",
+            "student_success_framework.txt",
+            "intervention_guide.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "model registry version",
+          "top_score": 0.566,
+          "retrieved": [
+            "data_privacy_and_governance.txt",
+            "early_warning_model.txt",
+            "intervention_copilot.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "KMeans 4 clusters",
+          "top_score": 0.513,
+          "retrieved": [
+            "learner_segmentation.txt",
+            "northstar_platform_overview.txt",
+            "learner_segmentation.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "largest segment",
+          "top_score": 0.358,
+          "retrieved": [
+            "learner_segmentation.txt",
+            "learner_segmentation.txt",
+            "learner_segmentation.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        }
+      ],
+      "unanswerable": [
+        {
+          "question": "What is the capital of France?",
+          "kind": "off_topic",
+          "top_score": 0.08,
+          "gated": true
+        },
+        {
+          "question": "Who won the football World Cup in 2022?",
+          "kind": "off_topic",
+          "top_score": 0.063,
+          "gated": true
+        },
+        {
+          "question": "How do I reset my email password?",
+          "kind": "off_topic",
+          "top_score": 0.058,
+          "gated": true
+        },
+        {
+          "question": "Write me a poem about the ocean.",
+          "kind": "off_topic",
+          "top_score": 0.128,
+          "gated": true
+        },
+        {
+          "question": "What is the weather in Berlin tomorrow?",
+          "kind": "off_topic",
+          "top_score": 0.132,
+          "gated": true
+        },
+        {
+          "question": "How much does a NorthStar licence cost per school?",
+          "kind": "near_domain",
+          "top_score": 0.358,
+          "gated": false
+        },
+        {
+          "question": "Which teacher is assigned to learner 12?",
+          "kind": "near_domain",
+          "top_score": 0.379,
+          "gated": false
+        },
+        {
+          "question": "What is the accuracy of the early warning model on the test set?",
+          "kind": "near_domain",
+          "top_score": 0.636,
+          "gated": false
+        },
+        {
+          "question": "What are the names of the four learner segments?",
+          "kind": "near_domain",
+          "top_score": 0.57,
+          "gated": false
+        },
+        {
+          "question": "Which cloud provider hosts the NorthStar database?",
+          "kind": "near_domain",
+          "top_score": 0.484,
+          "gated": false
+        }
+      ]
+    },
+    "dense + rerank": {
+      "hit_at_1": 0.95,
+      "hit_at_3": 1.0,
+      "mrr": 0.975,
+      "keyword_hit_at_1": 0.9285714285714286,
+      "keyword_hit_at_3": 0.9285714285714286,
+      "keyword_mrr": 0.9285714285714286,
+      "latency_ms_mean": 104.4,
+      "min_answerable_score": 0.388,
+      "max_off_topic_score": 0.132,
+      "answerable_above_threshold": 1.0,
+      "off_topic_gated": 1.0,
+      "threshold": 0.25,
+      "answerable": [
+        {
+          "question": "What machine learning model does the early warning system use?",
+          "top_score": 0.702,
+          "retrieved": [
+            "early_warning_model.txt",
+            "northstar_platform_overview.txt",
+            "intervention_copilot.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How many trees are in the at-risk classifier?",
+          "top_score": 0.692,
+          "retrieved": [
+            "early_warning_model.txt",
+            "executive_recommendation_rules.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Which inputs are used to predict learner risk?",
+          "top_score": 0.576,
+          "retrieved": [
+            "early_warning_model.txt",
+            "early_warning_model.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How is the early warning model trained and tested?",
+          "top_score": 0.739,
+          "retrieved": [
+            "early_warning_model.txt",
+            "early_warning_model.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Does the early warning system decide interventions by itself?",
+          "top_score": 0.638,
+          "retrieved": [
+            "early_warning_model.txt",
+            "early_warning_model.txt",
+            "intervention_copilot.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How many learner segments does NorthStar create?",
+          "top_score": 0.777,
+          "retrieved": [
+            "learner_segmentation.txt",
+            "learner_segmentation.txt",
+            "northstar_platform_overview.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What clustering algorithm is used for learner segmentation?",
+          "top_score": 0.663,
+          "retrieved": [
+            "learner_segmentation.txt",
+            "learner_segmentation.txt",
+            "northstar_platform_overview.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What happens when the retention rate drops below 85 percent?",
+          "top_score": 0.401,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "When does the advisor recommend prioritising advisor outreach?",
+          "top_score": 0.535,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What does the advisor report when no rule fires?",
+          "top_score": 0.459,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How long does it take to see impact from the growing intervention demand recommendation?",
+          "top_score": 0.73,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Can the intervention copilot act on a learner without approval?",
+          "top_score": 0.803,
+          "retrieved": [
+            "intervention_copilot.txt",
+            "intervention_copilot.txt",
+            "data_privacy_and_governance.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How many steps can the copilot's plan have?",
+          "top_score": 0.388,
+          "retrieved": [
+            "intervention_copilot.txt",
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What tools does the intervention copilot call?",
+          "top_score": 0.634,
+          "retrieved": [
+            "intervention_copilot.txt",
+            "intervention_copilot.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What should happen for high-risk learners?",
+          "top_score": 0.664,
+          "retrieved": [
+            "intervention_guide.txt",
+            "executive_recommendation_rules.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How often should educators review learner progress?",
+          "top_score": 0.575,
+          "retrieved": [
+            "intervention_guide.txt",
+            "executive_recommendation_rules.txt",
+            "intervention_guide.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What modules does the NorthStar platform include?",
+          "top_score": 0.61,
+          "retrieved": [
+            "northstar_platform_overview.txt",
+            "data_privacy_and_governance.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How does NorthStar support student success?",
+          "top_score": 0.537,
+          "retrieved": [
+            "data_privacy_and_governance.txt",
+            "student_success_framework.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": false,
+          "hit_at_k": true,
+          "reciprocal_rank": 0.5
+        },
+        {
+          "question": "What does the assistant do when the knowledge base has no answer?",
+          "top_score": 0.621,
+          "retrieved": [
+            "data_privacy_and_governance.txt",
+            "northstar_platform_overview.txt",
+            "northstar_platform_overview.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What does the model registry record?",
+          "top_score": 0.71,
+          "retrieved": [
+            "data_privacy_and_governance.txt",
+            "early_warning_model.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        }
+      ],
+      "keyword_queries": [
+        {
+          "question": "80/20 split",
+          "top_score": 0.121,
+          "retrieved": [
+            "early_warning_model.txt",
+            "early_warning_model.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "fixed denominator of 100",
+          "top_score": 0.084,
+          "retrieved": [
+            "early_warning_model.txt",
+            "early_warning_model.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Growing Intervention Demand",
+          "top_score": 0.587,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "intervention_guide.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Platform Healthy",
+          "top_score": 0.298,
+          "retrieved": [
+            "northstar_platform_overview.txt",
+            "data_privacy_and_governance.txt",
+            "northstar_platform_overview.txt"
+          ],
+          "hit_at_1": false,
+          "hit_at_k": false,
+          "reciprocal_rank": 0.0
+        },
+        {
+          "question": "Retention Below Target time to impact",
+          "top_score": 0.529,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "propose intervention tool",
+          "top_score": 0.648,
+          "retrieved": [
+            "intervention_copilot.txt",
+            "intervention_copilot.txt",
+            "intervention_guide.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "HTTP API",
+          "top_score": 0.138,
+          "retrieved": [
+            "intervention_copilot.txt",
+            "intervention_copilot.txt",
+            "student_success_framework.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "BI Decision Command Center",
+          "top_score": 0.323,
+          "retrieved": [
+            "northstar_platform_overview.txt",
+            "data_privacy_and_governance.txt",
+            "northstar_platform_overview.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "MLOps Foundation",
+          "top_score": 0.409,
+          "retrieved": [
+            "northstar_platform_overview.txt",
+            "northstar_platform_overview.txt",
+            "intervention_guide.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "personalized learning pathways",
+          "top_score": 0.584,
+          "retrieved": [
+            "student_success_framework.txt",
+            "northstar_platform_overview.txt",
+            "intervention_guide.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "academic coaching",
+          "top_score": 0.353,
+          "retrieved": [
+            "intervention_guide.txt",
+            "student_success_framework.txt",
+            "intervention_guide.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "model registry version",
+          "top_score": 0.566,
+          "retrieved": [
+            "data_privacy_and_governance.txt",
+            "early_warning_model.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "KMeans 4 clusters",
+          "top_score": 0.513,
+          "retrieved": [
+            "learner_segmentation.txt",
+            "northstar_platform_overview.txt",
+            "learner_segmentation.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "largest segment",
+          "top_score": 0.358,
+          "retrieved": [
+            "learner_segmentation.txt",
+            "learner_segmentation.txt",
+            "learner_segmentation.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        }
+      ],
+      "unanswerable": [
+        {
+          "question": "What is the capital of France?",
+          "kind": "off_topic",
+          "top_score": 0.054,
+          "gated": true
+        },
+        {
+          "question": "Who won the football World Cup in 2022?",
+          "kind": "off_topic",
+          "top_score": 0.052,
+          "gated": true
+        },
+        {
+          "question": "How do I reset my email password?",
+          "kind": "off_topic",
+          "top_score": 0.041,
+          "gated": true
+        },
+        {
+          "question": "Write me a poem about the ocean.",
+          "kind": "off_topic",
+          "top_score": 0.031,
+          "gated": true
+        },
+        {
+          "question": "What is the weather in Berlin tomorrow?",
+          "kind": "off_topic",
+          "top_score": 0.132,
+          "gated": true
+        },
+        {
+          "question": "How much does a NorthStar licence cost per school?",
+          "kind": "near_domain",
+          "top_score": 0.358,
+          "gated": false
+        },
+        {
+          "question": "Which teacher is assigned to learner 12?",
+          "kind": "near_domain",
+          "top_score": 0.379,
+          "gated": false
+        },
+        {
+          "question": "What is the accuracy of the early warning model on the test set?",
+          "kind": "near_domain",
+          "top_score": 0.583,
+          "gated": false
+        },
+        {
+          "question": "What are the names of the four learner segments?",
+          "kind": "near_domain",
+          "top_score": 0.562,
+          "gated": false
+        },
+        {
+          "question": "Which cloud provider hosts the NorthStar database?",
+          "kind": "near_domain",
+          "top_score": 0.484,
+          "gated": false
+        }
+      ]
+    },
+    "hybrid": {
+      "hit_at_1": 0.9,
+      "hit_at_3": 1.0,
+      "mrr": 0.95,
+      "keyword_hit_at_1": 0.9285714285714286,
+      "keyword_hit_at_3": 1.0,
+      "keyword_mrr": 0.9523809523809524,
+      "latency_ms_mean": 11.4,
+      "min_answerable_score": 0.401,
+      "max_off_topic_score": 0.132,
+      "answerable_above_threshold": 1.0,
+      "off_topic_gated": 1.0,
+      "threshold": 0.25,
+      "answerable": [
+        {
+          "question": "What machine learning model does the early warning system use?",
+          "top_score": 0.771,
+          "retrieved": [
+            "learner_segmentation.txt",
+            "early_warning_model.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": false,
+          "hit_at_k": true,
+          "reciprocal_rank": 0.5
+        },
+        {
+          "question": "How many trees are in the at-risk classifier?",
+          "top_score": 0.692,
+          "retrieved": [
+            "early_warning_model.txt",
+            "executive_recommendation_rules.txt",
+            "intervention_guide.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Which inputs are used to predict learner risk?",
+          "top_score": 0.576,
+          "retrieved": [
+            "early_warning_model.txt",
+            "early_warning_model.txt",
+            "student_success_framework.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How is the early warning model trained and tested?",
+          "top_score": 0.739,
+          "retrieved": [
+            "early_warning_model.txt",
+            "early_warning_model.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Does the early warning system decide interventions by itself?",
+          "top_score": 0.638,
+          "retrieved": [
+            "early_warning_model.txt",
+            "early_warning_model.txt",
+            "learner_segmentation.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How many learner segments does NorthStar create?",
+          "top_score": 0.777,
+          "retrieved": [
+            "learner_segmentation.txt",
+            "northstar_platform_overview.txt",
+            "data_privacy_and_governance.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What clustering algorithm is used for learner segmentation?",
+          "top_score": 0.663,
+          "retrieved": [
+            "learner_segmentation.txt",
+            "learner_segmentation.txt",
+            "northstar_platform_overview.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What happens when the retention rate drops below 85 percent?",
+          "top_score": 0.401,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "student_success_framework.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "When does the advisor recommend prioritising advisor outreach?",
+          "top_score": 0.535,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "intervention_guide.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What does the advisor report when no rule fires?",
+          "top_score": 0.459,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How long does it take to see impact from the growing intervention demand recommendation?",
+          "top_score": 0.73,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Can the intervention copilot act on a learner without approval?",
+          "top_score": 0.803,
+          "retrieved": [
+            "intervention_copilot.txt",
+            "intervention_copilot.txt",
+            "intervention_copilot.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How many steps can the copilot's plan have?",
+          "top_score": 0.464,
+          "retrieved": [
+            "intervention_copilot.txt",
+            "intervention_copilot.txt",
+            "intervention_guide.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What tools does the intervention copilot call?",
+          "top_score": 0.639,
+          "retrieved": [
+            "intervention_copilot.txt",
+            "intervention_copilot.txt",
+            "intervention_copilot.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What should happen for high-risk learners?",
+          "top_score": 0.664,
+          "retrieved": [
+            "intervention_guide.txt",
+            "executive_recommendation_rules.txt",
+            "student_success_framework.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How often should educators review learner progress?",
+          "top_score": 0.575,
+          "retrieved": [
+            "intervention_guide.txt",
+            "intervention_guide.txt",
+            "student_success_framework.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What modules does the NorthStar platform include?",
+          "top_score": 0.61,
+          "retrieved": [
+            "northstar_platform_overview.txt",
+            "northstar_platform_overview.txt",
+            "learner_segmentation.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How does NorthStar support student success?",
+          "top_score": 0.586,
+          "retrieved": [
+            "northstar_platform_overview.txt",
+            "student_success_framework.txt",
+            "data_privacy_and_governance.txt"
+          ],
+          "hit_at_1": false,
+          "hit_at_k": true,
+          "reciprocal_rank": 0.5
+        },
+        {
+          "question": "What does the assistant do when the knowledge base has no answer?",
+          "top_score": 0.621,
+          "retrieved": [
+            "data_privacy_and_governance.txt",
+            "northstar_platform_overview.txt",
+            "northstar_platform_overview.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What does the model registry record?",
+          "top_score": 0.71,
+          "retrieved": [
+            "data_privacy_and_governance.txt",
+            "early_warning_model.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        }
+      ],
+      "keyword_queries": [
+        {
+          "question": "80/20 split",
+          "top_score": 0.17,
+          "retrieved": [
+            "early_warning_model.txt",
+            "learner_segmentation.txt",
+            "learner_segmentation.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "fixed denominator of 100",
+          "top_score": 0.099,
+          "retrieved": [
+            "early_warning_model.txt",
+            "executive_recommendation_rules.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Growing Intervention Demand",
+          "top_score": 0.587,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "intervention_copilot.txt",
+            "intervention_guide.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Platform Healthy",
+          "top_score": 0.298,
+          "retrieved": [
+            "northstar_platform_overview.txt",
+            "northstar_platform_overview.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": false,
+          "hit_at_k": true,
+          "reciprocal_rank": 0.3333333333333333
+        },
+        {
+          "question": "Retention Below Target time to impact",
+          "top_score": 0.529,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "propose intervention tool",
+          "top_score": 0.648,
+          "retrieved": [
+            "intervention_copilot.txt",
+            "intervention_guide.txt",
+            "intervention_copilot.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "HTTP API",
+          "top_score": 0.138,
+          "retrieved": [
+            "intervention_copilot.txt",
+            "data_privacy_and_governance.txt",
+            "data_privacy_and_governance.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "BI Decision Command Center",
+          "top_score": 0.323,
+          "retrieved": [
+            "northstar_platform_overview.txt",
+            "data_privacy_and_governance.txt",
+            "northstar_platform_overview.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "MLOps Foundation",
+          "top_score": 0.409,
+          "retrieved": [
+            "northstar_platform_overview.txt",
+            "northstar_platform_overview.txt",
+            "data_privacy_and_governance.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "personalized learning pathways",
+          "top_score": 0.584,
+          "retrieved": [
+            "student_success_framework.txt",
+            "northstar_platform_overview.txt",
+            "northstar_platform_overview.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "academic coaching",
+          "top_score": 0.353,
+          "retrieved": [
+            "intervention_guide.txt",
+            "student_success_framework.txt",
+            "intervention_guide.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "model registry version",
+          "top_score": 0.566,
+          "retrieved": [
+            "data_privacy_and_governance.txt",
+            "early_warning_model.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "KMeans 4 clusters",
+          "top_score": 0.513,
+          "retrieved": [
+            "learner_segmentation.txt",
+            "executive_recommendation_rules.txt",
+            "northstar_platform_overview.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "largest segment",
+          "top_score": 0.358,
+          "retrieved": [
+            "learner_segmentation.txt",
+            "learner_segmentation.txt",
+            "data_privacy_and_governance.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        }
+      ],
+      "unanswerable": [
+        {
+          "question": "What is the capital of France?",
+          "kind": "off_topic",
+          "top_score": 0.08,
+          "gated": true
+        },
+        {
+          "question": "Who won the football World Cup in 2022?",
+          "kind": "off_topic",
+          "top_score": 0.063,
+          "gated": true
+        },
+        {
+          "question": "How do I reset my email password?",
+          "kind": "off_topic",
+          "top_score": 0.058,
+          "gated": true
+        },
+        {
+          "question": "Write me a poem about the ocean.",
+          "kind": "off_topic",
+          "top_score": 0.128,
+          "gated": true
+        },
+        {
+          "question": "What is the weather in Berlin tomorrow?",
+          "kind": "off_topic",
+          "top_score": 0.132,
+          "gated": true
+        },
+        {
+          "question": "How much does a NorthStar licence cost per school?",
+          "kind": "near_domain",
+          "top_score": 0.358,
+          "gated": false
+        },
+        {
+          "question": "Which teacher is assigned to learner 12?",
+          "kind": "near_domain",
+          "top_score": 0.379,
+          "gated": false
+        },
+        {
+          "question": "What is the accuracy of the early warning model on the test set?",
+          "kind": "near_domain",
+          "top_score": 0.636,
+          "gated": false
+        },
+        {
+          "question": "What are the names of the four learner segments?",
+          "kind": "near_domain",
+          "top_score": 0.57,
+          "gated": false
+        },
+        {
+          "question": "Which cloud provider hosts the NorthStar database?",
+          "kind": "near_domain",
+          "top_score": 0.484,
+          "gated": false
+        }
+      ]
+    },
+    "hybrid + rerank": {
+      "hit_at_1": 0.95,
+      "hit_at_3": 1.0,
+      "mrr": 0.975,
+      "keyword_hit_at_1": 1.0,
+      "keyword_hit_at_3": 1.0,
+      "keyword_mrr": 1.0,
+      "latency_ms_mean": 111.8,
+      "min_answerable_score": 0.388,
+      "max_off_topic_score": 0.132,
+      "answerable_above_threshold": 1.0,
+      "off_topic_gated": 1.0,
+      "threshold": 0.25,
+      "answerable": [
+        {
+          "question": "What machine learning model does the early warning system use?",
+          "top_score": 0.702,
+          "retrieved": [
+            "early_warning_model.txt",
+            "northstar_platform_overview.txt",
+            "intervention_copilot.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How many trees are in the at-risk classifier?",
+          "top_score": 0.692,
+          "retrieved": [
+            "early_warning_model.txt",
+            "executive_recommendation_rules.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Which inputs are used to predict learner risk?",
+          "top_score": 0.576,
+          "retrieved": [
+            "early_warning_model.txt",
+            "early_warning_model.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How is the early warning model trained and tested?",
+          "top_score": 0.739,
+          "retrieved": [
+            "early_warning_model.txt",
+            "early_warning_model.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Does the early warning system decide interventions by itself?",
+          "top_score": 0.638,
+          "retrieved": [
+            "early_warning_model.txt",
+            "early_warning_model.txt",
+            "intervention_copilot.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How many learner segments does NorthStar create?",
+          "top_score": 0.777,
+          "retrieved": [
+            "learner_segmentation.txt",
+            "learner_segmentation.txt",
+            "northstar_platform_overview.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What clustering algorithm is used for learner segmentation?",
+          "top_score": 0.663,
+          "retrieved": [
+            "learner_segmentation.txt",
+            "learner_segmentation.txt",
+            "northstar_platform_overview.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What happens when the retention rate drops below 85 percent?",
+          "top_score": 0.401,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "When does the advisor recommend prioritising advisor outreach?",
+          "top_score": 0.535,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What does the advisor report when no rule fires?",
+          "top_score": 0.459,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How long does it take to see impact from the growing intervention demand recommendation?",
+          "top_score": 0.73,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Can the intervention copilot act on a learner without approval?",
+          "top_score": 0.803,
+          "retrieved": [
+            "intervention_copilot.txt",
+            "intervention_copilot.txt",
+            "data_privacy_and_governance.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How many steps can the copilot's plan have?",
+          "top_score": 0.388,
+          "retrieved": [
+            "intervention_copilot.txt",
+            "executive_recommendation_rules.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What tools does the intervention copilot call?",
+          "top_score": 0.634,
+          "retrieved": [
+            "intervention_copilot.txt",
+            "intervention_copilot.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What should happen for high-risk learners?",
+          "top_score": 0.664,
+          "retrieved": [
+            "intervention_guide.txt",
+            "executive_recommendation_rules.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How often should educators review learner progress?",
+          "top_score": 0.575,
+          "retrieved": [
+            "intervention_guide.txt",
+            "executive_recommendation_rules.txt",
+            "intervention_guide.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What modules does the NorthStar platform include?",
+          "top_score": 0.61,
+          "retrieved": [
+            "northstar_platform_overview.txt",
+            "data_privacy_and_governance.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "How does NorthStar support student success?",
+          "top_score": 0.537,
+          "retrieved": [
+            "data_privacy_and_governance.txt",
+            "student_success_framework.txt",
+            "learner_segmentation.txt"
+          ],
+          "hit_at_1": false,
+          "hit_at_k": true,
+          "reciprocal_rank": 0.5
+        },
+        {
+          "question": "What does the assistant do when the knowledge base has no answer?",
+          "top_score": 0.621,
+          "retrieved": [
+            "data_privacy_and_governance.txt",
+            "northstar_platform_overview.txt",
+            "northstar_platform_overview.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What does the model registry record?",
+          "top_score": 0.71,
+          "retrieved": [
+            "data_privacy_and_governance.txt",
+            "early_warning_model.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        }
+      ],
+      "keyword_queries": [
+        {
+          "question": "80/20 split",
+          "top_score": 0.121,
+          "retrieved": [
+            "early_warning_model.txt",
+            "early_warning_model.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "fixed denominator of 100",
+          "top_score": 0.084,
+          "retrieved": [
+            "early_warning_model.txt",
+            "early_warning_model.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Growing Intervention Demand",
+          "top_score": 0.587,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "intervention_guide.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Platform Healthy",
+          "top_score": 0.298,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "northstar_platform_overview.txt",
+            "data_privacy_and_governance.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Retention Below Target time to impact",
+          "top_score": 0.529,
+          "retrieved": [
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt",
+            "executive_recommendation_rules.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "propose intervention tool",
+          "top_score": 0.648,
+          "retrieved": [
+            "intervention_copilot.txt",
+            "intervention_copilot.txt",
+            "intervention_guide.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "HTTP API",
+          "top_score": 0.138,
+          "retrieved": [
+            "intervention_copilot.txt",
+            "intervention_copilot.txt",
+            "student_success_framework.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "BI Decision Command Center",
+          "top_score": 0.323,
+          "retrieved": [
+            "northstar_platform_overview.txt",
+            "data_privacy_and_governance.txt",
+            "northstar_platform_overview.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "MLOps Foundation",
+          "top_score": 0.409,
+          "retrieved": [
+            "northstar_platform_overview.txt",
+            "northstar_platform_overview.txt",
+            "intervention_guide.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "personalized learning pathways",
+          "top_score": 0.584,
+          "retrieved": [
+            "student_success_framework.txt",
+            "northstar_platform_overview.txt",
+            "intervention_guide.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "academic coaching",
+          "top_score": 0.353,
+          "retrieved": [
+            "intervention_guide.txt",
+            "student_success_framework.txt",
+            "intervention_guide.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "model registry version",
+          "top_score": 0.566,
+          "retrieved": [
+            "data_privacy_and_governance.txt",
+            "early_warning_model.txt",
+            "early_warning_model.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "KMeans 4 clusters",
+          "top_score": 0.513,
+          "retrieved": [
+            "learner_segmentation.txt",
+            "northstar_platform_overview.txt",
+            "learner_segmentation.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "largest segment",
+          "top_score": 0.358,
+          "retrieved": [
+            "learner_segmentation.txt",
+            "learner_segmentation.txt",
+            "learner_segmentation.txt"
+          ],
+          "hit_at_1": true,
+          "hit_at_k": true,
+          "reciprocal_rank": 1.0
+        }
+      ],
+      "unanswerable": [
+        {
+          "question": "What is the capital of France?",
+          "kind": "off_topic",
+          "top_score": 0.054,
+          "gated": true
+        },
+        {
+          "question": "Who won the football World Cup in 2022?",
+          "kind": "off_topic",
+          "top_score": 0.052,
+          "gated": true
+        },
+        {
+          "question": "How do I reset my email password?",
+          "kind": "off_topic",
+          "top_score": 0.041,
+          "gated": true
+        },
+        {
+          "question": "Write me a poem about the ocean.",
+          "kind": "off_topic",
+          "top_score": 0.031,
+          "gated": true
+        },
+        {
+          "question": "What is the weather in Berlin tomorrow?",
+          "kind": "off_topic",
+          "top_score": 0.132,
+          "gated": true
+        },
+        {
+          "question": "How much does a NorthStar licence cost per school?",
+          "kind": "near_domain",
+          "top_score": 0.358,
+          "gated": false
+        },
+        {
+          "question": "Which teacher is assigned to learner 12?",
+          "kind": "near_domain",
+          "top_score": 0.379,
+          "gated": false
+        },
+        {
+          "question": "What is the accuracy of the early warning model on the test set?",
+          "kind": "near_domain",
+          "top_score": 0.583,
+          "gated": false
+        },
+        {
+          "question": "What are the names of the four learner segments?",
+          "kind": "near_domain",
+          "top_score": 0.562,
+          "gated": false
+        },
+        {
+          "question": "Which cloud provider hosts the NorthStar database?",
+          "kind": "near_domain",
+          "top_score": 0.484,
+          "gated": false
+        }
+      ]
+    }
+  }
+}

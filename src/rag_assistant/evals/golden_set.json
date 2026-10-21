@@ -32,5 +32,21 @@
     {"question": "What is the accuracy of the early warning model on the test set?", "kind": "near_domain"},
     {"question": "What are the names of the four learner segments?", "kind": "near_domain"},
     {"question": "Which cloud provider hosts the NorthStar database?", "kind": "near_domain"}
+  ],
+  "keyword_queries": [
+    {"question": "80/20 split", "expected_document": "early_warning_model.txt"},
+    {"question": "fixed denominator of 100", "expected_document": "early_warning_model.txt"},
+    {"question": "Growing Intervention Demand", "expected_document": "executive_recommendation_rules.txt"},
+    {"question": "Platform Healthy", "expected_document": "executive_recommendation_rules.txt"},
+    {"question": "Retention Below Target time to impact", "expected_document": "executive_recommendation_rules.txt"},
+    {"question": "propose intervention tool", "expected_document": "intervention_copilot.txt"},
+    {"question": "HTTP API", "expected_document": "intervention_copilot.txt"},
+    {"question": "BI Decision Command Center", "expected_document": "northstar_platform_overview.txt"},
+    {"question": "MLOps Foundation", "expected_document": "northstar_platform_overview.txt"},
+    {"question": "personalized learning pathways", "expected_document": "student_success_framework.txt"},
+    {"question": "academic coaching", "expected_document": "intervention_guide.txt"},
+    {"question": "model registry version", "expected_document": "data_privacy_and_governance.txt"},
+    {"question": "KMeans 4 clusters", "expected_document": "learner_segmentation.txt"},
+    {"question": "largest segment", "expected_document": "learner_segmentation.txt"}
   ]
 }

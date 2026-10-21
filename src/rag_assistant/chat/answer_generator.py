@@ -3,8 +3,10 @@ Grounded answer generation for the NorthStar Knowledge Assistant.
 
 Three guardrails keep answers tied to the knowledge base:
 
-1. Relevance gate: if no retrieved chunk clears MIN_RELEVANCE, the assistant
-   says it doesn't know, without calling the LLM at all.
+1. Relevance gate: if no retrieved chunk's cosine similarity clears
+   MIN_RELEVANCE, the assistant says it doesn't know, without calling the
+   LLM at all. (With reranking the best-ranked chunk need not be the most
+   similar one, so the gate checks the best score, not the first.)
 2. Cited generation: the model must cite a numbered source for each claim,
    or reply with REFUSAL_TOKEN when the context doesn't hold the answer.
 3. Grounding check: a second, deterministic (temperature 0) LLM pass judges
@@ -81,7 +83,15 @@ class AnswerResult:
     @property
     def top_score(self) -> float | None:
 
-        return self.results[0]["score"] if self.results else None
+        return top_score(self.results)
+
+
+def top_score(results: list[dict]) -> float | None:
+    """
+    Best cosine similarity among the retrieved chunks: the relevance gate's signal.
+    """
+
+    return max((r["score"] for r in results), default=None)
 
 
 def numbered_context(results: list[dict]) -> str:
@@ -160,7 +170,7 @@ def answer_question(
         result = AnswerResult(status=STATUS_ANSWERED, answer="", results=results)
 
         # 1. Relevance gate: no LLM call when nothing relevant was retrieved.
-        if not results or results[0]["score"] < min_relevance:
+        if not results or top_score(results) < min_relevance:
 
             result.status = STATUS_LOW_RELEVANCE
             result.answer = (
