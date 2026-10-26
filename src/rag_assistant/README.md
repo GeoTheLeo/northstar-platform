@@ -24,6 +24,7 @@ question
 | Module | Role |
 |---|---|
 | `vectorstore/qdrant_store.py` | Qdrant index. Embedded on local disk by default; set `QDRANT_URL` (+ `QDRANT_API_KEY`) for a Qdrant server or Qdrant Cloud. The collection name carries a content and schema fingerprint, so editing a document re-indexes and an unchanged knowledge base is reused across restarts. Each chunk has a dense embedding (with its document title as a header: contextual retrieval) and a BM25 sparse vector. `search()` runs dense or hybrid retrieval, with optional reranking; hybrid + rerank is the default. |
+| `vectorstore/azure_search_store.py` | **Azure AI Search** backend with the same interface (`RAG_BACKEND=azure_search`, `AZURE_SEARCH_ENDPOINT`, `AZURE_SEARCH_KEY`; `pip install -r requirements-azure.txt`). Same local embeddings pushed as vectors; modes: vector, hybrid (BM25 + vector, RRF), and hybrid + Azure's semantic ranker (the default on this backend). `infra/search.bicep` creates the service. |
 | `vectorstore/sparse.py` | BM25 sparse vectors: term-frequency weights per chunk, IDF applied by Qdrant, CRC32 term ids that are stable across restarts. |
 | `retrieval/reranker.py` | Cross-encoder reranking (`ms-marco-MiniLM-L6-v2`, local, loaded on first use). |
 | `ingestion/chunker.py` | Paragraph-aware chunking, so a rule and its consequence never split across chunks. |
@@ -96,6 +97,31 @@ Center"), written before hybrid search existed. Results are written to
   chunk can come first with a low cosine score ("Platform Healthy": 0.06,
   while the gate's 0.25 is cleared by another retrieved chunk). Checking only
   the first chunk would have refused that correct answer.
+
+### Azure AI Search (2026-10-26)
+
+`--compare --backend azure_search` on the same golden set, against an Azure
+AI Search index (Free tier, North Europe) holding the same chunks and
+embeddings. Per-question results in
+`evals/results/retrieval_comparison_azure_2026-10-26.json`:
+
+| Metric | Vector | Hybrid | Hybrid + local cross-encoder | **Hybrid + Azure semantic ranker** |
+|---|---|---|---|---|
+| Questions hit@1 / hit@3 | 95% / 100% | 100% / 100% | 95% / 100% | **95% / 100%** |
+| Keyword queries hit@1 | 79% | 93% | 100% | **100%** |
+| Keyword queries MRR | 0.845 | 0.929 | 1.000 | **1.000** |
+| Answerable above gate / off-topic gated | 100% / 100% | 100% / 100% | 100% / 100% | **100% / 100%** |
+| Mean latency per query | 65 ms | 71 ms | 176 ms | **103 ms** |
+
+- Vector-only results match the Qdrant backend exactly, as they should with
+  the same embeddings: the comparison isolates the search engine.
+- Azure's hybrid search alone did better on full questions than Qdrant's
+  hybrid (100% vs. 90% hit@1).
+- Azure's semantic ranker matched the local cross-encoder on every quality
+  metric at about 40% lower latency and with no reranking model to ship, so
+  hybrid + semantic ranker is the default on this backend.
+- The live regression test (`tests/rag/test_azure_search.py`) runs when the
+  Azure credentials are set and is skipped otherwise.
 
 ### End-to-end
 

@@ -23,11 +23,7 @@ from rag_assistant.observability.tracing import get_tracer
 from rag_assistant.retrieval.retriever import (
     get_index,
 )
-from rag_assistant.vectorstore.qdrant_store import (
-    DEFAULT_MODE,
-    DEFAULT_RERANK,
-    KnowledgeIndex,
-)
+from rag_assistant.vectorstore.qdrant_store import KnowledgeIndex
 
 BRIEFING_TRIGGERS = (
     "executive briefing",
@@ -61,11 +57,11 @@ def answer_with_rag(
 
             results = index.search(question, top_k=top_k)
 
-            span.set_attribute("db.system.name", "qdrant")
+            span.set_attribute("db.system.name", index.backend)
             span.set_attribute("db.collection.name", index.collection)
             span.set_attribute("northstar.rag.top_k", top_k)
-            span.set_attribute("northstar.rag.retrieval_mode", DEFAULT_MODE)
-            span.set_attribute("northstar.rag.rerank", DEFAULT_RERANK)
+            span.set_attribute("northstar.rag.retrieval_mode", index.default_mode)
+            span.set_attribute("northstar.rag.rerank", index.default_rerank)
             span.set_attribute("northstar.rag.top_score", top_score(results) or 0.0)
             span.set_attribute(
                 "northstar.rag.retrieved_documents",

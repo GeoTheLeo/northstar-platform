@@ -1,3 +1,5 @@
+import os
+
 from rag_assistant.ingestion.document_loader import (
     load_document_chunks,
 )
@@ -19,10 +21,20 @@ def get_index() -> KnowledgeIndex:
 
     if _index is None:
 
-        _index = KnowledgeIndex(
-            load_document_chunks(),
-            make_client(),
-        )
+        # RAG_BACKEND=azure_search uses Azure AI Search (AZURE_SEARCH_ENDPOINT,
+        # AZURE_SEARCH_KEY); the default is the embedded Qdrant index.
+        if os.getenv("RAG_BACKEND") == "azure_search":
+
+            from rag_assistant.vectorstore.azure_search_store import AzureSearchIndex
+
+            _index = AzureSearchIndex(load_document_chunks())
+
+        else:
+
+            _index = KnowledgeIndex(
+                load_document_chunks(),
+                make_client(),
+            )
 
     return _index
 

@@ -8,6 +8,9 @@ Retrieval stage (no LLM, runs in CI via tests/rag):
     used to calibrate MIN_RELEVANCE
   - --compare: the same metrics plus latency for dense vs. hybrid
     retrieval, each with and without cross-encoder reranking
+  - --backend azure_search: run on Azure AI Search instead of Qdrant
+    (needs AZURE_SEARCH_ENDPOINT / AZURE_SEARCH_KEY); --compare then also
+    covers Azure's semantic ranker
 
 End-to-end stage (--e2e, needs OPENAI_API_KEY):
   - answer correctness (required facts present), groundedness, false refusals
@@ -15,7 +18,7 @@ End-to-end stage (--e2e, needs OPENAI_API_KEY):
   - latency, tokens, and cost per question
 
 Run from the repository root:
-    python src/rag_assistant/evals/run_evals.py [--e2e] [--compare]
+    python src/rag_assistant/evals/run_evals.py [--e2e] [--compare] [--backend azure_search]
 """
 
 import argparse
@@ -61,16 +64,27 @@ CONFIGS = {
     "hybrid + rerank": (MODE_HYBRID, True),
 }
 
+AZURE_CONFIGS = {
+    **CONFIGS,
+    "hybrid + semantic ranker": ("semantic", False),
+}
+
 
 def load_golden_set() -> dict:
 
     return json.loads(GOLDEN_SET_PATH.read_text(encoding="utf-8"))
 
 
-def build_index() -> KnowledgeIndex:
+def build_index(backend: str = "qdrant"):
     """
-    Fresh in-memory index, so evals never touch the app's local store.
+    Qdrant: a fresh in-memory index, so evals never touch the app's local
+    store. Azure AI Search: the versioned index for the current documents.
     """
+
+    if backend == "azure_search":
+        from rag_assistant.vectorstore.azure_search_store import AzureSearchIndex
+
+        return AzureSearchIndex(load_document_chunks())
 
     return KnowledgeIndex(load_document_chunks(), make_client(":memory:"))
 
@@ -164,14 +178,14 @@ def evaluate_retrieval(
     }
 
 
-def compare_retrieval(index: KnowledgeIndex, golden: dict) -> dict:
+def compare_retrieval(index, golden: dict, configs: dict = CONFIGS) -> dict:
 
     # Load the reranker first, so its one-time load doesn't land in a latency figure.
     index.search("warm-up", rerank=True)
 
     return {
         name: evaluate_retrieval(index, golden, mode=mode, rerank=rerank)
-        for name, (mode, rerank) in CONFIGS.items()
+        for name, (mode, rerank) in configs.items()
     }
 
 
@@ -275,15 +289,18 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--e2e", action="store_true", help="also run LLM end-to-end evals")
     parser.add_argument("--compare", action="store_true", help="compare retrieval modes and reranking")
+    parser.add_argument("--backend", choices=["qdrant", "azure_search"], default="qdrant")
+    parser.add_argument("--out", help="results file name in evals/results/ (default: latest.json)")
     args = parser.parse_args()
 
     load_dotenv()
 
     golden = load_golden_set()
-    index = build_index()
+    index = build_index(args.backend)
 
     report = {
         "run_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "backend": args.backend,
         "retrieval": evaluate_retrieval(index, golden),
     }
 
@@ -302,7 +319,9 @@ def main() -> None:
 
     if args.compare:
 
-        report["comparison"] = compare_retrieval(index, golden)
+        report["comparison"] = compare_retrieval(
+            index, golden, AZURE_CONFIGS if args.backend == "azure_search" else CONFIGS
+        )
 
         print("\nRetrieval comparison\n")
         print(comparison_table(report["comparison"]))
@@ -329,9 +348,11 @@ def main() -> None:
 
     RESULTS_DIR.mkdir(exist_ok=True)
 
-    (RESULTS_DIR / "latest.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+    out = RESULTS_DIR / (args.out or "latest.json")
 
-    print(f"\nWrote {RESULTS_DIR / 'latest.json'}")
+    out.write_text(json.dumps(report, indent=2), encoding="utf-8")
+
+    print(f"\nWrote {out}")
 
 
 if __name__ == "__main__":

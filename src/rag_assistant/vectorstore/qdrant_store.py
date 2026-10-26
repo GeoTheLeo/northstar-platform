@@ -125,6 +125,12 @@ class KnowledgeIndex:
     The knowledge base as a Qdrant collection.
     """
 
+    backend = "qdrant"
+
+    default_mode = DEFAULT_MODE
+
+    default_rerank = DEFAULT_RERANK
+
     def __init__(self, chunks: list[dict], client: QdrantClient) -> None:
 
         self.client = client

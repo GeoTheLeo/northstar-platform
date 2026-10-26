@@ -1,0 +1,3 @@
+# Optional: Azure AI Search backend for the Knowledge Assistant (RAG_BACKEND=azure_search).
+# pip install -r requirements.txt -r requirements-azure.txt
+azure-search-documents==12.0.0
