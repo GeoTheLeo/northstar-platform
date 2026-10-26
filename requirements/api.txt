@@ -1,0 +1,16 @@
+# Runtime dependencies for services/copilot_api only.
+# The API serves the sklearn early-warning and segmentation models, so it needs
+# no torch / transformers / streamlit. Versions match requirements.txt; sklearn
+# must stay at the version the pickles were trained with.
+fastapi==0.135.1
+starlette==1.3.1
+uvicorn==0.49.0
+httptools==0.8.0
+pandas==3.0.3
+numpy==2.4.6
+scikit-learn==1.9.0
+scipy==1.17.1
+joblib==1.5.3
+threadpoolctl==3.6.0
+python-dateutil==2.9.0.post0
+tzdata==2026.2

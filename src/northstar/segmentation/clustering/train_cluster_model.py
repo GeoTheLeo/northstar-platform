@@ -14,9 +14,13 @@ from northstar.segmentation.features.feature_engineering import (
 
 def train_segmentation_model(
     df: pd.DataFrame,
+    persist: bool = True,
 ) -> tuple[KMeans, pd.DataFrame]:
     """
-    Train and persist the learner segmentation model.
+    Train the learner segmentation model, persisting it unless persist=False.
+
+    Runtime callers (the dashboard) pass persist=False: the saved artifact is
+    what the inference API serves, so only the training script may write it.
     """
 
     engineered = create_features(df)
@@ -39,15 +43,16 @@ def train_segmentation_model(
         features,
     )
 
-    SEGMENTATION_MODEL_PATH.parent.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
+    if persist:
+        SEGMENTATION_MODEL_PATH.parent.mkdir(
+            parents=True,
+            exist_ok=True,
+        )
 
-    joblib.dump(
-        model,
-        SEGMENTATION_MODEL_PATH,
-    )
+        joblib.dump(
+            model,
+            SEGMENTATION_MODEL_PATH,
+        )
 
     return (
         model,

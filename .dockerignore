@@ -1,7 +1,15 @@
-.git
+**/.git
+.github
+.env
+**/.env
+apps/
+deployment/
+infrastructure/
+src/mlops/ai-pronunciation-mlops/
+**/node_modules
 .venv
 venv
-__pycache__
+**/__pycache__
 *.pyc
 *.egg-info
 .coverage

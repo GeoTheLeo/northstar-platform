@@ -1,0 +1,153 @@
+# Risk acceptance for known vulnerabilities that cannot be fixed yet.
+# Use: trivy image --ignorefile .trivyignore.yaml <image>
+#
+# pillow (dashboard image only): every finding below is fixed in pillow 13.0.0,
+# but streamlit 1.58.0 (the version Streamlit Community Cloud runs) requires
+# pillow<13. pillow 12.3.0 is the newest allowed version and is already pinned.
+# All of these are triggered by decoding a crafted image. NorthStar never decodes
+# user-supplied images: no file_uploader, camera_input, Image.open or st.image
+# anywhere in src/northstar or src/rag_assistant; pillow only touches images
+# shipped inside the image. The API image does not contain pillow at all.
+# Review: when upgrading Streamlit, or by the expiry date, whichever comes first.
+# Accepted 2026-10-22 by George Smith.
+vulnerabilities:
+  - id: CVE-2026-112390
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112391
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112392
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112393
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112394
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112395
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112396
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112397
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112399
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112400
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112401
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112402
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112403
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112404
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112405
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112406
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112891
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112892
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112893
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112894
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112895
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112896
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112897
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112898
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112899
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112900
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112901
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.
+  - id: CVE-2026-112902
+    purls:
+      - pkg:pypi/pillow@12.3.0
+    expired_at: 2027-01-31
+    statement: Fixed only in pillow 13; blocked by streamlit 1.58 (pillow<13). Not reachable - the app never decodes user-supplied images.

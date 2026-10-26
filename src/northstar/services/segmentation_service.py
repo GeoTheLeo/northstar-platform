@@ -33,6 +33,7 @@ class SegmentationService:
         try:
             _, segmented_df = train_segmentation_model(
                 learner_df.copy(),
+                persist=False,
             )
 
             if "cluster" in segmented_df.columns:
