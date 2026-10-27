@@ -1,0 +1,1187 @@
+{
+  "summary": {
+    "by_kind": {
+      "knowledge": {
+        "passed": 19,
+        "total": 20
+      },
+      "refusal": {
+        "passed": 9,
+        "total": 10
+      },
+      "data": {
+        "passed": 8,
+        "total": 8
+      },
+      "mixed": {
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "passed": 38,
+    "total": 40,
+    "errors": 0,
+    "latency_s_median": 2.26,
+    "latency_s_p95": 7.75,
+    "tokens_in": 54545,
+    "tokens_out": 2204,
+    "est_cost_usd": 0.1584
+  },
+  "results": [
+    {
+      "kind": "knowledge",
+      "question": "What machine learning model does the early warning system use?",
+      "passed": true,
+      "facts": true,
+      "cited": true,
+      "expected": null,
+      "answer": "The NorthStar Early Warning System uses a Random Forest classifier with 100 trees as its machine learning model (Source: early_warning_model.txt).",
+      "tool_calls": [],
+      "duration_s": 24.39,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1122,
+        "input_token_count": 1092,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 30,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "knowledge",
+      "question": "How many trees are in the at-risk classifier?",
+      "passed": true,
+      "facts": true,
+      "cited": true,
+      "expected": null,
+      "answer": "The at-risk classifier is a Random Forest model with 100 trees (Source: early_warning_model.txt).",
+      "tool_calls": [],
+      "duration_s": 2.14,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1090,
+        "input_token_count": 1067,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 23,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "knowledge",
+      "question": "Which inputs are used to predict learner risk?",
+      "passed": true,
+      "facts": true,
+      "cited": true,
+      "expected": null,
+      "answer": "The inputs used to predict learner risk are **attendance**, **engagement score**, and **assessment score**. Each of these is a score from 0 to 100, and they are converted into ratios (attendance ratio, engagement ratio, assessment ratio) by dividing by 100 before being used in the model (Source: early_warning_model.txt).",
+      "tool_calls": [],
+      "duration_s": 2.16,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1162,
+        "input_token_count": 1090,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 72,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "knowledge",
+      "question": "How is the early warning model trained and tested?",
+      "passed": true,
+      "facts": true,
+      "cited": true,
+      "expected": null,
+      "answer": "The early warning model is trained as a Random Forest classifier with 100 trees, using the labelled learner dataset where learners are marked as \"at risk\" or \"not at risk.\" Data is split into 80% for training the model and 20% for testing (Source: early_warning_model.txt).",
+      "tool_calls": [],
+      "duration_s": 1.84,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1154,
+        "input_token_count": 1091,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 63,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "knowledge",
+      "question": "Does the early warning system decide interventions by itself?",
+      "passed": true,
+      "facts": true,
+      "cited": true,
+      "expected": null,
+      "answer": "No, the early warning system does not decide interventions by itself. Educators review the flagged learners before taking action (Source: early_warning_model.txt).",
+      "tool_calls": [],
+      "duration_s": 1.69,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1129,
+        "input_token_count": 1097,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 32,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "knowledge",
+      "question": "How many learner segments does NorthStar create?",
+      "passed": true,
+      "facts": true,
+      "cited": true,
+      "expected": null,
+      "answer": "NorthStar creates 4 learner segments using its KMeans clustering model (Source: learner_segmentation.txt).",
+      "tool_calls": [],
+      "duration_s": 1.27,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1061,
+        "input_token_count": 1038,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 23,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "knowledge",
+      "question": "What clustering algorithm is used for learner segmentation?",
+      "passed": true,
+      "facts": true,
+      "cited": true,
+      "expected": null,
+      "answer": "The clustering algorithm used for learner segmentation is **KMeans clustering** (Source: learner_segmentation.txt).",
+      "tool_calls": [],
+      "duration_s": 1.14,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1045,
+        "input_token_count": 1022,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 23,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "knowledge",
+      "question": "What happens when the retention rate drops below 85 percent?",
+      "passed": true,
+      "facts": true,
+      "cited": true,
+      "expected": null,
+      "answer": "When the retention rate drops below 85 percent, the NorthStar Executive Advisor raises a **High priority recommendation** called **Retention Below Target**. The recommended action is to **increase learner intervention efforts**, and the expected time to impact is **2 to 4 weeks** (Source: executive_recommendation_rules.txt).",
+      "tool_calls": [],
+      "duration_s": 1.84,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1159,
+        "input_token_count": 1093,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 66,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "knowledge",
+      "question": "When does the advisor recommend prioritising advisor outreach?",
+      "passed": true,
+      "facts": true,
+      "cited": true,
+      "expected": null,
+      "answer": "The advisor recommends prioritizing advisor outreach when more than 10 learners are at risk. In this case, a **High priority recommendation** called **High Learner Risk** is raised, with the expected time to impact being 1 to 2 weeks (Source: executive_recommendation_rules.txt).",
+      "tool_calls": [],
+      "duration_s": 1.67,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1161,
+        "input_token_count": 1099,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 62,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "knowledge",
+      "question": "What does the advisor report when no rule fires?",
+      "passed": true,
+      "facts": true,
+      "cited": true,
+      "expected": null,
+      "answer": "When no rule fires, the NorthStar Executive Advisor reports **Platform Healthy** with the action to continue monitoring. (Source: executive_recommendation_rules.txt)",
+      "tool_calls": [],
+      "duration_s": 1.33,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1133,
+        "input_token_count": 1099,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 34,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "knowledge",
+      "question": "How long does it take to see impact from the growing intervention demand recommendation?",
+      "passed": true,
+      "facts": true,
+      "cited": true,
+      "expected": null,
+      "answer": "The expected time to impact from the **Growing Intervention Demand** recommendation is **3 to 6 weeks** (Source: executive_recommendation_rules.txt).",
+      "tool_calls": [],
+      "duration_s": 1.52,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1137,
+        "input_token_count": 1104,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 33,
+        "openai.cached_input_tokens": 1024,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 1024
+      },
+      "error": null
+    },
+    {
+      "kind": "knowledge",
+      "question": "Can the intervention copilot act on a learner without approval?",
+      "passed": true,
+      "facts": true,
+      "cited": true,
+      "expected": null,
+      "answer": "No, the intervention copilot cannot act on a learner without staff approval. Any proposed intervention is added as a pending item in an approval queue, and staff must review and approve it before it affects a learner (Source: intervention_copilot.txt; data_privacy_and_governance.txt).",
+      "tool_calls": [],
+      "duration_s": 1.95,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1154,
+        "input_token_count": 1093,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 61,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "knowledge",
+      "question": "How many steps can the copilot's plan have?",
+      "passed": true,
+      "facts": true,
+      "cited": true,
+      "expected": null,
+      "answer": "The NorthStar Agentic Intervention Copilot's plan can have **one to six steps** (Source: intervention_copilot.txt).",
+      "tool_calls": [],
+      "duration_s": 1.2,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1106,
+        "input_token_count": 1077,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 29,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "knowledge",
+      "question": "What tools does the intervention copilot call?",
+      "passed": true,
+      "facts": true,
+      "cited": true,
+      "expected": null,
+      "answer": "The intervention copilot calls tools such as **listing at-risk learners**, **looking up one learner's details**, and tools connected to NorthStar's early warning and segmentation models via an HTTP API. Additionally, the agent can propose interventions, which adds a pending item to the approval queue (Source: intervention_copilot.txt).",
+      "tool_calls": [],
+      "duration_s": 2.08,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1142,
+        "input_token_count": 1075,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 67,
+        "openai.cached_input_tokens": 1024,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 1024
+      },
+      "error": null
+    },
+    {
+      "kind": "knowledge",
+      "question": "What should happen for high-risk learners?",
+      "passed": true,
+      "facts": true,
+      "cited": true,
+      "expected": null,
+      "answer": "High-risk learners should receive the following supports:\n\n1. **Proactive outreach** to address their specific needs.\n2. **Individualized support plans** tailored to each learner's unique challenges.\n3. **Academic coaching** to improve performance and skills.\n4. **Regular progress monitoring** to track improvements and address any ongoing issues.\n\n(Source: intervention_guide.txt)",
+      "tool_calls": [],
+      "duration_s": 4.61,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1133,
+        "input_token_count": 1058,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 75,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "knowledge",
+      "question": "How often should educators review learner progress?",
+      "passed": true,
+      "facts": true,
+      "cited": true,
+      "expected": null,
+      "answer": "Educators should review learner progress weekly and adjust support strategies as needed (Source: intervention_guide.txt).",
+      "tool_calls": [],
+      "duration_s": 1.59,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1014,
+        "input_token_count": 991,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 23,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "knowledge",
+      "question": "What modules does the NorthStar platform include?",
+      "passed": true,
+      "facts": true,
+      "cited": true,
+      "expected": null,
+      "answer": "The NorthStar platform includes the following modules:\n\n- Early Warning System\n- Learner Segmentation Engine\n- BI Decision Command Center\n- AI Knowledge Assistant\n- MLOps Foundation  \n(Source: northstar_platform_overview.txt)",
+      "tool_calls": [],
+      "duration_s": 2.55,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1114,
+        "input_token_count": 1065,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 49,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "knowledge",
+      "question": "How does NorthStar support student success?",
+      "passed": true,
+      "facts": true,
+      "cited": true,
+      "expected": null,
+      "answer": "NorthStar supports student success by:\n\n1. **Personalized Learning Pathways**: Tailoring education plans to individual learners' needs (Source: student_success_framework.txt).\n2. **Predictive Analytics and Early Risk Identification**: Using tools like the Early Warning System to predict which learners are at risk of falling behind, based on attendance, engagement, and assessment scores (Source: early_warning_model.txt; northstar_platform_overview.txt).\n3. **Continuous Feedback**: Providing ongoing insights to learners and educators for improvement (Source: student_success_framework.txt).\n4. **Clustering and Decision Support**: Grouping learners into meaningful segments for targeted interventions and improving decision-making through intelligent analytics (Source: northstar_platform_overview.txt).\n5. **Data-Informed Decision Making**: Leveraging learning analytics to identify intervention opportunities before academic performance deteriorates (Source: student_success_framework.txt). \n\nThese efforts collectively aim to enhance learner outcomes and prevent academic decline.",
+      "tool_calls": [],
+      "duration_s": 5.39,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1248,
+        "input_token_count": 1053,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 195,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "knowledge",
+      "question": "What does the assistant do when the knowledge base has no answer?",
+      "passed": false,
+      "facts": false,
+      "cited": true,
+      "expected": null,
+      "answer": "When the knowledge base does not contain an answer, the assistant explicitly states that it does not have the information instead of guessing (Source: data_privacy_and_governance.txt).",
+      "tool_calls": [],
+      "duration_s": 4.12,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1101,
+        "input_token_count": 1063,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 38,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "knowledge",
+      "question": "What does the model registry record?",
+      "passed": true,
+      "facts": true,
+      "cited": true,
+      "expected": null,
+      "answer": "The model registry records each model's **name and version** and counts how often it is **loaded and used**, ensuring that the model behind a prediction can always be identified (Source: data_privacy_and_governance.txt).",
+      "tool_calls": [],
+      "duration_s": 1.56,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1100,
+        "input_token_count": 1052,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 48,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "refusal",
+      "question": "What is the capital of France?",
+      "passed": true,
+      "declined": true,
+      "expected": null,
+      "answer": "NorthStar's knowledge base and data do not contain this information. However, the capital of France is Paris.",
+      "tool_calls": [],
+      "duration_s": 1.86,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1053,
+        "input_token_count": 1029,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 24,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "refusal",
+      "question": "Who won the football World Cup in 2022?",
+      "passed": true,
+      "declined": true,
+      "expected": null,
+      "answer": "NorthStar's knowledge base and data don't contain information about the winner of the 2022 Football World Cup.",
+      "tool_calls": [],
+      "duration_s": 1.75,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1042,
+        "input_token_count": 1018,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 24,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "refusal",
+      "question": "How do I reset my email password?",
+      "passed": true,
+      "declined": true,
+      "expected": null,
+      "answer": "NorthStar's knowledge base and data do not contain information about resetting email passwords. For assistance, please refer to your organization's IT support.",
+      "tool_calls": [],
+      "duration_s": 1.89,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1063,
+        "input_token_count": 1034,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 29,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "refusal",
+      "question": "Write me a poem about the ocean.",
+      "passed": true,
+      "declined": true,
+      "expected": null,
+      "answer": "NorthStar's knowledge base and data are limited to school-related information, and poetry is beyond its scope. Unfortunately, I can't assist with that!",
+      "tool_calls": [],
+      "duration_s": 2.36,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1047,
+        "input_token_count": 1016,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 31,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "refusal",
+      "question": "What is the weather in Berlin tomorrow?",
+      "passed": true,
+      "declined": true,
+      "expected": null,
+      "answer": "NorthStar's knowledge base and data do not provide information about weather conditions.",
+      "tool_calls": [],
+      "duration_s": 2.53,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1032,
+        "input_token_count": 1015,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 17,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "refusal",
+      "question": "How much does a NorthStar licence cost per school?",
+      "passed": true,
+      "declined": true,
+      "expected": null,
+      "answer": "NorthStar's knowledge base and data do not include information about the cost of a license per school.",
+      "tool_calls": [],
+      "duration_s": 1.41,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1035,
+        "input_token_count": 1013,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 22,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "refusal",
+      "question": "Which teacher is assigned to learner 12?",
+      "passed": true,
+      "declined": true,
+      "expected": null,
+      "answer": "NorthStar's knowledge base and data do not include teacher assignments to learners, so I cannot answer this question.",
+      "tool_calls": [],
+      "duration_s": 2.12,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1033,
+        "input_token_count": 1009,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 24,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "refusal",
+      "question": "What is the accuracy of the early warning model on the test set?",
+      "passed": true,
+      "declined": true,
+      "expected": null,
+      "answer": "NorthStar's knowledge base and data do not contain the accuracy of the early warning model on the test set. No model performance metrics, such as accuracy, precision, or recall, are included in the provided documents or available datasets.",
+      "tool_calls": [],
+      "duration_s": 2.55,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1113,
+        "input_token_count": 1065,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 48,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "refusal",
+      "question": "What are the names of the four learner segments?",
+      "passed": false,
+      "declined": false,
+      "expected": null,
+      "answer": "The names of the learner segments are not specified in NorthStar's knowledge base or data tools. However, the model creates 4 segments based on attendance, engagement, and assessment patterns (Source: learner_segmentation.txt). If you need further details, accessing the segment definitions from other sources or consulting the implementation team might help.",
+      "tool_calls": [],
+      "duration_s": 2.62,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1095,
+        "input_token_count": 1028,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 67,
+        "openai.cached_input_tokens": 0,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 0
+      },
+      "error": null
+    },
+    {
+      "kind": "refusal",
+      "question": "Which cloud provider hosts the NorthStar database?",
+      "passed": true,
+      "declined": true,
+      "expected": null,
+      "answer": "NorthStar's knowledge base and data do not specify the cloud provider hosting the database. However, the NorthStar data lake uses Amazon S3 for storing learner data (Data: tools description).",
+      "tool_calls": [],
+      "duration_s": 2.98,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 1105,
+        "input_token_count": 1065,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 40,
+        "openai.cached_input_tokens": 1024,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 1024
+      },
+      "error": null
+    },
+    {
+      "kind": "data",
+      "question": "How many learners in Berlin are currently flagged as at risk?",
+      "passed": true,
+      "correct": true,
+      "queried": true,
+      "names_source": true,
+      "expected": 127,
+      "answer": "There are currently 127 learners in Berlin flagged as at risk (Data: learners + risk_predictions).",
+      "tool_calls": [
+        {
+          "name": "query_dataset",
+          "arguments": {
+            "dataset": "learners",
+            "join": [
+              "risk_predictions"
+            ],
+            "filters": [
+              {
+                "column": "campus",
+                "op": "==",
+                "value": "Berlin"
+              },
+              {
+                "column": "at_risk",
+                "op": "==",
+                "value": 1
+              }
+            ],
+            "metrics": [
+              {
+                "column": "learner_id",
+                "agg": "count"
+              }
+            ]
+          },
+          "result": "{\"result\": \"{\\\"dataset\\\": \\\"learners\\\", \\\"joined\\\": [\\\"risk_predictions\\\"], \\\"matched_rows\\\": 127, \\\"returned_rows\\\": 1, \\\"rows\\\": [{\\\"count_learner_id\\\": 127}]}\"}"
+        }
+      ],
+      "duration_s": 3.75,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 2291,
+        "input_token_count": 2202,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 89,
+        "openai.cached_input_tokens": 1024,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 1024
+      },
+      "error": null
+    },
+    {
+      "kind": "data",
+      "question": "What is the average attendance of learners at the Munich campus?",
+      "passed": true,
+      "correct": true,
+      "queried": true,
+      "names_source": true,
+      "expected": 80.31,
+      "answer": "The average attendance of learners at the Munich campus is 80.31% (Data: learners).",
+      "tool_calls": [
+        {
+          "name": "query_dataset",
+          "arguments": {
+            "dataset": "learners",
+            "filters": [
+              {
+                "column": "campus",
+                "op": "==",
+                "value": "Munich"
+              }
+            ],
+            "metrics": [
+              {
+                "column": "attendance",
+                "agg": "mean"
+              }
+            ]
+          },
+          "result": "{\"result\": \"{\\\"dataset\\\": \\\"learners\\\", \\\"joined\\\": [], \\\"matched_rows\\\": 318, \\\"returned_rows\\\": 1, \\\"rows\\\": [{\\\"mean_attendance\\\": 80.31}]}\"}"
+        }
+      ],
+      "duration_s": 2.64,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 2256,
+        "input_token_count": 2188,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 68,
+        "openai.cached_input_tokens": 1024,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 1024
+      },
+      "error": null
+    },
+    {
+      "kind": "data",
+      "question": "How many learners are in the data lake in total?",
+      "passed": true,
+      "correct": true,
+      "queried": true,
+      "names_source": true,
+      "expected": 2000,
+      "answer": "There are 2,000 learners in total in the data lake (Data: learners).",
+      "tool_calls": [
+        {
+          "name": "query_dataset",
+          "arguments": {
+            "dataset": "learners",
+            "metrics": [
+              {
+                "column": "learner_id",
+                "agg": "count"
+              }
+            ]
+          },
+          "result": "{\"result\": \"{\\\"dataset\\\": \\\"learners\\\", \\\"joined\\\": [], \\\"matched_rows\\\": 2000, \\\"returned_rows\\\": 1, \\\"rows\\\": [{\\\"count_learner_id\\\": 2000}]}\"}"
+        }
+      ],
+      "duration_s": 2.56,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 2224,
+        "input_token_count": 2174,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 50,
+        "openai.cached_input_tokens": 1024,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 1024
+      },
+      "error": null
+    },
+    {
+      "kind": "data",
+      "question": "Which program has the most at-risk learners?",
+      "passed": true,
+      "correct": true,
+      "queried": true,
+      "names_source": true,
+      "expected": "General English",
+      "answer": "The program with the most at-risk learners is \"General English,\" with 417 learners at risk (Data: learners + risk_predictions).",
+      "tool_calls": [
+        {
+          "name": "query_dataset",
+          "arguments": {
+            "dataset": "learners",
+            "join": [
+              "risk_predictions"
+            ],
+            "filters": [
+              {
+                "column": "at_risk",
+                "op": "==",
+                "value": 1
+              }
+            ],
+            "group_by": [
+              "program"
+            ],
+            "metrics": [
+              {
+                "column": "learner_id",
+                "agg": "count"
+              }
+            ],
+            "order_by": "count_learner_id",
+            "descending": true,
+            "limit": 1
+          },
+          "result": "{\"result\": \"{\\\"dataset\\\": \\\"learners\\\", \\\"joined\\\": [\\\"risk_predictions\\\"], \\\"matched_rows\\\": 734, \\\"returned_rows\\\": 1, \\\"rows\\\": [{\\\"program\\\": \\\"General English\\\", \\\"count_learner_id\\\": 417}]}\"}"
+        }
+      ],
+      "duration_s": 4.62,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 2485,
+        "input_token_count": 2379,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 106,
+        "openai.cached_input_tokens": 1152,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 1152
+      },
+      "error": null
+    },
+    {
+      "kind": "data",
+      "question": "How many interventions have been completed?",
+      "passed": true,
+      "correct": true,
+      "queried": true,
+      "names_source": true,
+      "expected": 364,
+      "answer": "A total of 364 interventions have been completed (Data: interventions).",
+      "tool_calls": [
+        {
+          "name": "query_dataset",
+          "arguments": {
+            "dataset": "interventions",
+            "filters": [
+              {
+                "column": "status",
+                "op": "==",
+                "value": "completed"
+              }
+            ],
+            "metrics": [
+              {
+                "column": "learner_id",
+                "agg": "count"
+              }
+            ]
+          },
+          "result": "{\"result\": \"{\\\"dataset\\\": \\\"interventions\\\", \\\"joined\\\": [], \\\"matched_rows\\\": 364, \\\"returned_rows\\\": 1, \\\"rows\\\": [{\\\"count_learner_id\\\": 364}]}\"}"
+        }
+      ],
+      "duration_s": 6.11,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 2420,
+        "input_token_count": 2358,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 62,
+        "openai.cached_input_tokens": 1152,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 1152
+      },
+      "error": null
+    },
+    {
+      "kind": "data",
+      "question": "How many learners are enrolled in term 2026-S2?",
+      "passed": true,
+      "correct": true,
+      "queried": true,
+      "names_source": true,
+      "expected": 996,
+      "answer": "There are 996 learners enrolled in term 2026-S2 (Data: learners).",
+      "tool_calls": [
+        {
+          "name": "query_dataset",
+          "arguments": {
+            "dataset": "learners",
+            "filters": [
+              {
+                "column": "term",
+                "op": "==",
+                "value": "2026-S2"
+              }
+            ],
+            "metrics": [
+              {
+                "column": "learner_id",
+                "agg": "count"
+              }
+            ]
+          },
+          "result": "{\"result\": \"{\\\"dataset\\\": \\\"learners\\\", \\\"joined\\\": [], \\\"matched_rows\\\": 996, \\\"returned_rows\\\": 1, \\\"rows\\\": [{\\\"count_learner_id\\\": 996}]}\"}"
+        }
+      ],
+      "duration_s": 11.58,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 2268,
+        "input_token_count": 2199,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 69,
+        "openai.cached_input_tokens": 1024,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 1024
+      },
+      "error": null
+    },
+    {
+      "kind": "data",
+      "question": "What is the average assessment score of learners flagged at risk?",
+      "passed": true,
+      "correct": true,
+      "queried": true,
+      "names_source": true,
+      "expected": 56.95,
+      "answer": "The average assessment score of learners flagged at risk is 56.95 (Data: learners + risk_predictions).",
+      "tool_calls": [
+        {
+          "name": "query_dataset",
+          "arguments": {
+            "dataset": "learners",
+            "join": [
+              "risk_predictions"
+            ],
+            "filters": [
+              {
+                "column": "at_risk",
+                "op": "==",
+                "value": 1
+              }
+            ],
+            "metrics": [
+              {
+                "column": "assessment_score",
+                "agg": "mean"
+              }
+            ]
+          },
+          "result": "{\"result\": \"{\\\"dataset\\\": \\\"learners\\\", \\\"joined\\\": [\\\"risk_predictions\\\"], \\\"matched_rows\\\": 734, \\\"returned_rows\\\": 1, \\\"rows\\\": [{\\\"mean_assessment_score\\\": 56.95}]}\"}"
+        }
+      ],
+      "duration_s": 2.8,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 2314,
+        "input_token_count": 2237,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 77,
+        "openai.cached_input_tokens": 1024,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 1024
+      },
+      "error": null
+    },
+    {
+      "kind": "data",
+      "question": "Which learner segment number has the most learners?",
+      "passed": true,
+      "correct": true,
+      "queried": true,
+      "names_source": true,
+      "expected": 3,
+      "answer": "Segment 3 has the most learners, with 673 assigned to it (Data: segments).",
+      "tool_calls": [
+        {
+          "name": "query_dataset",
+          "arguments": {
+            "dataset": "segments",
+            "group_by": [
+              "segment"
+            ],
+            "metrics": [
+              {
+                "column": "learner_id",
+                "agg": "count"
+              }
+            ],
+            "order_by": "count_learner_id",
+            "descending": true,
+            "limit": 1
+          },
+          "result": "{\"result\": \"{\\\"dataset\\\": \\\"segments\\\", \\\"joined\\\": [], \\\"matched_rows\\\": 2000, \\\"returned_rows\\\": 1, \\\"rows\\\": [{\\\"segment\\\": 3, \\\"count_learner_id\\\": 673}]}\"}"
+        }
+      ],
+      "duration_s": 5.66,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 2243,
+        "input_token_count": 2170,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 73,
+        "openai.cached_input_tokens": 1024,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 1024
+      },
+      "error": null
+    },
+    {
+      "kind": "mixed",
+      "question": "What model does the early warning system use, and how many learners in total are flagged at risk?",
+      "passed": true,
+      "fact": true,
+      "number": true,
+      "queried": true,
+      "expected": 734,
+      "answer": "The Early Warning System uses a Random Forest classifier with 100 trees (Source: early_warning_model.txt). \n\nIn total, 734 learners are currently flagged as at risk (Data: learners + risk_predictions).",
+      "tool_calls": [
+        {
+          "name": "query_dataset",
+          "arguments": {
+            "dataset": "learners",
+            "join": [
+              "risk_predictions"
+            ],
+            "filters": [
+              {
+                "column": "at_risk",
+                "op": "==",
+                "value": 1
+              }
+            ],
+            "metrics": [
+              {
+                "column": "learner_id",
+                "agg": "count"
+              }
+            ]
+          },
+          "result": "{\"result\": \"{\\\"dataset\\\": \\\"learners\\\", \\\"joined\\\": [\\\"risk_predictions\\\"], \\\"matched_rows\\\": 734, \\\"returned_rows\\\": 1, \\\"rows\\\": [{\\\"count_learner_id\\\": 734}]}\"}"
+        },
+        {
+          "name": "describe_dataset",
+          "arguments": {
+            "dataset": "risk_predictions"
+          },
+          "result": "{\"result\": \"{\\\"dataset\\\": \\\"risk_predictions\\\", \\\"rows\\\": 2000, \\\"columns\\\": {\\\"learner_id\\\": \\\"str\\\", \\\"at_risk\\\": \\\"int64\\\", \\\"model\\\": \\\"str\\\"}, \\\"categorical_values\\\": {}, \\\"numeric_summary\\\": {\\\"at_risk\\\": {\\\"count\\\": 2000.0, \\\"mean\\\": 0.37, \\\"std\\\": 0.48, \\\"min\\\": 0.0, \\\"25%\\\": 0.0, \\\"50%\\\": 0.0, \\\"75%\\\": 1.0, \\\"max\\\": 1.0}}, \\\"example_rows\\\": [{\\\"learner_id\\\": \\\"L00001\\\", \\\"at_risk\\\": 0, \\\"model\\\": \\\"early_warning_random_forest\\\"}, {\\\"learner_id\\\": \\\"L00002\\\", \\\"at_risk\\\": 0, \\\"model\\\": \\"
+        }
+      ],
+      "duration_s": 4.12,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 2626,
+        "input_token_count": 2497,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 129,
+        "openai.cached_input_tokens": 1024,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 1024
+      },
+      "error": null
+    },
+    {
+      "kind": "mixed",
+      "question": "How many learner segments does NorthStar create, and how many learners are in segment 0?",
+      "passed": true,
+      "fact": true,
+      "number": true,
+      "queried": true,
+      "expected": 291,
+      "answer": "NorthStar creates 4 learner segments using KMeans clustering (Source: learner_segmentation.txt). Segment 0 currently has 291 learners assigned to it (Data: segments).",
+      "tool_calls": [
+        {
+          "name": "list_datasets",
+          "arguments": {},
+          "result": "{\"result\": \"{\\\"source\\\": \\\"s3://northstar-datalake/northstar/\\\", \\\"datasets\\\": [{\\\"dataset\\\": \\\"learners\\\", \\\"rows\\\": 2000, \\\"columns\\\": [\\\"learner_id\\\", \\\"campus\\\", \\\"program\\\", \\\"term\\\", \\\"attendance\\\", \\\"engagement_score\\\", \\\"assessment_score\\\"]}, {\\\"dataset\\\": \\\"risk_predictions\\\", \\\"rows\\\": 2000, \\\"columns\\\": [\\\"learner_id\\\", \\\"at_risk\\\", \\\"model\\\"]}, {\\\"dataset\\\": \\\"segments\\\", \\\"rows\\\": 2000, \\\"columns\\\": [\\\"learner_id\\\", \\\"segment\\\"]}, {\\\"dataset\\\": \\\"interventions\\\", \\\"rows\\\": 734, \\\"co"
+        },
+        {
+          "name": "query_dataset",
+          "arguments": {
+            "dataset": "segments",
+            "group_by": [
+              "segment"
+            ],
+            "metrics": [
+              {
+                "column": "learner_id",
+                "agg": "count"
+              }
+            ],
+            "order_by": "segment",
+            "descending": false
+          },
+          "result": "{\"result\": \"{\\\"dataset\\\": \\\"segments\\\", \\\"joined\\\": [], \\\"matched_rows\\\": 2000, \\\"returned_rows\\\": 4, \\\"rows\\\": [{\\\"segment\\\": 0, \\\"count_learner_id\\\": 291}, {\\\"segment\\\": 1, \\\"count_learner_id\\\": 396}, {\\\"segment\\\": 2, \\\"count_learner_id\\\": 640}, {\\\"segment\\\": 3, \\\"count_learner_id\\\": 673}]}\"}"
+        }
+      ],
+      "duration_s": 7.75,
+      "usage": {
+        "cache_creation_input_token_count": 0,
+        "total_token_count": 2539,
+        "input_token_count": 2430,
+        "openai.cache_write_tokens": 0,
+        "output_token_count": 109,
+        "openai.cached_input_tokens": 1024,
+        "openai.reasoning_tokens": 0,
+        "reasoning_output_token_count": 0,
+        "cache_read_input_token_count": 1024
+      },
+      "error": null
+    }
+  ]
+}

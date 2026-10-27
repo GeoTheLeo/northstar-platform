@@ -35,3 +35,7 @@ data/intervention_audit_log.csv
 
 # RAG assistant - local Qdrant index, rebuilt automatically from the documents
 data/vector_store/
+
+# Knowledge agent: isolated venv and the generated data lake (rebuild with src/datalake_mcp/build_datalake.py)
+.venv-agent/
+data/datalake/
